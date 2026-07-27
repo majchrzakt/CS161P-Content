@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Variables and Data Types</title>
+<style>
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/AtkinsonHyperlegible-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/AtkinsonHyperlegible-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/AtkinsonHyperlegible-Italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/AtkinsonHyperlegible-BoldItalic.woff2') format('woff2');
+}
+body {
+  font-family: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background: #ffffff;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 3rem;
+}
+/* Moodle's WYSIWYG editor bakes in a different inline font-family per page
+   (Arial, Calibri, Times New Roman, etc.) - force everything back to the
+   accessible stack above regardless of what the original page specified. */
+body * {
+  font-family: inherit !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+}
+/* Explicit scale so no heading level ties or drops below the 18px body
+   text - the browser default em-based scale shrinks below that starting
+   at h4/h5 once the body font-size is bumped up this far for accessibility. */
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.1em; }
+h5 { font-size: 1em; }
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: #0b5fff;
+}
+table {
+  border-collapse: collapse;
+}
+td, th {
+  padding: 0.4em 0.8em;
+}
+/* Moodle CTF "flag" prompts are wrapped in a div with an inline neon-green
+   border (#00ff11); the title inside is an h5 that barely stands out once
+   pulled out of Moodle's own page chrome. Give it real visual weight, but
+   with a darkened green (8.2:1 contrast on white, WCAG AAA) instead of the
+   neon border color, which would be close to unreadable as text. */
+div[style*="00ff11"] h5 {
+  font-size: 1.3em;
+  font-weight: 800;
+  color: #0e5c1a;
+  margin: 0 0 0.5em 0;
+}
+</style>
+</head>
+<body>
+<h1>Variables and Data Types</h1>
+<h3><a title="http://yaacotu.com/ctf/engineDRM/index.php?class=161P&amp;challengeTopic=Variable_and_Data_Type" href="http://yaacotu.com/ctf/engineDRM/index.php?class=161P&amp;challengeTopic=Variable_and_Data_Type" target="_blank" rel="noopener">Variable and Data Type CTF</a></h3>
+<p>Complete Capture the Flag (CTF) activities below.  You can check that you have the correct flags at the CTF link above.  If you'd like to register your progress and to have your name appear on the leaderboard, you may opt to include your name when entering flags.  As you capture flags and verify they're correct, keep track of them, so you can enter them into Canvas and earn class points toward your grade. </p>
+<h3 id="yui_3_18_1_1_1767939914735_195">Required Resources</h3>
+<h4>Read </h4>
+<ul>
+<li>Chapter 2 in <span style="color: #990066;"><strong>CS 161P: Computer Science 1 Using Python</strong></span> by Jim Bailey (in <span style="color: #990066;"><strong>Course Resources</strong></span> section)</li>
+<li>Sections 2.1 to 2.5 in <a href="https://runestone.academy/ns/books/published/thinkcspy/index.html" target="_blank" rel="noopener"><strong>How to Think Like a Computer Scientist</strong></a></li>
+</ul>
+<p id="yui_3_18_1_1_1768622132229_34">Then attempt the challenges below.</p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag VDTCanChange (5 pts)</h5>
+<p>This is where a program stores <strong><span style="color: #990066;">information which can change</span></strong>.</p>
+</div>
+</div>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag VDTShouldNotChange (5 pts)</h5>
+In Python, even though you cannot create a true constant, by convention you can indicate a value should be treated as a <strong><span style="color: #990066;">constant</span></strong> and not changed by giving it a name with <strong><span style="color: #990066;">all</span></strong> <span style="color: #00ff11; background-color: #00ff11; display: inline-block; width: 3em; height: 1.5em; border-radius: 3px;">gb</span> <strong><span style="color: #990066;">letters</span></strong>.  The flag is under the green box.</div>
+</div>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag VDTTyped (5 pts)</h5>
+Python is <span style="color: #00ff11; background-color: #00ff11; display: inline-block; width: 3em; height: 1.5em; border-radius: 3px;">gb</span> typed, meaning the <strong><span style="color: #990066;">type of a variable can change</span></strong> as the program runs.  For example, you could store "happy" in a variable called state, then you could store 7 in state.  The flag is under the green box.</div>
+</div>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag VDTString (5 pts)</h5>
+<p>What <strong><span style="color: #990066;">type</span></strong> will the Python interpreter return for the line below?  The flag is the <strong><span style="color: #990066;">full line output</span></strong> by the print statement, including all delimiters like angle brackets and single quotes.</p>
+<pre>print(type("Hello World!"))</pre>
+</div>
+</div>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag VDTReal (5 pts)</h5>
+<p>What <strong><span style="color: #990066;">type</span></strong> will it return for the line below?  The flag is the <strong><span style="color: #990066;">full line output</span></strong> by the print statement, including all delimiters like angle brackets and single quotes.</p>
+<pre>print(type(3.14))</pre>
+</div>
+</div>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag VDTNotChar (5 pts)</h5>
+<p>What <strong><span style="color: #990066;">type</span></strong> will it return for the line below?  The flag is the <strong><span style="color: #990066;">full line output</span></strong> by the print statement, including all delimiters like angle brackets and single quotes.</p>
+<pre>print(type('c'))</pre>
+</div>
+</div>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag VDTNumber (5 pts)</h5>
+<p>What do you use to <strong><span style="color: #990066;">convert a string literal</span></strong> like "7.29" <strong><span style="color: #990066;">to a numbe</span><span style="color: #990066;">r</span><span style="color: #990066;"> with a decimal portion</span></strong>, so you can do math with it?  The flag is under the green box.</p>
+<pre>num = <span style="color: #00ff11; background-color: #00ff11; display: inline-block; width: 3em; height: 1.5em; border-radius: 3px;">gb</span>("7.29")</pre>
+</div>
+</div>
+<p></p>
+</body>
+</html>

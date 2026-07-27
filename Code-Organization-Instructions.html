@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Code Organization</title>
+<style>
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/AtkinsonHyperlegible-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/AtkinsonHyperlegible-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/AtkinsonHyperlegible-Italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/AtkinsonHyperlegible-BoldItalic.woff2') format('woff2');
+}
+body {
+  font-family: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background: #ffffff;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 3rem;
+}
+/* Moodle's WYSIWYG editor bakes in a different inline font-family per page
+   (Arial, Calibri, Times New Roman, etc.) - force everything back to the
+   accessible stack above regardless of what the original page specified. */
+body * {
+  font-family: inherit !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+}
+/* Explicit scale so no heading level ties or drops below the 18px body
+   text - the browser default em-based scale shrinks below that starting
+   at h4/h5 once the body font-size is bumped up this far for accessibility. */
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.1em; }
+h5 { font-size: 1em; }
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: #0b5fff;
+}
+table {
+  border-collapse: collapse;
+}
+td, th {
+  padding: 0.4em 0.8em;
+}
+/* Moodle CTF "flag" prompts are wrapped in a div with an inline neon-green
+   border (#00ff11); the title inside is an h5 that barely stands out once
+   pulled out of Moodle's own page chrome. Give it real visual weight, but
+   with a darkened green (8.2:1 contrast on white, WCAG AAA) instead of the
+   neon border color, which would be close to unreadable as text. */
+div[style*="00ff11"] h5 {
+  font-size: 1.3em;
+  font-weight: 800;
+  color: #0e5c1a;
+  margin: 0 0 0.5em 0;
+}
+</style>
+</head>
+<body>
+<h1>Code Organization</h1>
+<h3><a title="http://yaacotu.com/ctf/engineDRM/index.php?class=161P&amp;challengeTopic=Code_Organization" href="http://yaacotu.com/ctf/engineDRM/index.php?class=161P&amp;challengeTopic=Code_Organization" target="_blank" rel="noopener">Code Organization CTF</a></h3>
+<p dir="ltr" style="text-align: left;">Complete Capture the Flag (CTF) activities below.  You can check that you have the correct flags at the CTF link above.  If you'd like to register your progress and to have your name appear on the leaderboard, you may opt to include your name when entering flags.  As you capture flags and verify they're correct, keep track of them, so you can enter them into Canvas and earn class points toward your grade.</p>
+<h3>Required Resource</h3>
+<p>Review this material, then attempt the challenges below.</p>
+<ul id="yui_3_18_1_1_1768619106315_31">
+<li>Read <span style="color: #990066;"><strong>Chapter 7</strong></span> in <span style="color: #990066;"><strong>CS 161P: Computer Science 1 Using Python</strong></span> by Jim Bailey (in <span style="color: #990066;"><strong>Course Resources</strong></span> section)</li>
+<li>Watch <strong><span style="color: #990066;">Creating an IPO Chart</span></strong> by Mari Good.</li>
+</ul>
+<p><strong><a title="IPOs by Mari Good.mp4" href="https://classes.lanecc.edu/webservice/pluginfile.php/6584048/mod_page/content/105/IPOs%20by%20Mari%20Good.mp4?token=e6f394e89e0848664344dbce4362ce95" target="_blank" rel="noopener">IPOs by Mari Good.mp4</a></strong></p>
+<h3 style="text-align: left;">Make a Plan</h3>
+<p dir="ltr" style="text-align: left;">There are several planning methodologies we might employ before we dive into writing code.  The strategies explored below help us make a plan, so our process is more efficient and organized.</p>
+<h4 style="text-align: left;">IPO Chart - Celsius to Fahrenheit </h4>
+<p>In an <strong><span style="color: #990066;">IPO chart</span></strong> we list the <strong><span style="color: #990066;">input(s)</span></strong>, <strong><span style="color: #990066;">output(s)</span></strong>, and <strong><span style="color: #990066;">processes</span></strong> needed to solve a programming task.  Say you want to write a program that can <strong><span style="color: #990066;">retrieve</span></strong> a temperature, F, in <strong><span style="color: #990066;">Fahrenheit</span></strong>, <strong><span style="color: #990066;">convert</span></strong> it <strong><span style="color: #990066;">to Celsius</span></strong> using the formula <strong><span style="color: #990066;">C = (F – 32) * 5/9</span></strong>, and display the result.  What are the inputs, outputs, and processes involved?  Drag the items on the right and drop them onto the proper categories on the left.</p>
+<div class="h5p-placeholder" contenteditable="false">https://classes.lanecc.edu/webservice/pluginfile.php/6584048/mod_page/content/105/drag-and-drop-papi-jo-11982.h5p?token=e6f394e89e0848664344dbce4362ce95</div>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag ORGIPO (5 pts)</h5>
+<p>After completing the task above, put the <strong><span style="color: #990066;">numbers</span></strong> at the end of each item together to build the flag.  Work from <strong><span style="color: #990066;">top to bottom</span></strong>.  For example, if the numbers in order were 3, 2, 1, then enter 321 to get the flag.  (<strong><span style="color: #990066;">No pipes</span></strong> between values!)</p>
+</div>
+</div>
+<p></p>
+<h3>Day or Night Flowchart</h3>
+<p>You can use a <strong><span style="color: #990066;">flowchart</span></strong> to <strong><span style="color: #990066;">map</span></strong> the <strong><span style="color: #990066;">flow</span></strong> of your <strong><span style="color: #990066;">code</span></strong> before you write it.  Say you want to write a program that will continue asking the user to <strong><span style="color: #990066;">enter D </span></strong>or<strong><span style="color: #990066;"> N</span></strong> until they enter either d, D, n, or N.  Once they've entered one of these values, you want to display "<strong><span style="color: #990066;">It is light outside</span></strong>," if they enter either <strong><span style="color: #990066;">d</span></strong> or <strong><span style="color: #990066;">D</span></strong>.  <strong><span style="color: #990066;">Otherwise</span></strong>, you want to display, "<strong><span style="color: #990066;">It is dark outside</span></strong>."  Drag the items on the right to the appropriate places in the flowchart on the left to create a program flow which describes code that could yield one possible solution.</p>
+<div class="h5p-placeholder" contenteditable="false">https://classes.lanecc.edu/webservice/pluginfile.php/6584048/mod_page/content/105/drag-and-drop-papi-jo-11976.h5p?token=e6f394e89e0848664344dbce4362ce95</div>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag ORGFlow (5 pts)</h5>
+<p>After completing the task above, put the <strong><span style="color: #990066;">numbers</span></strong> at the beginning of each item together.  (<strong><span style="color: #990066;">No pipes</span></strong>!)  Work from <strong><span style="color: #990066;">top to bottom</span></strong>, <strong><span style="color: #990066;">left to right</span></strong>.</p>
+</div>
+</div>
+<p></p>
+<h3>Number Pyramid Pseudocode</h3>
+<p>You can use <strong><span style="color: #990066;">pseudocode</span></strong> to map the flow of your code before you write it.  Say you want to write a program that will create a number pyramid comprised of four rows that looks like this.</p>
+<pre class="language-c"><code>   1
+  121
+ 12321
+1234321</code></pre>
+<p>Drag the items on the right to the appropriate positions on the left, so they're in an order which describes code that could yield one possible solution.</p>
+<div class="h5p-placeholder" contenteditable="false">https://classes.lanecc.edu/webservice/pluginfile.php/6584048/mod_page/content/105/drag-and-drop-papi-jo-11979.h5p?token=e6f394e89e0848664344dbce4362ce95</div>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag ORGPyramid (5 pts)</h5>
+<p>After completing the task above, put the <strong><span style="color: #990066;">numbers</span></strong> at the beginning of each item together.  (<strong><span style="color: #990066;">No pipes</span></strong>!)  Work from <strong><span style="color: #990066;">top to bottom</span></strong>.</p>
+</div>
+</div>
+<p></p>
+<h4>The Game of NIM</h4>
+<p><strong><span style="color: #990066;">Nim</span></strong> is a mathematical strategy game, which dates back to <strong><span style="color: #990066;">16th century China</span></strong>. The game consists of <strong><span style="color: #990066;">two players taking turns removing objects</span></strong>.  The <strong><span style="color: #990066;">player who removes</span></strong> the <strong><span style="color: #990066;">last object wins</span></strong>.  Write a program which implements Nim based on the requirements below.  To help you understand the game better, you can <strong><a href="https://www.transum.org/Software/Nim/Subtraction.asp" target="_blank" rel="noopener">try playing it</a></strong>.</p>
+<h5>NIM Program Requirments</h5>
+<ul>
+<li>Output a <strong><span style="color: #990066;">welcome</span></strong> when the game starts and a description of <strong><span style="color: #990066;">how to play</span></strong>.</li>
+<li>Start with <strong><span style="color: #990066;">11 sticks</span></strong> (use the <strong><span style="color: #990066;">pipe symbol |</span></strong> to show how many sticks remain).</li>
+<li><strong><span style="color: #990066;">Display</span></strong> the current <strong><span style="color: #990066;">number of sticks</span></strong> and <strong><span style="color: #990066;">prompt </span></strong>Player 1 for the number of <strong><span style="color: #990066;">sticks to remove</span></strong>.</li>
+<li>On a player’s turn they may remove <strong><span style="color: #990066;">1</span></strong>, <strong><span style="color: #990066;">2</span></strong>, or <strong><span style="color: #990066;">3</span></strong> sticks from the pile.</li>
+<li><strong><span style="color: #990066;">Players alternate</span></strong>.</li>
+<li><strong><span style="color: #990066;">Verify</span></strong> the player entered an <strong><span style="color: #990066;">integer</span></strong>, and if not, clean up the buffer.</li>
+<li><strong><span style="color: #990066;">Verify</span></strong> the <strong><span style="color: #990066;">move</span></strong> is <strong><span style="color: #990066;">legal</span></strong> (1, 2, or 3) and that there are <strong><span style="color: #990066;">at least that many sticks remaining</span></strong>.</li>
+<li>Your program should not duplicate code. Use the <strong><span style="color: #990066;">same code for Player1 and Player2</span></strong>. The only difference is that you should indicate whose turn is next (Player1 or Player2).</li>
+<li><strong><span style="color: #990066;">Check</span></strong> to see <strong><span style="color: #990066;">if</span></strong> the <strong><span style="color: #990066;">game</span></strong> is <strong><span style="color: #990066;">over</span></strong> and who won by removing the last stick. <strong><span style="color: #990066;">Report who won</span></strong>.</li>
+</ul>
+<p>Below is an example run.</p>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="background-color: black; padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid rgb(0, 48, 135);"><span style="color: white;">***** WELCOME TO NIM! *****<br><br>Each player will take turns removing<br>1, 2, or 3 sticks from the initial 11.<br>The player who removes the last stick wins!<br><br>Player 1, it's your turn!<br>Here are the sticks remaining: |||||||||||<br>How many would you like to remove? <span class="" style="color: #f0a800;">4</span><br>Invalid move. Try again: <span class="" style="color: #f0a800;">0</span><br>Invalid move. Try again: <span class="" style="color: #f0a800;">3</span><br><br>Player 2, it's your turn!<br>Here are the sticks remaining: ||||||||<br>How many would you like to remove? <span class="" style="color: #f0a800;">3</span><br><br>Player 1, it's your turn!<br>Here are the sticks remaining: |||||<br>How many would you like to remove? <span class="" style="color: #f0a800;">3</span><br><br>Player 2, it's your turn!<br>Here are the sticks remaining: ||<br>How many would you like to remove? <span class="" style="color: #f0a800;">3</span><br>Can not take more sticks than remain. Try again: <span class="" style="color: #f0a800;">2</span><br><br>Congratulations Player 2, you win!<br></span></div>
+</div>
+<p><br>This is the largest program you've written so far.  It would be wise to at least write some <strong><span style="color: #990066;">pseudocode</span></strong> before you begin.  Sketch out an <strong><span style="color: #990066;">outline</span></strong> of <strong><span style="color: #990066;">what steps you'll take</span></strong> and how control will flow in your program.  After you've written your pseudocode, click Pseudocode for a Solution below, and compare it to yours.</p>
+<details>
+<summary><strong><span style="color: #990066;">HINT:</span></strong>  Click here to see pseudocode for one possible solution.  (Remember, there are many ways to do a thing.)</summary>
+<pre class="language-python"><code>Initialize variables:
+numSticks starts at 11
+player starts at 1
+playing starts at true
+  
+Display instructions
+  
+While playing is true do the following:
+  Tell current player it's their turn
+  Show them how many sticks are remaining (use pipes)
+  Ask how many they'd like to remove
+  Get their answer and call it move
+  
+  Validate their move:
+  While any of the following are true: 
+    move is less than 1
+    move is greater than 3
+    move is greater than number of sticks
+  
+    if move is less than 4, but greater than numSticks,
+      tell them they cannot remove more sticks than remain
+    Otherwise,
+      tell them their move is invalid
+    
+    Ask them to try entering their move again
+    Get a new move
+  
+  Subtract move from numSticks
+  
+  if numSticks is zero
+    Tell current player they won
+    Set playing to false
+  
+  if player is 1, set player to 2
+  else, set player to 1
+
+</code></pre>
+</details>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag ORGNim (25 pts)</h5>
+<p>Convert your pseudocode or the pseudocode provided above to actual code.  After it's running properly based on the requirements and sample run above, submit it to this <strong><a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?lang=P&amp;class=161P&amp;challenge=ORGNim&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?lang=P&amp;class=161P&amp;challenge=ORGNim&amp;subFormat=uploadZip" target="_blank" rel="noopener">code checker</a></strong> to get the flag.</p>
+</div>
+</div>
+<p></p>
+</body>
+</html>

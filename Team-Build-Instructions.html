@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team Build</title>
+<style>
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/AtkinsonHyperlegible-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/AtkinsonHyperlegible-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/AtkinsonHyperlegible-Italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/AtkinsonHyperlegible-BoldItalic.woff2') format('woff2');
+}
+body {
+  font-family: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background: #ffffff;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 3rem;
+}
+/* Moodle's WYSIWYG editor bakes in a different inline font-family per page
+   (Arial, Calibri, Times New Roman, etc.) - force everything back to the
+   accessible stack above regardless of what the original page specified. */
+body * {
+  font-family: inherit !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+}
+/* Explicit scale so no heading level ties or drops below the 18px body
+   text - the browser default em-based scale shrinks below that starting
+   at h4/h5 once the body font-size is bumped up this far for accessibility. */
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.1em; }
+h5 { font-size: 1em; }
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: #0b5fff;
+}
+table {
+  border-collapse: collapse;
+}
+td, th {
+  padding: 0.4em 0.8em;
+}
+/* Moodle CTF "flag" prompts are wrapped in a div with an inline neon-green
+   border (#00ff11); the title inside is an h5 that barely stands out once
+   pulled out of Moodle's own page chrome. Give it real visual weight, but
+   with a darkened green (8.2:1 contrast on white, WCAG AAA) instead of the
+   neon border color, which would be close to unreadable as text. */
+div[style*="00ff11"] h5 {
+  font-size: 1.3em;
+  font-weight: 800;
+  color: #0e5c1a;
+  margin: 0 0 0.5em 0;
+}
+</style>
+</head>
+<body>
+<h1>Team Build</h1>
+<p>Most programmers work on a team, which requires careful coordination to ensure all parts of the program work well together.  This activity gives you practice adhering to <strong><span style="color: rgb(153, 0, 102);">specifications</span></strong> and introduces you to <strong><span style="color: rgb(153, 0, 102);">GitHub</span></strong>, a platform commonly used by programmers to collaborate on projects being managed with the <span style="color: rgb(153, 0, 102);"><strong>git</strong></span> version control system.</p>
+<h3>Sign Up and Share GitHub Username</h3>
+<ol>
+<li><strong>Sign Up: </strong> If you don't already have one, sign up for a <strong><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></strong> account.  Follow the prompts to set up your username, email, and password. Verify your email address to activate the account. </li>
+<li><strong>Share Username:</strong>  Add your username in the spreadsheet below, so I can invite you to collaborate on our Team Build.</li>
+</ol>
+<h3><iframe src="https://docs.google.com/spreadsheets/d/1Kzi-FI-8iCdFYK_14yJYoQ6L6B14zGJfqhSEdOOOt60/edit?usp=sharing?widget=true&amp;headers=false" width="100%" height="500px"></iframe></h3>
+<hr>
+<h3>Access Team Build Repo on GitHub</h3>
+<ol>
+<li data-start="466" data-end="612"><strong data-start="468" data-end="491">Accept Invitation:</strong>  Check your email for an invitation to join the <strong><a href="https://github.com/majchrzakt/161P_W25_Team_Build" target="_blank" rel="noopener">Team Build</a></strong> repository (repo).  Click on the link provided in the email to accept the invitation.</li>
+<li data-start="616" data-end="746"><strong data-start="618" data-end="637">Confirm Access:</strong>  Go to the Team Build and verify you have access to it.  Can you see the repo?  If you click on a file, do you see a pencil icon showing you can edit it?</li>
+</ol>
+<h3>Set Up Environment</h3>
+<p>This assumes you plan to use PyCharm.</p>
+<ol>
+<li>If you haven't done so already, install <strong><a href="https://www.jetbrains.com/pycharm-edu/">PyCharm</a></strong></li>
+<li>If you haven't done so already, install <strong><a href="https://git-scm.com/">Git</a></strong>.</li>
+</ol>
+<h3>Clone Repo</h3>
+<p>Open PyCharm and do the following to get a copy of the Team Repo on your machine, so you can work on it.</p>
+<ol>
+<li>Go to <span style="color: rgb(153, 0, 102);"><strong>VCS &gt;</strong></span> <strong><span style="color: rgb(153, 0, 102);">Get from Version Control....</span></strong></li>
+<li>In the dialog box that pops up, select <strong><span style="color: rgb(153, 0, 102);">GitHub</span></strong> on the left.</li>
+<li data-start="1235" data-end="1279">Click the <strong><span style="color: rgb(153, 0, 102);">Log In via GitHub...</span></strong> button.</li>
+<li data-start="1285" data-end="1414">Click the <strong><span style="color: rgb(153, 0, 102);">Authorize in GitHub</span></strong> button on the browser page which opens.</li>
+<li data-start="1285" data-end="1414">Click the <strong><span style="color: rgb(153, 0, 102);">Authorize JetBrains</span></strong> button.</li>
+<li data-start="1285" data-end="1414">Click the <strong><span style="color: rgb(153, 0, 102);">Use passkey</span></strong> button and complete the sign in process.</li>
+<li data-start="1285" data-end="1414">Enter the repo URL <strong><span style="color: rgb(153, 0, 102);">https://github.com/majchrzakt/161P_W25_Team_Build.git</span></strong></li>
+<li data-start="1285" data-end="1414">Choose a directory on your machine to clone the project into.</li>
+<li data-start="1420" data-end="1515">Click the <strong><span style="color: rgb(153, 0, 102);">Clone</span></strong> button to create a local copy of the repo.</li>
+<li data-start="1420" data-end="1515">Click the <strong><span style="color: rgb(153, 0, 102);">Trust Project</span></strong> button.</li>
+</ol>
+<h3>Create Branch for Your Function</h3>
+<p>Create a new branch where you'll work on your function, either alone or with a partner.</p>
+<ol>
+<li data-start="1565" data-end="1683"><strong data-start="1567" data-end="1596">Open Terminal in PyCharm:  </strong>Go to <strong><span style="color: rgb(153, 0, 102);">View &gt; Tool Windows &gt; Terminal</span></strong></li>
+<li data-start="1687" data-end="1860"><strong data-start="1689" data-end="1712">Check Out Main Branch:  </strong><strong><span style="color: rgb(153, 0, 102);"><code>git checkout
+          main</code></span></strong>  <br>This ensures you're on the main branch.</li>
+<li data-start="1687" data-end="1860"><strong data-start="1689" data-end="1712">Update Main Branch:  </strong><strong><span style="color: rgb(153, 0, 102);"><code>git
+          pull origin main</code> </span></strong><br>This ensures you have the latest changes.</li>
+<li data-start="1864" data-end="2037"><strong data-start="1866" data-end="1902">Create and Switch to New Branch:  </strong><strong><span style="color: rgb(153, 0, 102);"><code>git checkout -b <span style="color: rgb(153, 0, 102);"><em>your-function-name</em></span></code> <br></span></strong>Change your-function-name to the <strong><span style="color: rgb(153, 0, 102);">name of your function</span></strong> (e.g., git <strong><code>checkout -b <span style="color: rgb(153, 0, 102);">validate</span></code></strong>).</li>
+<li data-start="1864" data-end="2037"><strong>Write and Test Code:</strong>  Write and test the code for your function.  If necessary add a temporary function call to your function in main.  <span style="color: rgb(153, 0, 102);"><strong>Add your name(s) to the function's docstring</strong></span>.</li>
+</ol>
+<h3>Commit and Push Your Branch</h3>
+<p>When you're done with your function, you'll push your branch back to the repo where we'll all be able to see your work.  Because you made a branch, it won't automatically try to overwrite the main branch where all our work will come together.</p>
+<p>Refer to this image and take the steps indicated below.</p>
+<p><img class="img-fluid" src="assets/commit.png" alt="1 commit button, 2 click changed files, 3 describe changes, 4 click commit and push" width="300" height="296"></p>
+<ol>
+<li data-start="2317" data-end="2423"><strong data-start="2319" data-end="2337">Open Commit Tool:</strong> Click the commit icon. <img class="img-fluid" src="assets/commitButton.png" alt="commit button" width="30" height="28"></li>
+<li data-start="2317" data-end="2423"><strong data-start="2319" data-end="2337">Stage Changes:</strong> Put a check in the boxes next to the files you changed and want to push to the Team Build</li>
+<li data-start="2317" data-end="2423"><strong>Write Commit Message:</strong> Write a meaningful commit message in the active tense (i.e., write <span style="color: rgb(153, 0, 102);"><strong>Add</strong></span> rather than Added).</li>
+<li data-start="2427" data-end="2509"><strong data-start="2429" data-end="2448">Commit Changes:</strong> Click the <strong><span style="color: rgb(153, 0, 102);">Commit and Push</span></strong> button.</li>
+<li data-start="2513" data-end="2608"><strong data-start="2515" data-end="2541">Push Remote Branch to Origin:</strong> Click the <strong><span style="color: rgb(153, 0, 102);">Push</span></strong> button in the dialog box that appears.</li>
+</ol>
+<h3>Create Pull Request</h3>
+<p>Make a pull request to have your branch merged into the main branch.  I'll act as the team lead and manage merging everyone's branches into main.</p>
+<p>Refer to this image and take the steps indicated below.</p>
+<p><img class="img-fluid" src="assets/pullRequest.png" alt="1 click pull request icon, 2 click +, 3 add/update description, 4 click Create Pull Request" width="300" height="300"></p>
+<ol>
+<li>Click the pull request icon. <img class="img-fluid" src="assets/Screenshot-2025-02-27-at-12.27.44_PM.png" alt="pull requests icon" width="30" height="28"></li>
+<li>Click the plus sign. <img class="img-fluid" src="assets/Screenshot-2025-02-27-at-12.30.13_PM.png" alt="plus sign" width="30" height="28"></li>
+<li>Add/update the <span style="color: rgb(153, 0, 102);"><strong>Description</strong></span>.</li>
+<li>Click the <strong><span style="color: rgb(153, 0, 102);">Create Pull Request</span></strong> button.</li>
+</ol>
+<p>Once all branches are merged into main, you can fetch the latest version of the code by choosing <strong><span style="color: rgb(153, 0, 102);">Git &gt; Pull</span></strong>, then clicking the <strong><span style="color: rgb(153, 0, 102);">Pull</span></strong> button in the dialog box.  Then you can play the fully functional adventure game we created together!</p>
+<hr>
+<h3>Biggest Take Away</h3>
+<p>To earn credit for this activity, post your final thoughts on this experience in the <strong><a href="https://classes.lanecc.edu/mod/forum/discuss.php?d=1093263">Learning Community Forum</a></strong>.  Discuss any challenges and how you overcame them.</p>
+<hr>
+<h3>Late Work</h3>
+<p>If you missed completing this in class and want to complete it now (before midnight on Sunday, March 16, 2025), please follow the instructions above.  After you create your GitHub account, please email me your user name, so I can add you as a contributor.  Choose one of the storyline functions to edit (e.g., cave, forest, mountain, town).  Don't change what another student wrote.  Just add onto it.  Send me an email once you've finished posting your biggest take away from the assignment.</p>
+</body>
+</html>

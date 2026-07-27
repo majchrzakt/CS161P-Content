@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Debugging Interview -- Collaboration ORIG</title>
+<style>
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/AtkinsonHyperlegible-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/AtkinsonHyperlegible-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/AtkinsonHyperlegible-Italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/AtkinsonHyperlegible-BoldItalic.woff2') format('woff2');
+}
+body {
+  font-family: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background: #ffffff;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 3rem;
+}
+/* Moodle's WYSIWYG editor bakes in a different inline font-family per page
+   (Arial, Calibri, Times New Roman, etc.) - force everything back to the
+   accessible stack above regardless of what the original page specified. */
+body * {
+  font-family: inherit !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+}
+/* Explicit scale so no heading level ties or drops below the 18px body
+   text - the browser default em-based scale shrinks below that starting
+   at h4/h5 once the body font-size is bumped up this far for accessibility. */
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.1em; }
+h5 { font-size: 1em; }
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: #0b5fff;
+}
+table {
+  border-collapse: collapse;
+}
+td, th {
+  padding: 0.4em 0.8em;
+}
+/* Moodle CTF "flag" prompts are wrapped in a div with an inline neon-green
+   border (#00ff11); the title inside is an h5 that barely stands out once
+   pulled out of Moodle's own page chrome. Give it real visual weight, but
+   with a darkened green (8.2:1 contrast on white, WCAG AAA) instead of the
+   neon border color, which would be close to unreadable as text. */
+div[style*="00ff11"] h5 {
+  font-size: 1.3em;
+  font-weight: 800;
+  color: #0e5c1a;
+  margin: 0 0 0.5em 0;
+}
+</style>
+</head>
+<body>
+<h1>Debugging Interview -- Collaboration ORIG</h1>
+<p>It is becoming more common to evaluate a candidate's debugging skills during the interview process.  Interviewers will want to see your skill in the following areas.</p>
+<ul>
+<li><strong>Technical</strong> - knowledge of the language</li>
+<li><strong>Troubleshooting</strong> - systematic approach to finding and fixing issues</li>
+<li><strong>Communication</strong> - how well you communicate your thought process during the debugging task (ask for clarification where needed, handle the pressure of being observed, respond to feedback, interact with your potential future colleagues)</li>
+</ul>
+<p>During this exercise, you should do the following.</p>
+<ul>
+<li><strong>Ask</strong> for clarification when needed.</li>
+<li><strong>Communicate</strong> your thought process and explain what you are trying.</li>
+<li><strong>Identify edge cases</strong>, if any, and <strong>test your code</strong> after you fix it.</li>
+<li><strong>Speak clearly</strong> and <strong>make eye contact</strong>, being sure to explain things at a level all will understand.</li>
+<li><strong>Be prepared for interruptions</strong> when observers have questions.</li>
+<li><strong>Stay calm</strong>.  It's natural to feel nervous.  Take deep breaths and stay focused on the task.</li>
+</ul>
+<div><hr></div>
+<h3>Set Up (5 minutes)</h3>
+<p>Coordinate with classmates to create groups of 3-5 students.  Decide who will debug first.  Set up PyCharm (or an alternative environment) where you can all see the debugger's screen.</p>
+<ul>
+<li><strong><span style="color: #0000ff;">Debugger</span>:</strong> works on debugging code, shares what they're thinking/trying</li>
+<li><strong><span style="color: #0000ff;">Observers</span>:</strong> observe and may provide guidance/feedback</li>
+</ul>
+<p>Set up the environment.  Here's how you could use PyCharm.</p>
+<ol>
+<li>The <span style="color: #0000ff;"><strong>Debugger</strong></span> starts <span style="color: #990066;"><strong>PyCharm</strong></span>, clicks the <span style="color: #990066;"><strong>Code with Me</strong></span> icon <img class="img-fluid" src="assets/Screenshot-2025-01-22-at-10.21.13_PM-_1_-(3).png" alt="person with plus sign" width="22" height="24"> in the top right corner, selects <span style="color: #990066;"><strong>Edit</strong></span> if desired, and clicks the <strong><span style="color: #990066;">Start Session</span></strong> button.  After the session starts, the Debugger clicks <strong><span style="color: #990066;">Copy Link</span></strong> and sends it to the Observers via email, Zoom chat, etc.</li>
+<li>The <span style="color: #0000ff;"><strong>Observers</strong></span> click the link sent by the Debugger and specifies a name.</li>
+<li>The <span style="color: #0000ff;"><strong>Debugger</strong></span> allows the specified Observers access to the code.</li>
+</ol>
+<hr>
+<h3>Debug - Syntax Error (20-30 minutes)</h3>
+<p>Each person should take a turn debugging code that has a syntax error, meaning Python will not be able to interpret the code.  Instead it will report an error.  When the next person is ready, ask your professor for a new code and enter it into the <strong><a href="http://yaacotu.com/ctf-progs/engineDRM/requestDebugQ.php">Buggy Code Retriever</a></strong>.  </p>
+<hr>
+<h3>Debug - Logic Error (20-30 minutes)</h3>
+<p>Each person should take a turn debugging code that has a logic error, meaning the code produces output, but it's not correct.  When the next person is ready, ask your professor for a new code and enter it into the <strong><a href="http://yaacotu.com/ctf-progs/engineDRM/requestDebugQ.php">Buggy Code Retriever</a></strong>.  </p>
+<hr>
+<h3>Reflect and Discuss</h3>
+<ul>
+<li>What did you learn from being the <span style="color: #0000ff;"><strong>Debugger</strong></span>?</li>
+<li>What did you learn from being the <span style="color: #0000ff;"><strong>Observer</strong></span>?</li>
+<li>Discuss any challenges and how you overcame them.</li>
+</ul>
+<hr>
+<h3>Biggest Take Away</h3>
+<p>To earn credit, report your thoughts on this experience in this section's <span style="color: #990066;"><strong>Debugging Interview</strong></span> graded assignment.</p>
+</body>
+</html>
