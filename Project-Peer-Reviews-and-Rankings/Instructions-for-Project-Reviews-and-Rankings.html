@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>for Project Reviews and Rankings</title>
+<style>
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-BoldItalic.woff2') format('woff2');
+}
+body {
+  font-family: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background: #ffffff;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 3rem;
+}
+/* Moodle's WYSIWYG editor bakes in a different inline font-family per page
+   (Arial, Calibri, Times New Roman, etc.) - force everything back to the
+   accessible stack above regardless of what the original page specified. */
+body * {
+  font-family: inherit !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+}
+/* Explicit scale so no heading level ties or drops below the 18px body
+   text - the browser default em-based scale shrinks below that starting
+   at h4/h5 once the body font-size is bumped up this far for accessibility. */
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.1em; }
+h5 { font-size: 1em; }
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+/* img/video have a true intrinsic aspect ratio, so height: auto above keeps
+   them proportional automatically. iframe has no such intrinsic ratio, so
+   without this it looks squished/too-wide whenever its container is
+   narrower than its width="..." attribute (e.g. YouTube embeds at 560x315
+   on a narrower viewport). Assumes 16:9, true for all current embeds. */
+iframe {
+  aspect-ratio: 16 / 9;
+}
+a {
+  color: #0b5fff;
+}
+table {
+  border-collapse: collapse;
+}
+td, th {
+  padding: 0.4em 0.8em;
+}
+/* Moodle CTF "flag" prompts are wrapped in a div with an inline neon-green
+   border (#00ff11); the title inside is an h5 that barely stands out once
+   pulled out of Moodle's own page chrome. Give it real visual weight, but
+   with a darkened green (8.2:1 contrast on white, WCAG AAA) instead of the
+   neon border color, which would be close to unreadable as text. */
+div[style*="00ff11"] h5 {
+  font-size: 1.3em;
+  font-weight: 800;
+  color: #0e5c1a;
+  margin: 0 0 0.5em 0;
+}
+</style>
+</head>
+<body>
+<h1>for Project Reviews and Rankings</h1>
+<p dir="ltr">Please complete BOTH of these tasks.  You get points for all five reviews and the rankings.</p>
+<ul>
+<li>A separate peer review of at least 5 peers AND </li>
+<li>A ranking of ALL projects</li>
+</ul>
+<h3>Peer Preferred Names</h3>
+<p>Some students in the class specified preferred names at the beginning of the term.  When you check the forums, you may find that Canvas logs their work under a different name.</p>
+<ul>
+<li class="MsoNormal"><strong>Alex</strong> aka Alexander</li>
+<li class="MsoNormal"><strong>B</strong> aka Beltus</li>
+<li class="MsoNormal"><strong>Ben</strong> aka Benjamin</li>
+<li class="MsoNormal"><strong>Lu</strong> aka Chenglu</li>
+<li class="MsoNormal"><strong>Chris</strong> aka Christopher</li>
+<li class="MsoNormal"><strong>Stephane</strong> aka Ekouegan</li>
+<li class="MsoNormal"><strong>J.J.</strong> aka Jeremy</li>
+<li class="MsoNormal"><strong>John Michael</strong> aka John</li>
+<li class="MsoNormal"><strong>Nate</strong> aka Nathan</li>
+<li class="MsoNormal"><strong>Ray</strong> aka Raymond</li>
+<li class="MsoNormal"><strong>Tom</strong> aka Thomas</li>
+<li class="MsoNormal"><strong>Tory</strong> aka Victoria</li>
+</ul>
+<h3>GitHub Links</h3>
+<p><strong><a href="https://github.com/Felix25178/Game" target="_blank" rel="noopener">Alex</a></strong> | Andrew | <a href="https://github.com/mbehb-crypto/Space_Travel_adventure" target="_blank" rel="noopener"><strong>B</strong></a> | Ben | <strong><a href="https://github.com/CalliGilbertNeel/Lyrical-Visualizer" target="_blank" rel="noopener">Calli</a> </strong>| <strong><a href="https://github.com/CarsonBernardo/Wordle-in-a-Terminal.git" target="_blank" rel="noopener">Carson</a></strong> | <strong><a href="https://github.com/Lu-lou-cs/Lucky-White-Ball-Game" target="_blank" rel="noopener">Lu</a></strong> | <strong><a href="https://github.com/ChristoChristo/Wizard-Type" target="_blank" rel="noopener">Chris</a></strong> | <strong><a href="https://github.com/Codaea/blackjack2gamblingheaven" target="_blank" rel="noopener">Coda</a></strong> | <strong><a href="https://github.com/coopernicklaus/anagram-solver" target="_blank" rel="noopener">Cooper</a></strong> | <strong><a href="https://github.com/Dario-Lopez-GIT/Guess-That-Number" target="_blank" rel="noopener">Dario</a></strong> | <strong><a href="https://github.com/HipperLink-67/Traductor.git" target="_blank" rel="noopener">Fernando</a></strong> | <strong><a href="https://github.com/VideoDog123/Breath-of-Fresh-Air" target="_blank" rel="noopener">Jackson</a></strong> | J.J. | <strong><a href="https://github.com/John-Soza/Final_Project" target="_blank" rel="noopener">John Michael</a></strong> | <strong><a href="https://github.com/joshmelick17-cmd/oh_mission" target="_blank" rel="noopener">Josh</a></strong> | <strong><a href="https://github.com/KateBartu/TUNNEL-12" target="_blank" rel="noopener">Kate</a></strong> | Lacey | <strong><a href="https://github.com/Rutaaru/20-Rooms" target="_blank" rel="noopener">Luther</a></strong> | <strong><a href="https://github.com/Maksym-Kholodenko/Alternate-Red-Riding-Hood-Story---story-based-adventure-game#how-to-run" target="_blank" rel="noopener">Maksym</a></strong> | <strong><a href="https://github.com/matthewlarsenn/birthday-weekday-finder" target="_blank" rel="noopener">Matthew</a></strong> | <strong><a href="https://github.com/Nmuldowney1/Hangmangame" target="_blank" rel="noopener">Nate</a></strong> | <strong><a href="https://github.com/OleksiiSvietnoi/language-flashcards-trainer" target="_blank" rel="noopener">Oleksii</a></strong> | Ray | Stephane | <strong><a href="https://github.com/TomatoSpaghetto/Python-ASCII-Chess" target="_blank" rel="noopener">Tom</a></strong> | <strong><a href="https://github.com/Shylsomer/Decimal-to-Binary-Converter" target="_blank" rel="noopener">Torin</a></strong> | <strong><a href="https://github.com/straht-lcc/Budget-Tracker" target="_blank" rel="noopener">Travis</a></strong> | <strong><a href="https://github.com/tpatrick2/CombatGame" target="_blank" rel="noopener">Trevor</a></strong> | <strong><a href="https://github.com/VictoriaColeman/Go-Fish.git" target="_blank" rel="noopener">Tory</a></strong> | <strong><a href="https://github.com/parmenterz/Slot-Machine-Winter2026/tree/main" target="_blank" rel="noopener">Zane</a></strong></p>
+<h3>Review Five Peers</h3>
+<p>Please review the projects created by the peers emailed to you on <strong><span class="" style="color: #900c3f;">Monday, March 16<sup>th</sup></span></strong> using this <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScB_PMdnFqK8FqiShTWTZqv95Vufmf0JhA533BFPBIWNP6QHQ/viewform?usp=dialog" target="_blank" rel="noopener">Final Project Evaluation</a></strong> (responses accepted during the review period only) form by midnight on <span style="color: #990066;"><strong><span class="">Wednesday, March 18<sup>th</sup></span></strong></span>.  It contains <strong><a href="../assets/Project-Evaluation-161P-Winter-2026.pdf" target="_blank" rel="noopener">these questions</a></strong>.  You'll receive a list of five peers, plus two more.  Review the <span style="color: #990066;"><em><strong><span class="">first five</span></strong></em></span> listed.  Review the sixth and/or seventh, if one of the first five does not have any videos or code posted <span style="color: #990066;"><em><strong><span class="">by the end</span></strong></em></span> of the review period.  </p>
+<p id="yui_3_18_1_1_1773515427184_33">Review your designated peers' code, video demos, and video walkthroughs posted on GitHub.  If they don't have an active link above, look for their GitHub links in the <strong><a href="https://classes.lanecc.edu/mod/forum/view.php?id=4583218">GitHub Link forum</a></strong><strong id="yui_3_18_1_1_1773515427184_32"><a id="yui_3_18_1_1_1773515427184_31" href="https://classes.lanecc.edu/mod/forum/view.php?id=4774671"></a></strong>.  Their project README should contain links to their videos.  If any links are missing, look for their submissions in the forums under the <strong><span style="color: #990066;">Project Implementation</span></strong> section.</p>
+<p>If you don't see them now, please check for them later.  If they only have one of these by the end of the review period, please review their project to the best of your ability based on what they’ve submitted.  Again, if any of the first five peers on the list emailed to you has not posted their links or videos by Wednesday, when this peer review assignment is due, please review the sixth and/or seventh one on your list on Wednesday.  If necessary on the day reviews are due, choose other students until you have reviewed <span style="color: #990066;"><strong><em><span class="">at least five</span></em></strong></span>.  Your feedback will be shared with your peers anonymously.</p>
+<h3>Rank ALL Projects</h3>
+<p>Take a quick look at ALL projects created by your peers and <a href="https://rankings-qnva.onrender.com/?class=161Pt&amp;token=a1abc559805c24e5edd520de4252d6499919addec1c7ccd5" target="_blank" rel="noopener"><strong>rank them</strong></a> (link available on <strong><span class="" style="color: #900c3f;">March 18<sup>th</sup></span></strong> for <em><strong><span class="" style="color: #900c3f;">one day only</span></strong></em>).  You can access their posted code and videos, but you may find their demo videos are sufficient.  If there are any peers with no links and no video submissions, which you cannot review, please put them at the lowest ranking.  </p>
+<p>Consider the project rubric elements (works correctly, bug free, handles user entry errors), the level of code difficulty, the ease of use (intuitive), the creativity shown in the project, the amount of unique code written by the student, how well they explain their design and code in the videos, and whether or not they give credit to any tutorials/material they referenced.</p>
+</body>
+</html>

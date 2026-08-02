@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robots -- Collaboration</title>
+<style>
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-BoldItalic.woff2') format('woff2');
+}
+body {
+  font-family: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background: #ffffff;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 3rem;
+}
+/* Moodle's WYSIWYG editor bakes in a different inline font-family per page
+   (Arial, Calibri, Times New Roman, etc.) - force everything back to the
+   accessible stack above regardless of what the original page specified. */
+body * {
+  font-family: inherit !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+}
+/* Explicit scale so no heading level ties or drops below the 18px body
+   text - the browser default em-based scale shrinks below that starting
+   at h4/h5 once the body font-size is bumped up this far for accessibility. */
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.1em; }
+h5 { font-size: 1em; }
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+/* img/video have a true intrinsic aspect ratio, so height: auto above keeps
+   them proportional automatically. iframe has no such intrinsic ratio, so
+   without this it looks squished/too-wide whenever its container is
+   narrower than its width="..." attribute (e.g. YouTube embeds at 560x315
+   on a narrower viewport). Assumes 16:9, true for all current embeds. */
+iframe {
+  aspect-ratio: 16 / 9;
+}
+a {
+  color: #0b5fff;
+}
+table {
+  border-collapse: collapse;
+}
+td, th {
+  padding: 0.4em 0.8em;
+}
+/* Moodle CTF "flag" prompts are wrapped in a div with an inline neon-green
+   border (#00ff11); the title inside is an h5 that barely stands out once
+   pulled out of Moodle's own page chrome. Give it real visual weight, but
+   with a darkened green (8.2:1 contrast on white, WCAG AAA) instead of the
+   neon border color, which would be close to unreadable as text. */
+div[style*="00ff11"] h5 {
+  font-size: 1.3em;
+  font-weight: 800;
+  color: #0e5c1a;
+  margin: 0 0 0.5em 0;
+}
+</style>
+</head>
+<body>
+<h1>Robots -- Collaboration</h1>
+<h3><a href="http://yaacotu.com/ctf/engineDRM/index.php?class=161P&amp;challengeTopic=Robots" target="_blank" rel="noopener">Robots CTF</a></h3>
+<p>Complete Capture the Flag (CTF) activities below.  You can check that you have the correct flags at the CTF link above.  If you'd like to register your progress and to have your name appear on the leaderboard, you may opt to include your name when entering flags.  As you capture flags and verify they're correct, keep track of them, so you can enter them into Canvas and earn class points toward your grade.</p>
+<h3>Program Neo</h3>
+<p>Robots are controlled by programming.  Grab an mBot Neo robot and go to the <strong><a href="https://ide.mblock.cc/" target="_blank" rel="noopener">mBlock</a></strong> IDE to program it.  If you don't have a physical robot, you won't be able to see the programs running, but you still can build the programs and capture the flags.</p>
+<h3>Connect Neo to Computer</h3>
+<p>You can connect Neo to the computer via Bluetooth or directly with a cable. If you want to use the white handheld controller, you'll need to connect the robot with a cable.</p>
+<p>In either case, you'll need to turn Neo on. </p>
+<p>Then <span style="background-color: #ffff00;"><strong><span style="color: #990066;">PUT NEO on the GROUND!</span></strong></span>  We want to keep Neo from flying off the table.  Even if you're not making Neo move yet, someone else might accidentally connect to your Neo and make it move unexpectedly.</p>
+<p><img class="img-fluid" src="../assets/Robot_On.png" alt="on" width="500" height="214"></p>
+<h4>Use Bluetooth</h4>
+<p>In the <strong><a href="https://ide.mblock.cc/" target="_blank" rel="noopener">mBlock</a></strong> IDE, select <span style="color: #990066;"><strong>CyberPi</strong></span> on the <span style="color: #990066;"><strong>Devices</strong></span> tab in the lower left pane, and click <span style="color: #990066;"><strong>Bluetooth</strong></span>.</p>
+<p><img class="img-fluid" src="../assets/bluetooth-_1_.png" alt="Bluetooth button is circled in lower left pane on the Devices tab with CyberPi selected" width="600" height="673"></p>
+<p>Then choose <span style="color: #990066;"><strong>Makeblock_...</strong></span> in the pop-up window, and click <span style="color: #990066;"><strong>Pair</strong></span>.</p>
+<p><img class="img-fluid" src="../assets/pair-_1_.png" alt="Makeblock_LE....circled and labeled 1
+Pair circled and labeled 2" width="500" height="497"></p>
+<p>If other robots are nearby, be sure to choose the correct one. Look for one that matches the serial number for your robot, which is written on the side of the CyberPi unit. You also can get this information by clicking the <span style="color: #990066;"><strong>HOME</strong></span> button on the CyberPi unit, then choosing <span style="color: #990066;"><strong>Settings</strong></span> and <span style="color: #990066;"><strong>About CyberPi</strong></span>.</p>
+<p>Switch to Live mode by clicking the <span style="color: #990066;"><strong>Live button</strong></span>.</p>
+<p><img class="img-fluid" src="../assets/Robot_BluetoothLive.png" alt="Live button on Devices tab circled with CyberPi device selected" width="291" height="456"></p>
+<h3>Does it Work?</h3>
+<p>Drag the <span style="color: #990066;"><strong>play hi until done</strong></span> block from the <span style="color: #990066;"><strong>Audio</strong></span> category in the blocks palette into the coding workspace, and double click it. If Neo says "hi," you've successfully established a connection (the proverbial "Hello, World!").</p>
+<p><img class="img-fluid" src="../assets/Robot_HelloWorld.png" alt="play hi until done block in Audio category" width="302" height="62"></p>
+<h3>Make Neo Move</h3>
+<p><span style="color: #990066;"><strong>IMPORTANT:</strong></span> Please put Neo on the ground before making it move!</p>
+<p>Verify <span style="color: #990066;"><strong>CyberPi</strong></span> is selected on the Devices tab, and click <span style="color: #990066;"><strong>+ extension</strong></span>.</p>
+<p><img class="img-fluid" src="../assets/Robot_Extension.png" alt="extension" width="800" height="550"></p>
+<p>When the Extensions window opens, click <span style="color: #990066;"><strong>+ Add</strong></span> for <span style="color: #990066;"><strong>mBot2</strong></span> shield.</p>
+<p><img class="img-fluid" src="../assets/Robot_Shield.png" alt="shield" width="800" height="593"></p>
+<p>This gives you two new sets of blocks, including <span style="color: #990066;"><strong>mBot2 Chassis</strong></span>.  Use blocks in this category and the <span style="color: #990066;"><strong>Events</strong></span> category to build the code below, which will make Neo move.  To keep Neo safe, set the movement forward to <span style="color: #990066;"><strong>5 cm</strong></span>.</p>
+<p><img class="img-fluid" src="../assets/Robot_Move.png" alt="move" width="800" height="497"></p>
+<p>Press the <strong><span style="color: #ba372a;">A button</span></strong> on Neo to see it move!</p>
+<p><img class="img-fluid" src="../assets/Robot_AButton.png" alt="A button" width="200" height="260"></p>
+<h4>Square Dance</h4>
+<p>Try this code to make Neo move in a square.</p>
+<p><img class="img-fluid" src="../assets/Robot_SquareDance.png" alt="square dance" width="500" height="530"></p>
+<h4>Loop Square Dance</h4>
+<p>Update the blocks above to use a loop instead of repeating the same code four times.</p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag ROBLoop (5 pts)</h5>
+<p>Under what category did you find the loop block?</p>
+</div>
+</div>
+<p></p>
+<h4>Your Dance</h4>
+<ul>
+<li>What unique dance moves can you create?</li>
+<li>Can you make Neo do the <em>No No No</em> move, where they move their front end left then right three times?</li>
+<li>Can you make Neo show some colors?</li>
+</ul>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag ROBColors (5 pts)</h5>
+<p>Under what category did you find blocks which let you show colors across the back of Neo? </p>
+</div>
+</div>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag ROBBlock (5 pts)</h5>
+<p>Which block can you use to set and show all the colors to individual hues at once? </p>
+</div>
+</div>
+<p></p>
+<h3>Sensing</h3>
+<p>Neo can use a number of sensors, including the following built in ones.</p>
+<ul>
+<li><span style="color: #990066;"><strong>Ultrasonic Sensor</strong></span> – measures distance to objects</li>
+<li><span style="color: #990066;"><strong>Quad RGB Line Follower Sensor</strong></span> – detects lines and colors</li>
+<li><span style="color: #990066;"><strong>Gyro &amp; Accelerometer</strong></span> – detects orientation, tilt, and motion</li>
+<li><span style="color: #990066;"><strong>Microphone</strong></span> – detects sound levels for voice or clap-based triggers</li>
+<li><span style="color: #990066;"><strong>Light Sensor</strong></span> – detects ambient brightness</li>
+</ul>
+<h4>Avoid Obstacles</h4>
+<p>Install and use the <span style="color: #990066;"><strong>Ultrasonic Sensor 2</strong></span> extension to detect when Neo is close to an obstacle. Build the program below to avoid obstacles.</p>
+<p><img class="img-fluid" src="../assets/Robot_Avoid.png" alt="code blocks to avoid" width="600" height="374"></p>
+<h4>Put on the Brakes</h4>
+<p>Can you adjust the code above, so when Neo stops, it also displays all red lights?</p>
+<h4>Pivot</h4>
+<p>Can you update the Avoid Obstacles code, so Neo turns 90 degrees left or right rather than stopping?</p>
+<h3>Python Under the Blocks</h3>
+<p>To see the Python code which corresponds to the Avoid Obstacles blocks above, make sure you're in <span style="color: #990066;"><strong>Upload</strong></span><em> </em>mode, so the orange<img class="img-fluid" src="../assets/Robot_CodeViewer.png" alt="orange tab with &lt;/&gt; on it" width="40" height="35"> <span style="color: #990066;"><strong>Code Viewer</strong></span> symbol appears to the right of the blocks.  Click <span style="color: #990066;"><strong>&lt;/&gt;</strong></span> to reveal the Python code. You can click <span style="color: #990066;"><strong>x</strong></span> to close the Code Viewer.</p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag ROBKeyword (5 pts)</h5>
+<p>Which keyword in the Python code specifies the beginning of the loop?</p>
+</div>
+</div>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag ROBLibrary (5 pts)</h5>
+<p>Which library imported into the code handles the <span style="color: #990066;"><strong>is_press</strong></span> function call?</p>
+</div>
+</div>
+<p></p>
+<h4>Edit Python Code</h4>
+<p>We can edit the actual Python code in the <span style="color: #990066;"><strong>Python tab</strong></span>. First open the Code Viewer again. Highlight and copy (Ctrl-C) the code. Then click the Python tab.</p>
+<p><img class="img-fluid" src="../assets/Robot_Python.png" alt="&lt;/&gt; is circled and labeled 1
+Python tab is circled and labeled 2" width="300" height="308"></p>
+<p>Paste (Ctrl-V) the code in the top pane.</p>
+<p><img class="img-fluid" src="../assets/Robot_PythonAvoid.png" alt="import event, time, cyberpi, mbuild, mbot2
+
+@event.is_press('a')
+def is_btn_press():
+  while True:
+    if mbuild.ultra...." width="500" height="300"></p>
+<p>You can edit the code in the mBlock editor. To test code changes on Neo, click <span style="color: #990066;"><strong>Upload</strong></span>.</p>
+<h4>Button B</h4>
+<p>Can you edit this Python code, so it runs when <span style="color: #990066;"><strong>button B</strong></span> is pressed rather than button A?</p>
+<h4>Two Timer</h4>
+<p>Can you edit this code, so Neo only moves a maximum of two times?  HINT: You could add a variable and change the while loop.</p>
+<details>
+<summary>Solution Code</summary>
+<pre>import event, time, cyberpi, mbuild, mbot2
+
+@event.is_press('a')
+def is_btn_press():
+  for i in range(2):
+    if mbuild.ultrasonic2.get(1) &lt; 20:
+      mbot2.motor_stop("all")
+
+    else:
+      mbot2.straight(5)</pre>
+<pre> </pre>
+</details>
+<p></p>
+<h3>Broken Python Code</h3>
+<p>Block coding is a good choice for new programmers, because you can't make a <span style="color: #990066;"><strong>syntax error</strong></span> (i.e., type something wrong). You only have to deal with logical errors (e.g., accidentally setting Neo to turn left when it should turn right). If you have a syntax error in your Python code, Neo will display an error message on the CyberPi.</p>
+<p>Alter line 7 of the Avoid Obstacles Python code above as follows.</p>
+<pre class="language-python"><code>@event.is_press('a')
+def is_btn_press():
+  while True:
+    if mbuild.ultrasonic2.get(1) &lt; 20:
+      mbot2.motor_stop("all"
+
+    else:
+      mbot2.straight(5)</code></pre>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag ROBLine (5 pts)</h5>
+<p>On Neo's CyberPi display, which line does it indicate has an error?</p>
+</div>
+</div>
+<p></p>
+<p>Can you guess why?</p>
+<details>
+<summary>Answer</summary>
+It's because the computer keeps looking for the missing closing parenthesis until it sees something else. That's when it realizes there's an issue and reports what line it's on.</details>
+<p></p>
+<p><em>Image Credits: Some content adapted from images on <a class="inline_disabled" href="https://support.makeblock.com/hc/en-us/articles/1500006184261-Use-the-Preset-Programs-of-mBot-Neo" target="_blank" rel="noopener"><strong>support.makeblock.com</strong></a>.</em></p>
+</body>
+</html>

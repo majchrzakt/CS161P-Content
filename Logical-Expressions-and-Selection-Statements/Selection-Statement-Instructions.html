@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Selection Statement</title>
+<style>
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-BoldItalic.woff2') format('woff2');
+}
+body {
+  font-family: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background: #ffffff;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 3rem;
+}
+/* Moodle's WYSIWYG editor bakes in a different inline font-family per page
+   (Arial, Calibri, Times New Roman, etc.) - force everything back to the
+   accessible stack above regardless of what the original page specified. */
+body * {
+  font-family: inherit !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+}
+/* Explicit scale so no heading level ties or drops below the 18px body
+   text - the browser default em-based scale shrinks below that starting
+   at h4/h5 once the body font-size is bumped up this far for accessibility. */
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.1em; }
+h5 { font-size: 1em; }
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+/* img/video have a true intrinsic aspect ratio, so height: auto above keeps
+   them proportional automatically. iframe has no such intrinsic ratio, so
+   without this it looks squished/too-wide whenever its container is
+   narrower than its width="..." attribute (e.g. YouTube embeds at 560x315
+   on a narrower viewport). Assumes 16:9, true for all current embeds. */
+iframe {
+  aspect-ratio: 16 / 9;
+}
+a {
+  color: #0b5fff;
+}
+table {
+  border-collapse: collapse;
+}
+td, th {
+  padding: 0.4em 0.8em;
+}
+/* Moodle CTF "flag" prompts are wrapped in a div with an inline neon-green
+   border (#00ff11); the title inside is an h5 that barely stands out once
+   pulled out of Moodle's own page chrome. Give it real visual weight, but
+   with a darkened green (8.2:1 contrast on white, WCAG AAA) instead of the
+   neon border color, which would be close to unreadable as text. */
+div[style*="00ff11"] h5 {
+  font-size: 1.3em;
+  font-weight: 800;
+  color: #0e5c1a;
+  margin: 0 0 0.5em 0;
+}
+</style>
+</head>
+<body>
+<h1>Selection Statement</h1>
+<h3><a title="http://yaacotu.com/ctf/engineDRM/index.php?class=161P&amp;challengeTopic=Selection_Statements" href="http://yaacotu.com/ctf/engineDRM/index.php?class=161P&amp;challengeTopic=Selection_Statements" target="_blank" rel="noopener">Selection Statements CTF</a></h3>
+<p>Complete Capture the Flag (CTF) activities below.  You can check that you have the correct flags at the CTF link above.  If you'd like to register your progress and to have your name appear on the leaderboard, you may opt to include your name when entering flags.  As you capture flags and verify they're correct, keep track of them, so you can enter them into Canvas and earn class points toward your grade. </p>
+<h3 id="yui_3_18_1_1_1767939914735_195">Required Resources</h3>
+<h4>Read </h4>
+<ul id="yui_3_18_1_1_1768619106315_31">
+<li><span style="color: #990066;"><strong>Chapter 4</strong></span> in <span style="color: #990066;"><strong>CS 161P: Computer Science 1 Using Python</strong></span> by Jim Bailey (in <span style="color: #990066;"><strong>Course Resources</strong></span> section)</li>
+<li><strong><span style="color: #990066;">Chapter 7</span></strong> in <a href="https://runestone.academy/ns/books/published/thinkcspy/index.html" target="_blank" rel="noopener"><strong>How to Think Like a Computer Scientist</strong></a></li>
+</ul>
+<p>Then attempt the challenges below.</p>
+<h4>Is It Equal?</h4>
+<p>What is needed under the green box to make this check <strong><span style="color: #990066;">if x equals 7</span></strong>, and if so, print "Found it!"?</p>
+<pre class="language-python"><code>x = 7
+if (x 🟩 7):
+  print ("Found it!")</code></pre>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag SELEqual (5 pts)</h5>
+<p>The flag is under the green box.</p>
+</div>
+</div>
+<p></p>
+<h4>More or Less?</h4>
+<p>What will <strong><span style="color: #990066;">print</span></strong> to the screen?</p>
+<pre class="language-python"><code>x = 5
+if (x &gt; 7):
+  print ("more")
+else:
+  print ("less")</code></pre>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag SELMoreOrLess (5 pts)</h5>
+<p>The flag is what the code <strong><span style="color: #990066;">displays</span></strong>.</p>
+</div>
+</div>
+<p></p>
+<h4>Short Circuit Evaluation</h4>
+<p>Before considering <strong><span style="color: #990066;">short circuit evaluation</span></strong>, it's important to understand a few things about Python.</p>
+<ul>
+<li>Anything which evaluates to <strong><span style="color: #990066;">0</span></strong> is considered to be <strong><span style="color: #990066;">False</span></strong>.</li>
+<li>Anything which evaluates to something <strong><span style="color: #990066;">other than 0</span></strong> is considered to be <strong><span style="color: #990066;">True</span></strong>.</li>
+<li>The <strong><span style="color: #990066;">or</span></strong> operator <strong><span style="color: #990066;">returns</span></strong> the <strong><span style="color: #990066;">first True operand</span></strong> or the <strong><span style="color: #990066;">last operand if <em>none</em> are True</span></strong>.</li>
+<li>The <strong><span style="color: #990066;">and</span></strong> operator returns the <strong><span style="color: #990066;">first False operand</strong> or the <strong><span style="color: #990066;">last operand if <em>all</em> are True</span></strong>.</span></li>
+</ul>
+<p>What this means is that Python is <strong><span style="color: #990066;">efficient</span></strong> when it evaluates boolean expressions.  As soon as it <strong><span style="color: #990066;">knows enough</span></strong>, it <strong><span style="color: #990066;">stops evaluating</span></strong>. </p>
+<p>For example, <strong><span style="color: #990066;">or</span></strong> requires just <strong><span style="color: #990066;">one expression</span></strong> to be <strong><span style="color: #990066;">True</span></strong> to consider the <strong><span style="color: #990066;">whole condition True</span></strong>.  True <strong><span style="color: #990066;">or</span></strong> anotherCondition is True, regardless of whether or not anotherCondition is True or False, so it won't waste time evaluating anotherCondition. </p>
+<p>Something similar holds for <strong><span style="color: #990066;">and</span></strong>.  False <strong><span style="color: #990066;">and</span></strong> anotherCondition is False, regardless of whether or not anotherCondition is True or False, so again, Python won't waste time evaluating anotherCondition.  Consider the code below.</p>
+<pre class="language-python"><code>x = 5
+y = 7
+if ((x == 3) and (y &lt; 8)):
+  print ("something")</code></pre>
+<p>The expression <strong><span style="color: #990066;">x == 3</span></strong> evaluates to <strong><span style="color: #990066;">False</span></strong>, because x is 5.  Therefore, <strong><span style="color: #990066;">Python won't </span></strong>even<strong><span style="color: #990066;"> consider y &lt; 8</span></strong>.  It's not necessary to evaluate, because it already knows it can skip the print.<br><br>This holds for non-boolean expressions combined with <strong><span style="color: #990066;">or</span></strong> as well.  Consider the code below.   What do you think will get printed in each case?  (To learn more, read about <a href="https://www.geeksforgeeks.org/short-circuiting-techniques-python/" target="_blank" rel="noopener"><strong>Short Circuiting Techniques in Python</strong></a>.)</p>
+<pre class="language-python"><code>print(1 and "geeks")
+print("geeks" and 1)
+print(1 or "geeks")
+print("geeks" or 1)</code></pre>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag SELShortCirc1 (5 pts)</h5>
+<p>What gets <strong><span style="color: #990066;">printed</span></strong> by each of the four print statements above?  Put your answers together, separated by pipes to build the flag.  For example, if your answers are a, b, c, d, then enter a|b|c|d to get the flag.  The pipe is above the return/enter key on standard keyboards.</p>
+</div>
+</div>
+<p><br>Consider the code below.  For what operator under the green box do you think Python will be efficient and decide it doesn't have to evaluate the second condition?</p>
+<pre class="language-python"><code>x = 5
+y = 7
+if ((x == 5) 🟩 (y &lt; 8)):
+  print ("something")</code></pre>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag SELShortCirc2 (5 pts)</h5>
+<p>What <strong><span style="color: #990066;">operator</span></strong> should be under the green box?  Do you know why?  If not, please ask!</p>
+</div>
+</div>
+<p></p>
+<h4>Ternary Statement</h4>
+<p>You can write a simple <strong><span style="color: #990066;">if-else</span></strong> statement more <strong><span style="color: #990066;">succinctly</span></strong> as a <strong><span style="color: #990066;">ternary</span></strong> statement.  It follows this basic pattern.</p>
+<pre>Do Something <strong><span class="" style="color: #900c3f;">if</span></strong> This is True <strong><span class="" style="color: #900c3f;">else</span></strong> Do a Different Thing</pre>
+<p>As an example, consider this code.</p>
+<pre class="language-python"><code>if ((x == 3) and (y &lt; 8)):
+  print ("Do Something")
+else:
+  print ("Do a Different Thing")</code></pre>
+<p>You can <strong><span style="color: #990066;">rewrite</span></strong> the <strong><span style="color: #990066;">if-else</span></strong> statement above <strong><span style="color: #990066;">in ternary</span></strong> format on <strong><span style="color: #990066;">one line</span></strong> as follows.</p>
+<pre class="language-python"><code>print ("Do Something") if ((x == 3) and (y &lt; 8)) else print ("Do a Different Thing")</code></pre>
+<p>When <strong><span style="color: #990066;">x is 3</span></strong> it should print <strong><span style="color: #990066;">Do Something</span></strong>.  When <strong><span style="color: #990066;">x is 4</span></strong> it should print <strong><span style="color: #990066;">Do a Different Thing</span></strong>.  Try setting x to 3 and then to 4 to test the code and confirm your understanding. <br><br>For each of the <strong><span style="color: #990066;">ternary statements</span></strong> below, what value gets stored in the <strong><span style="color: #990066;">variable set to it</span></strong>?</p>
+<pre class="language-python"><code>result = 1.5 if (5 &gt; 3) else 2
+
+a = 15
+b = 20
+max = a if (a &gt; b) else b
+
+x = 5
+y = 5
+result = 1 if (x != y) else 0 
+
+a = 10
+b = 20
+result = (a / 2) if (a &gt; b) else (b * 2)
+
+l = 5
+w = 12
+shape = "Square" if (l == w) else "Rectangle"
+
+isWeekend = False
+activity = "Relax" if isWeekend else "School"
+
+age = 12
+status = "Adult" if (age &gt;= 18) else "Minor"</code></pre>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag SELTern (10 pts)</h5>
+<p>Put the <strong><span style="color: #990066;">values returned by</span></strong> the <strong><span style="color: #990066;">ternary statements</span></strong> above and stored in the variables (result, max, result, result, shape, activity, status) together, separated by pipes to build the flag.</p>
+</div>
+</div>
+<p></p>
+<h4>Debug if Statement</h4>
+<p>The code below is supposed to <strong><span style="color: #990066;">ask</span></strong> the user <strong><span style="color: #990066;">for</span></strong> an <strong><span style="color: #990066;">integer</span></strong>.  Then it should <strong><span style="color: #990066;">report if</span></strong> it's <strong><span style="color: #990066;">even</span></strong>.  If it's not even, it does not report anything.  It has <strong><span style="color: #990066;">one or more errors</span></strong>.  See if you can find them. </p>
+<pre class="language-python"><code>value = int(input("Enter an integer: "))
+
+if value % 2 == 0:
+print("Because", value, "is divisible by two, it is even.")</code></pre>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag SELDebugIf1 (10 pts)</h5>
+<p>After you've gotten the program to work, submit it to this <strong><a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=SELDebugIf1&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=SELDebugIf1&amp;subFormat=uploadZip" target="_blank" rel="noopener">code checker</a></strong> to get the flag.</p>
+</div>
+</div>
+<p></p>
+<h4>Debug Another if Statement</h4>
+<p>The code below is supposed to <strong><span style="color: #990066;">ask</span></strong> the user <strong><span style="color: #990066;">for</span></strong> an <strong><span style="color: #990066;">integer</span></strong>.  Then it should <strong><span style="color: #990066;">report if</span></strong> it's <strong><span style="color: #990066;">positive</span></strong>.  If it's not positive, it does not report anything.  It has <strong><span style="color: #990066;">one or more errors</span></strong>.  See if you can find them. </p>
+<pre class="language-python"><code>value = int(input("Enter an integer: "))
+
+if value &gt; 0
+    print("The number is positive")</code></pre>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag SELDebugIf2 (10 pts)</h5>
+<p>After you've gotten the program to work, submit it to this <strong><a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=SELDebugIf2&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=SELDebugIf2&amp;subFormat=uploadZip" target="_blank" rel="noopener">code checker</a></strong> to get the flag.</p>
+</div>
+</div>
+<p></p>
+<h4>Debug an Else-If Statement</h4>
+<p>The code below is supposed to <strong><span style="color: #990066;">ask</span></strong> the user <strong><span style="color: #990066;">for</span></strong> a <strong><span style="color: #990066;">letter</span></strong>.  Then it should <strong><span style="color: #990066;">report Apple for A</span></strong>, <strong><span style="color: #990066;">Bear for B</span></strong>, and <strong><span style="color: #990066;">Cat for C</span></strong>.  If <strong><span style="color: #990066;">anything else</span></strong> is entered, it should report <strong><span style="color: #990066;">Neither Apple, Bear, nor Cat</span></strong>.  It has <strong><span style="color: #990066;">one or more errors</span></strong>.  See if you can find them. </p>
+<pre class="language-python"><code>code = input("Enter a letter, (A B or C): ")
+
+if code == 'A':
+  print("Apple")
+else if code == 'B':
+  print("Bear")
+else if code == 'C':
+  print("Cat")
+else:
+  print("Neither Apple, Bear, nor Cat") </code></pre>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag SELDebugElif (10 pts)</h5>
+<p>After you've gotten the program to work, submit it to this <strong><a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=SELDebugElif&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=SELDebugElif&amp;subFormat=uploadZip" target="_blank" rel="noopener">code checker</a></strong> to get the flag.</p>
+</div>
+</div>
+<p></p>
+<h4>Report Adult or Minor</h4>
+<p>Write a program that <strong><span style="color: #990066;">retrieves a number</span></strong>, and if it is <strong><span style="color: #990066;">18 or over</span></strong>, <strong><span style="color: #990066;">reports "You are an adult."</span></strong>  <strong><span style="color: #990066;">Otherwise</span></strong>, it reports <strong><span style="color: #990066;">"You are a minor."</span></strong>  Use an <strong><span style="color: #990066;">if-else</span></strong> statement.</p>
+<p>Below are example runs.</p>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="background-color: black; color: white; padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #003087;">Please enter your age: <span style="color: #f2a900;">8</span><br>You are a minor.</div>
+</div>
+<p></p>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="background-color: black; color: white; padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #003087;">Please enter your age: <span style="color: #f2a900;">35</span><br>You are an adult.</div>
+</div>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag SELAdultIf (15 pts)</h5>
+<p>After you've gotten the program to work, submit it to this <strong><a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=SELAdultIf&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=SELAdultIf&amp;subFormat=uploadZip" target="_blank" rel="noopener">code checker</a></strong> to get the flag.</p>
+</div>
+</div>
+<p><br><strong><span style="color: #990066;">Rewrite</span></strong> the code for the last challenge using a conditional (<strong><span style="color: #990066;">ternary</span></strong>) statement.</p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag SELAdultCond (15 pts)</h5>
+<p>After you've gotten the program to work, submit it to this <strong><a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=SELAdultCond&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=SELAdultCond&amp;subFormat=uploadZip" target="_blank" rel="noopener">code checker</a></strong> to get the flag.</p>
+</div>
+</div>
+<p></p>
+<h4>Number to Word</h4>
+<p>Write a program which asks the user to <strong><span style="color: #990066;">enter</span></strong> an <strong><span style="color: #990066;">integer between 1 and 3</span></strong>, then displays the <strong><span style="color: #990066;">corresponding word</span></strong> for what they entered.  <strong><span style="color: #990066;">Otherwise</span></strong>, it lets them know they <strong><span style="color: #990066;">didn't enter</span></strong> a <strong><span style="color: #990066;">value between 1 and 3</span></strong>. </p>
+<p>Below are example runs.</p>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="background-color: black; color: white; padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #003087;">Enter a number between 1 and 3: <span style="color: #f2a900;">1</span><br>You entered one.</div>
+</div>
+<p></p>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="background-color: black; color: white; padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #003087;">Enter a number between 1 and 3: <span style="color: #f2a900;">5</span><br>You didn't enter one, two, or three.</div>
+</div>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag SELNum2Word (15 pts)</h5>
+<p>After you've gotten the program to work, submit it to this <strong><a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=SELNum2Word&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=SELNum2Word&amp;subFormat=uploadZip" target="_blank" rel="noopener">code checker</a></strong> to get the flag.</p>
+</div>
+</div>
+<p></p>
+<h4>Calculator</h4>
+<p>Write a program that is a simple <strong><span style="color: #990066;">calculator</span></strong>.  Ask the user to <strong><span style="color: #990066;">enter</span></strong> an <strong><span style="color: #990066;">integer</span></strong>.  Then ask for an <strong><span style="color: #990066;">operator from</span></strong> this set: <strong><span style="color: #990066;">* / % + -</span></strong>.  Finally, ask for a <strong><span style="color: #990066;">second integer</span></strong>.  If the user does <strong><span style="color: #990066;">not</span></strong> enter a <strong><span style="color: #990066;">valid operator</span></strong>, <strong><span style="color: #990066;">report</span></strong> an <strong><span style="color: #990066;">error and terminate</span></strong>. </p>
+<p>Do NOT worry about checking if the integers entered are valid.  We'll learn how to check this in the future. </p>
+<p>Dividing by zero is not defined, and will cause the program to crash badly if we try to do it, so it's important to check if the user enters zero for the divisor and to not proceed.  <strong><span style="color: #990066;">If</span></strong> the user asks to do <strong><span style="color: #990066;">division</span></strong> or <strong><span style="color: #990066;">modulus</span></strong> and the <strong><span style="color: #990066;">second number</span></strong> is <strong><span style="color: #990066;">zero</span></strong>, <strong><span style="color: #990066;">report</span></strong> an <strong><span style="color: #990066;">error and terminate</span></strong>.  <strong><span style="color: #990066;">Otherwise</span></strong>, <strong><span style="color: #990066;">display</span></strong> the <strong><span style="color: #990066;">equation</span></strong> and the <strong><span style="color: #990066;">result</span></strong>.  <br><br>Below are example runs.</p>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="background-color: black; color: white; padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #003087;">Enter an integer: <span style="color: #f2a900;">3</span><br>Enter an operator from the list * / % + -: <span style="color: #f2a900;">*</span><br>Enter another integer: <span style="color: #f2a900;">5</span><br>3 * 5 = 15</div>
+</div>
+<p></p>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="background-color: black; color: white; padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #003087;">Enter an integer: <span style="color: #f2a900;">20</span><br>Enter an operator from the list * / % + -: <span style="color: #f2a900;">&amp;</span><br>Enter another integer: <span style="color: #f2a900;">42</span><br>That is not a valid operator.</div>
+</div>
+<p></p>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="background-color: black; color: white; padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #003087;">Enter an integer: <span style="color: #f2a900;">5</span><br>Enter an operator from the list * / % + -: <span style="color: #f2a900;">/</span><br>Enter another integer: <span style="color: #f2a900;">0</span><br>You cannot divide by zero.</div>
+</div>
+<p></p>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="background-color: black; color: white; padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #003087;">Enter an integer: <span style="color: #f2a900;">42</span><br>Enter an operator from the list * / % + -: <span style="color: #f2a900;">%</span><br>Enter another integer: <span style="color: #f2a900;">0</span><br>You cannot divide by zero.</div>
+</div>
+<p></p>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="background-color: black; color: white; padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #003087;">Enter an integer: <span style="color: #f2a900;">0</span><br>Enter an operator from the list * / % + -: <span style="color: #f2a900;">/</span><br>Enter another integer: <span style="color: #f2a900;">7</span><br>0 / 7 = 0</div>
+</div>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag SELCalculator (20 pts)</h5>
+<p>After you've gotten the program to work, submit it to this <strong><a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=SELCalculator&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=SELCalculator&amp;subFormat=uploadZip" target="_blank" rel="noopener">code checker</a></strong> to get the flag.</p>
+</div>
+</div>
+<p></p>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Readings and Videos</title>
+<style>
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-BoldItalic.woff2') format('woff2');
+}
+body {
+  font-family: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background: #ffffff;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 3rem;
+}
+/* Moodle's WYSIWYG editor bakes in a different inline font-family per page
+   (Arial, Calibri, Times New Roman, etc.) - force everything back to the
+   accessible stack above regardless of what the original page specified. */
+body * {
+  font-family: inherit !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+}
+/* Explicit scale so no heading level ties or drops below the 18px body
+   text - the browser default em-based scale shrinks below that starting
+   at h4/h5 once the body font-size is bumped up this far for accessibility. */
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.1em; }
+h5 { font-size: 1em; }
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+/* img/video have a true intrinsic aspect ratio, so height: auto above keeps
+   them proportional automatically. iframe has no such intrinsic ratio, so
+   without this it looks squished/too-wide whenever its container is
+   narrower than its width="..." attribute (e.g. YouTube embeds at 560x315
+   on a narrower viewport). Assumes 16:9, true for all current embeds. */
+iframe {
+  aspect-ratio: 16 / 9;
+}
+a {
+  color: #0b5fff;
+}
+table {
+  border-collapse: collapse;
+}
+td, th {
+  padding: 0.4em 0.8em;
+}
+/* Moodle CTF "flag" prompts are wrapped in a div with an inline neon-green
+   border (#00ff11); the title inside is an h5 that barely stands out once
+   pulled out of Moodle's own page chrome. Give it real visual weight, but
+   with a darkened green (8.2:1 contrast on white, WCAG AAA) instead of the
+   neon border color, which would be close to unreadable as text. */
+div[style*="00ff11"] h5 {
+  font-size: 1.3em;
+  font-weight: 800;
+  color: #0e5c1a;
+  margin: 0 0 0.5em 0;
+}
+</style>
+</head>
+<body>
+<h1>Readings and Videos</h1>
+<h3>Design Thinking</h3>
+<p>Take a quick look at design thinking.</p>
+<ul>
+<li>Overview: <a href="https://www.youtube.com/watch?v=6lmvCqvmjfE" target="_blank" rel="noopener"><strong>Design Thinking 101</strong></a> by NNGroup <sub>(3:17)</sub></li>
+<li><span style="color: #990066;"><strong>Example Using Design Thinking:</strong></span> <a href="https://www.youtube.com/watch?v=_r0VX-aU_T8" target="_blank" rel="noopener"><strong>The Design Thinking Process</strong></a> by Sprouts <sub>(3:56)</sub></li>
+<li>Success Stories:
+<ul>
+<li><a href="https://www.youtube.com/watch?v=EH9u1bHqwpc" target="_blank" rel="noopener"><em><strong>How design thinking is transforming lives in rural India</strong></em></a> by Dalham <sub>(4:22)</sub></li>
+<li><a href="https://www.youtube.com/watch?v=hnSPmcZjEqs&amp;t=0s" target="_blank" rel="noopener"><em><strong>Pittsburg Childrens Hospital Makes Visits Fun for Kids</strong></em></a> by healthymagination <sub>(5:10)</sub></li>
+</ul>
+</li>
+</ul>
+<p>If you want to dig deeper into the design thinking process, read this advice from Emily Stevens.</p>
+<ul>
+<li><em><a href="https://careerfoundry.com/en/blog/ux-design/what-is-empathy-in-design-thinking/" target="_blank" rel="noopener"><strong>What is Empathy in Design Thinking? A comprehensive Guide</strong></a></em></li>
+<li><em><a href="https://careerfoundry.com/en/blog/ux-design/stage-two-design-thinking-define-the-problem/" target="_blank" rel="noopener"><strong>Stage 2 in the Design Thinking Process: Define theProblem</strong></a></em></li>
+<li><em><a href="https://careerfoundry.com/en/blog/ux-design/what-is-ideation-in-design-thinking/" target="_blank" rel="noopener"><strong>What is Ideation in Design Thinking? 2023 Ideation Techniques Guide</strong></a></em> </li>
+<li><em><a href="https://careerfoundry.com/en/blog/ux-design/design-thinking-stage-four-prototyping/" target="_blank" rel="noopener"><strong>A Complete Introduction to Prototyping (2023 Guide)</strong></a></em></li>
+<li><em><a href="https://careerfoundry.com/en/blog/ux-design/user-testing-design-thinking/" target="_blank" rel="noopener"><strong>User Testing: The Ultimate How-To Guide</strong></a></em></li>
+</ul>
+<h3>Prototyping</h3>
+<p><strong><span style="color: #990066;">Test early and often.  Fail fast and pivot.</span></strong></p>
+<ul>
+<li><strong><span style="color: #990066;">Flash Build </span></strong>of<strong><span style="color: #990066;"> iPad App</span></strong> by <a href="https://www.youtube.com/watch?v=2NFH3VC6LNs" target="_blank" rel="noopener"><strong>Nordstrom Innovation Lab</strong></a> <sub>(6:42)</sub></li>
+<li><span style="color: #990066;"><strong>Prototyping </strong></span>process<span style="color: #990066;"><strong> in action</strong></span> in <a href="https://vimeo.com/284948950" target="_blank" rel="noopener"><strong>Design Thinking - McDonalds - Iterate</strong></a> <sub>(2:47)</sub></li>
+</ul>
+<h3>Agile Development Method</h3>
+<p>The agile development method is practiced by many businesses today.</p>
+<ul>
+<li><strong><span style="color: #990066;">Agile Manifesto:</span> </strong><a href="https://www.agilealliance.org/agile101/the-agile-manifesto/" target="_blank" rel="noopener"><strong>What is the Agile Manifesto?</strong></a></li>
+<li><a href="https://www.agilealliance.org/agile101/" target="_blank" rel="noopener"><strong>What is Agile</strong></a> by the Agile Alliance</li>
+</ul>
+<p>If you want to take a deeper dive, review this Scrum Training Series.</p>
+<ul>
+<li><a title="" href="http://scrumtrainingseries.com/Intro_to_Scrum/index.html" target="_blank" rel="noopener"><strong>Introduction to Scrum</strong></a></li>
+<li><a title="" href="http://scrumtrainingseries.com/BacklogRefinementMeeting/index.html" target="_blank" rel="noopener"><strong>Backlog Refinement Meeting</strong></a></li>
+<li><a title="" href="http://scrumtrainingseries.com/SprintPlanningMeeting/index.html" target="_blank" rel="noopener"><strong>Sprint Planning Meeting</strong></a></li>
+<li><a href="https://scrumtrainingseries.com/DailyScrumMeeting/" target="_blank" rel="noreferrer noopener"><strong>Daily Scrum</strong></a></li>
+<li><a title="" href="http://scrumtrainingseries.com/SprintReviewMeeting/" target="_blank" rel="noopener"><strong>Sprint Review Meeting</strong></a></li>
+<li><a href="http://scrumtrainingseries.com/SprintRetrospectiveMeeting/index.html" target="_blank" rel="noopener"><strong>Sprint Retrospective Meeting</strong></a></li>
+</ul>
+<h3>Changing Text Color</h3>
+<ul>
+<li><a href="../assets/color.py" target="_blank" rel="noopener"><strong>Example code</strong></a></li>
+<li><a style="background-color: #ffffff; font-size: 1rem; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';" href="https://en.wikipedia.org/wiki/ANSI_escape_code#Colors" target="_blank" rel="noopener"><strong>ANSI escape code</strong></a></li>
+</ul>
+<h3>Adding Emojis</h3>
+<ul>
+<li><strong><span style="color: #990066;">print("\U0001F607")</span></strong></li>
+<li><strong>Wikimedia Commons: <a href="https://commons.wikimedia.org/wiki/Emoji/Table" target="_blank" rel="noopener">emoji/table</a></strong></li>
+</ul>
+<p></p>
+</body>
+</html>

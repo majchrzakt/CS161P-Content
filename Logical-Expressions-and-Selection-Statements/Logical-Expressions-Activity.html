@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logical Expression</title>
+<style>
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-BoldItalic.woff2') format('woff2');
+}
+body {
+  font-family: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background: #ffffff;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 3rem;
+}
+/* Moodle's WYSIWYG editor bakes in a different inline font-family per page
+   (Arial, Calibri, Times New Roman, etc.) - force everything back to the
+   accessible stack above regardless of what the original page specified. */
+body * {
+  font-family: inherit !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+}
+/* Explicit scale so no heading level ties or drops below the 18px body
+   text - the browser default em-based scale shrinks below that starting
+   at h4/h5 once the body font-size is bumped up this far for accessibility. */
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.1em; }
+h5 { font-size: 1em; }
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+/* img/video have a true intrinsic aspect ratio, so height: auto above keeps
+   them proportional automatically. iframe has no such intrinsic ratio, so
+   without this it looks squished/too-wide whenever its container is
+   narrower than its width="..." attribute (e.g. YouTube embeds at 560x315
+   on a narrower viewport). Assumes 16:9, true for all current embeds. */
+iframe {
+  aspect-ratio: 16 / 9;
+}
+a {
+  color: #0b5fff;
+}
+table {
+  border-collapse: collapse;
+}
+td, th {
+  padding: 0.4em 0.8em;
+}
+/* Moodle CTF "flag" prompts are wrapped in a div with an inline neon-green
+   border (#00ff11); the title inside is an h5 that barely stands out once
+   pulled out of Moodle's own page chrome. Give it real visual weight, but
+   with a darkened green (8.2:1 contrast on white, WCAG AAA) instead of the
+   neon border color, which would be close to unreadable as text. */
+div[style*="00ff11"] h5 {
+  font-size: 1.3em;
+  font-weight: 800;
+  color: #0e5c1a;
+  margin: 0 0 0.5em 0;
+}
+</style>
+</head>
+<body>
+<details style="margin-bottom: 0.75em; border: 1px solid #c1c7cd; border-radius: 8px; padding: 0.5em 0.9em;">
+<summary style="cursor: pointer;">Leaderboard</summary>
+<iframe src="https://yaacotu.com/ctf/engineDRM/scoreboard.php?summary=1&amp;refresh=1&amp;class=161P&amp;challengeTopic=Logical_Expressions" width="100%" height="300" frameborder="0" style="margin-top: 0.75em;"></iframe>
+</details>
+<details style="margin-bottom: 0.75em; border: 1px solid #c1c7cd; border-radius: 8px; padding: 0.5em 0.9em;">
+<summary style="cursor: pointer;">Progress</summary>
+<iframe src="https://yaacotu.com/ctf/engineDRM/scoreboard.php?summary=0&amp;refresh=1&amp;class=161P&amp;challengeTopic=Logical_Expressions" width="100%" height="300" frameborder="0" style="margin-top: 0.75em;"></iframe>
+</details>
+<details style="margin-bottom: 0.75em; border: 1px solid #c1c7cd; border-radius: 8px; padding: 0.5em 0.9em;">
+<summary style="cursor: pointer;">Flag Checker</summary>
+<p>You can check your flags here.&nbsp; If you want to have your name on the leaderboard, enter your name when entering flags.&nbsp; Otherwise, leave the name field blank.&nbsp; To earn points on this activity, you MUST enter your flags and click Submit on the form at the bottom of this page.</p>
+<iframe src="https://yaacotu.com/ctf/engineDRM/index.php?class=161P&amp;challengeTopic=Logical_Expressions" width="100%" height="300" frameborder="0" style="margin-top: 0.75em;" allow="unload"></iframe>
+</details>
+<div style="max-height: 60vh; min-height: 150px; overflow-y: auto; border: 1px solid #c1c7cd; border-radius: 8px; padding: 1em 1.25em; margin-bottom: 1em; background: #fafbfc;">
+<h1>Logical Expression</h1>
+<h3><a title="http://yaacotu.com/ctf/engineDRM/index.php?class=161P&amp;challengeTopic=Logical_Expressions" href="http://yaacotu.com/ctf/engineDRM/index.php?class=161P&amp;challengeTopic=Logical_Expressions" target="_blank" rel="noopener">Logical Expressions CTF</a></h3>
+<p>Complete Capture the Flag (CTF) activities below.  You can check that you have the correct flags at the CTF link above.  If you'd like to register your progress and to have your name appear on the leaderboard, you may opt to include your name when entering flags.  As you capture flags and verify they're correct, keep track of them, so you can enter them into Canvas and earn class points toward your grade. </p>
+<h3 id="yui_3_18_1_1_1767939914735_195">Required Resources</h3>
+<h4>Read </h4>
+<ul id="yui_3_18_1_1_1768619106315_31">
+<li><span style="color: #990066;"><strong>Chapter 4</strong></span> in <span style="color: #990066;"><strong>CS 161P: Computer Science 1 Using Python</strong></span> by Jim Bailey (in <span style="color: #990066;"><strong>Course Resources</strong></span> section)</li>
+<li><strong><span style="color: #990066;">Chapter 7</span></strong> in <a href="https://runestone.academy/ns/books/published/thinkcspy/index.html" target="_blank" rel="noopener"><strong>How to Think Like a Computer Scientist</strong></a></li>
+</ul>
+<p>Then attempt the challenges below.</p>
+<h4>Operators</h4>
+<p>There are many kinds of <strong><a href="https://www.w3schools.com/python/python_operators.asp" target="_blank" rel="noopener">operators</a></strong> in Python, including <strong><span style="color: #990066;">arithmetic</span></strong>, <strong><span style="color: #990066;">assignment</span></strong>, <strong><span style="color: #990066;">comparison</span></strong>, and <strong><span style="color: #990066;">logical</span></strong>.</p>
+<p>What <strong><span style="color: #990066;">type of operators</span></strong> are &lt;, &gt;, &gt;=, &lt;=, ==, !=, and &lt;&gt;<br>What <strong><span style="color: #990066;">type of operators</span></strong> are <span class=""><strong><span class="" style="color: #900c3f;">and</span></strong></span>, <strong><span class="" style="color: #900c3f;">or</span></strong>, and <strong><span class="" style="color: #900c3f;">not</span></strong>?<br>What <strong><span style="color: #990066;">type</span></strong> is used to store <strong><span style="color: #990066;">boolean</span></strong> (e.g., <strong><span style="color: #990066;">True</span></strong> and <strong><span style="color: #990066;">False</span></strong>) values?</p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag LEGen (5 pts)</h5>
+<p>Put the answers to the questions above together, separated by pipes to build the flag.  For example, if the answers were a, b, c, d, then enter a|b|c|d to get the flag.  The pipe is above the return/enter key on standard keyboards.</p>
+</div>
+</div>
+<p></p>
+<h4>Precedence</h4>
+<p><strong><span style="color: #990066;">Precedence</span></strong> is the <strong><span style="color: #990066;">order</span></strong> in which <strong><span style="color: #990066;">operators</span></strong> will be <strong><span style="color: #990066;">evaluated</span></strong> when there is more than one operator on a line.  W3Schools lists the <a href="https://www.w3schools.com/python/python_operators.asp" target="_blank" rel="noopener"><strong>precedence order for Python operators</strong></a>. </p>
+<p>For each expression below, which operator has the <strong><span style="color: #990066;">highest precedence</span></strong>?  In other words, without parentheses, which one will execute first?</p>
+<pre class="language-python"><code>x + 7 % 8
+x and not y
+x or y and z</code></pre>
+<p>Which operator has the <strong><span style="color: #990066;">lowest precedence</span></strong> in the expression below? </p>
+<pre class="language-python"><code>x &gt; 7 or y &lt; 8</code></pre>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag LEPrec (10 pts)</h5>
+<p>Put the answers to the four questions above together, separated by pipes, to build the flag.</p>
+</div>
+</div>
+<p><br>To not have to worry about precedence in a particular language, you can use <strong><span style="color: #990066;">parentheses to force</span></strong> the <strong><span style="color: #990066;">order</span></strong> you desire, and I would argue, to make your code <strong><span style="color: #990066;">more readable</span></strong>, as follows.</p>
+<pre class="language-python"><code>(x &gt; 7) or (y &lt; 8)</code></pre>
+<h4>Boolean Expressions</h4>
+<p><strong><span style="color: #990066;">Boolean</span></strong> expressions (aka <strong><span style="color: #990066;">conditionals</span></strong>) evaluate to <strong><span style="color: #990066;">True</span></strong> or <strong><span style="color: #990066;">False</span></strong>.  Consider the conditionals below (inside the parentheses of if statements).  Which ones evaluate to True and which to False?  You can try these in an IDE.  If you're not sure why one evaluates a particular way, please ask about it.</p>
+<pre class="language-python"><code>if (False or False) ...
+if (True or False) ...
+if (True and False) ...
+if (True and True) ...
+
+int x = 0  
+if (x == 0) ...
+if (x == 3) ...</code></pre>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag LETorF1 (10 pts)</h5>
+<p>Build the flag by entering <strong><span style="color: #990066;">T</span></strong> for <strong><span style="color: #990066;">True</span></strong> or <strong><span style="color: #990066;">F</span></strong> for <strong><span style="color: #990066;">False</span></strong> for each of the 6 conditionals above with pipe symbols in between.  For example, the flag could be T|F|F|T|T|F.</p>
+<details>
+<summary>HINT:</summary>
+Try printing each of the conditionals (e.g., print(True or False))</details>
+</div>
+</div>
+<p><br>Here are some more conditionals for you to try.  See if you can guess whether <strong><span style="color: #990066;">res</span></strong> is <strong><span style="color: #990066;">True or False</span></strong> in each case before printing it in an IDE to confirm its value.</p>
+<pre class="language-python"><code>p = True
+q = False
+res = p or not q
+res = 8 &gt; 5 and not (2 &lt; 1)
+res = True or False and not (True and False)
+res = not (6 &gt; 4)</code></pre>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag LETorF2 (10 pts)</h5>
+<p>Build the flag by entering T or F for each occurrence of <strong><span style="color: #990066;">res</span></strong> above with pipe symbols in between.</p>
+</div>
+</div>
+<p><br>Here are some more for you to try.  See if you can guess whether <strong><span style="color: #990066;">res</span></strong> is <strong><span style="color: #990066;">True or False</span></strong> in each case before trying it in an IDE to confirm its value.</p>
+<pre class="language-python"><code>x = 5
+y = 5
+z = 12
+res = x != y or (z &gt;= 10 and not (x &lt; 5))
+
+a = 7
+b = 3
+res = a &gt; 5 and b != 2 or not (a &lt; b)
+
+res = (3.14 == 3.14159)
+res = ('a' == 'A')</code></pre>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag LETorF3 (10 pts)</h5>
+<p>Build the flag by entering T or F for each line above for the value of <strong><span style="color: #990066;">res</span></strong> with pipe symbols in between.</p>
+</div>
+</div>
+<p></p>
+</div>
+<h2>Submit Work</h2>
+<p>You <strong><span style="color: #c71f23;">must</span></strong> enter your flags below and click <strong><span style="color: #c71f23;">submit</span></strong> to earn points for this activity.&nbsp; You do NOT have to enter all flags to earn credit, but you must click submit.&nbsp; You may update the flags and submit them an unlimited number of times until the due date.&nbsp; Your highest score will be entered in the gradebook.</p>
+<p>If a flag has more than one box to the right of it, enter the <strong><span style="color: #c71f23;">same</span></strong> <strong><span style="color: #c71f23;">flag</span></strong> into <strong><span style="color: #c71f23;">each</span></strong> <strong><span style="color: #c71f23;">box</span></strong>.&nbsp; These flags are worth more points.</p>
+<iframe src="https://lanecc.h5p.com/content/1292971295212280658/embed" width="100%" height="500" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *" style="margin-top: 1em;"></iframe>
+</body>
+</html>

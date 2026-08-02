@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting Started</title>
+<style>
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-BoldItalic.woff2') format('woff2');
+}
+body {
+  font-family: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background: #ffffff;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 3rem;
+}
+/* Moodle's WYSIWYG editor bakes in a different inline font-family per page
+   (Arial, Calibri, Times New Roman, etc.) - force everything back to the
+   accessible stack above regardless of what the original page specified. */
+body * {
+  font-family: inherit !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+}
+/* Explicit scale so no heading level ties or drops below the 18px body
+   text - the browser default em-based scale shrinks below that starting
+   at h4/h5 once the body font-size is bumped up this far for accessibility. */
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.1em; }
+h5 { font-size: 1em; }
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+/* img/video have a true intrinsic aspect ratio, so height: auto above keeps
+   them proportional automatically. iframe has no such intrinsic ratio, so
+   without this it looks squished/too-wide whenever its container is
+   narrower than its width="..." attribute (e.g. YouTube embeds at 560x315
+   on a narrower viewport). Assumes 16:9, true for all current embeds. */
+iframe {
+  aspect-ratio: 16 / 9;
+}
+a {
+  color: #0b5fff;
+}
+table {
+  border-collapse: collapse;
+}
+td, th {
+  padding: 0.4em 0.8em;
+}
+/* Moodle CTF "flag" prompts are wrapped in a div with an inline neon-green
+   border (#00ff11); the title inside is an h5 that barely stands out once
+   pulled out of Moodle's own page chrome. Give it real visual weight, but
+   with a darkened green (8.2:1 contrast on white, WCAG AAA) instead of the
+   neon border color, which would be close to unreadable as text. */
+div[style*="00ff11"] h5 {
+  font-size: 1.3em;
+  font-weight: 800;
+  color: #0e5c1a;
+  margin: 0 0 0.5em 0;
+}
+</style>
+</head>
+<body>
+<h1>Getting Started</h1>
+<h3><a title="http://yaacotu.com/ctf/engineDRM/index.php?class=161P&amp;challengeTopic=Getting_Started" href="http://yaacotu.com/ctf/engineDRM/index.php?class=161P&amp;challengeTopic=Getting_Started" target="_blank" rel="noopener">Getting Started CTF</a></h3>
+<p>Complete Capture the Flag (CTF) activities below.  You can check that you have the correct flags at the CTF link above.  If you'd like to register your progress and to have your name appear on the leaderboard, you may opt to include your name when entering flags.  As you capture flags and verify they're correct, keep track of them, so you can enter them into Canvas and earn class points toward your grade. </p>
+<h3 id="yui_3_18_1_1_1767939914735_195">Required Resources</h3>
+<h4>Read </h4>
+<ul>
+<li>Chapter 1 in <span style="color: #990066;"><strong>CS 161P: Computer Science 1 Using Python</strong></span> by Jim Bailey (in <span style="color: #990066;"><strong>Course Resources</strong></span> section)</li>
+<li>Chapter 1 in <a href="https://runestone.academy/ns/books/published/thinkcspy/index.html" target="_blank" rel="noopener"><strong>How to Think Like a Computer Scientist</strong></a></li>
+</ul>
+<p>Then attempt the challenges below.</p>
+<h3>Try IDEs and Choose One</h3>
+<p>An <strong><span style="color: #990066;">IDE</span></strong> is an <strong><span style="color: #990066;">integrated development environment</span></strong>, which allows you to edit code, compile it, debug it, and run it.  Some good choices include <strong><span style="color: #990066;">PyCharm</span></strong>, <strong><span style="color: #990066;">VS Code</span></strong>, and <strong><span style="color: #990066;">JDoodle</span></strong>.  While JDoodle is a good IDE to start with as a new programmer, PyCharm and VS Code are IDEs you're more likely to see used professionally. </p>
+<p>Watch this video to see how to use <strong><a href="https://www.jdoodle.com/python3-programming-online" target="_blank" rel="noopener">JDoodle</a></strong>.</p>
+<p><iframe title="YouTube video player" src="https://www.youtube.com/embed/foqePluvPHg?si=i-N_cFNhFKzo1xaH" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe></p>
+<p>The first program people generally write when learning a new language is <strong><span style="color: #990066;">Hello World</span></strong>.  It gives them a chance to see if they can get the coding environment to work and produce simple output.  You'll find Hello World on <strong><span style="color: #990066;">page 7</strong> of the <strong><span style="color: #990066;">CS 161P readings</span></strong> for this week.  </span></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag GSJDoodle (5 pts)</h5>
+<p>For <strong><span style="color: #990066;">JDoodle</span></strong>, what <strong><span style="color: #990066;">button</span></strong> do you need to click to <strong><span style="color: #990066;">run</span></strong> the <strong><span style="color: #990066;">code</span></strong>?  The flag is under the green box.</p>
+<p><img class="img-fluid" src="../assets/JDoodle.png" alt="The flag covers the word on the button you click to compile and execute the code." width="800" height="413"></p>
+<p>NOTE: This flag replaces <strong><span style="color: #990066;">GSReplit</span></strong>, which had the answer <strong><span style="color: #990066;">Run</span></strong>.  The answer for <strong><span style="color: #990066;">GSDoodle</span></strong> is <span style="color: #990066;"><strong>Execute</strong></span>.</p>
+</div>
+</div>
+<p></p>
+<p>Watch Mari Good's video, which shows how to use the <strong><span style="color: #990066;">PyCharm IDE</strong> to enter and run Hello World.</span></p>
+<p><iframe title="YouTube video player" src="https://www.youtube.com/embed/USRq6YgENwY?si=8pbql0k9NtgNBL3C" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe></p>
+<p>Try the PyCharm IDE by entering and executing the Hello Word code in it.  PyCharm is a professional IDE developed by JetBrains that is available for Linux, Mac, and Windows.  There is a <strong><span style="color: #990066;">free educational license</span></strong> available for all the JetBrains software.  PyCharm also is available in the classroom and in the <strong><span style="color: #990066;">Computer Lab</span></strong>.  Below are some resources to help you learn more about it and to get it installed on your home system, if you wish.</p>
+<ul>
+<li><a title="Educational License Information" href="https://www.jetbrains.com/community/education/#students" target="_blank" rel="noopener"><strong>Educational License Information</strong></a> ← Go to this page, click the <strong><span style="color: #990066;">Apply now</span></strong> button, then fill out and submit the form using your <strong><span style="color: #990066;">Lane email</span></strong> address.</li>
+<li><a href="https://intellij-support.jetbrains.com/hc/en-us/community/posts/28595494022418-DOWNLOAD-COMMUNITY-VERSION-OF-PYCHARM" target="_blank" rel="noopener"><strong>Download Community Version of PyCharm</strong></a></li>
+</ul>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag GSPyCharm (5 pts)</h5>
+<p>What does PyCharm report when Hello World executes?  The flag is under the green box.</p>
+<p><img class="img-fluid atto_image_button_text-bottom" src="../assets/GSPyCharm.png" alt="Word after &quot;Process finished with exit code&quot;" width="800" height="449"></p>
+</div>
+</div>
+<p></p>
+<p>PyCharm sets up an entire project with many extra files that aren't strictly necessary to run your program.  You'll submit programs you create in this class to code checkers, which run on a server and use the command line to run your code.  You'll just need to submit the <strong><span style="color: #990066;">source code</span></strong> files, which end in <strong><span style="color: #990066;">py</span></strong>.  This video shows how to save just the <strong><span style="color: #990066;">main.py</span></strong> file you need for the Hello World program, which you'll put in a <strong><span style="color: #990066;">folder</span></strong>, <strong><span style="color: #990066;">zip</span></strong>, and <strong><span style="color: #990066;">submit</span></strong>.</p>
+<p><iframe title="YouTube video player" src="https://www.youtube.com/embed/snBV3QCzaB4?si=B-MpmRja5_OZJbjE" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe></p>
+<p>On a <strong><span style="color: #990066;">Windows</span></strong> computer, you can put your <strong><span style="color: #990066;">main.py</span></strong> file <strong><span style="color: #990066;">in</span></strong> a <strong><span style="color: #990066;">folder</span></strong>, <strong><span style="color: #990066;">right click</span></strong> the folder, choose <strong><span style="color: #990066;">Send to</span></strong>, and then choose <strong><span style="color: #990066;">Compressed (zipped) folder</span></strong>.  Here's a video showing the process.</p>
+<p><iframe title="YouTube video player" src="https://www.youtube.com/embed/t79KzhfU7hM?si=rQR4uJRC0PkqZW54" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe></p>
+<p>On a <strong><span style="color: #990066;">Mac</span></strong>, you can <strong><span style="color: #990066;">right click</span></strong> (<strong><span style="color: #990066;">two finger press</span></strong>) and choose <strong><span style="color: #990066;">Compress &lt;folderName&gt;</span></strong>, where &lt;folderName&gt; is the name of your folder.</p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag GSHelloWorld (5 pts)</h5>
+<p>Submit your <strong><span style="color: #990066;">zipped folder containing main.py</span></strong> to this <a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=GSHelloWorld&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=GSHelloWorld&amp;subFormat=uploadZip" target="_blank" rel="noopener"><strong>code checker</strong></a> to get the flag.  Read the text below for help understanding the feedback you receive.</p>
+</div>
+</div>
+<p></p>
+<h3>Code Checker Feedback</h3>
+<p>Ideally, you'll get a message like this, which contains the <strong><span style="color: #990066;">flag</span></strong> you need to enter for the <strong><span style="color: #990066;">leaderboard</span></strong> and to get <strong><span style="color: #990066;">class points in Canvas</span></strong>.</p>
+<p><img class="img-fluid" src="../assets/codeCheckerFlag.png" alt="The file ....zip has been uploaded with contents: main.py
+Congratulations! Your code ...correctly!
+Here's the FLAG: K...U" width="550" height="113"></p>
+<h4>More Work Needed</h4>
+<p>If your output doesn't match what's expected for this flag, you might get something like this.</p>
+<p><img class="img-fluid" src="../assets/helloDiff.png" alt="1c1
+&lt; Hello World!
+---
+&gt; Hello World
+with 1c1 and ! circled" width="700" height="313"></p>
+<p>The <strong><span style="color: #990066;">1c1 </span></strong>above indicates the code checker found a discrepancy between what appears on line 1 of the output for the code submitted and on line 1 of the output for the solution code.  The line which begins with <strong><span style="color: #990066;">&lt;</span></strong> is line 1 of the <span style="color: #990066;"><strong>solution code output</strong></span>.  The line which begins with <strong><span style="color: #990066;">&gt;</span></strong> is line 1 of the <strong><span style="color: #990066;">code submitted's output</span></strong>.  Notice that the code submitted is <strong><span style="color: #990066;">missing</span></strong> the <strong><span style="color: #990066;">exclamation mark</span></strong>.  To fix this, you'd need to add the exclamation mark to the print statement in main.py and resubmit the code to the checker.</p>
+<h4>When User Input is Required</h4>
+<p>The code checkers require the output from your programs to match the expected output <strong><span style="color: #990066;">exactly</span></strong>.  You will be provided with <strong><span style="color: #990066;">example runs</span></strong> you need to match, including blank lines. </p>
+<p>When the code checkers report the output from your program, they do not display the input, which can look a bit confusing.  Above the output, the code checkers report what input was used.  Watch this video to see how to effectively work with what the code checker tells you when the program requires data to be input by the user.</p>
+<p><iframe title="YouTube video player" src="https://www.youtube.com/embed/nGTogmEfsKM?si=eVcWIdvdvMWJO1o-" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe></p>
+<h4>Show File Extensions</h4>
+<p>Many of the code checkers require you to name your Python file <strong><span style="color: #990066;">main.py</span></strong>.  <strong><span style="color: #990066;">Windows</span></strong> machines, by default, <strong><span style="color: #990066;">do NOT show file extensions</span></strong>.  If you haven't made file extensions visible, then main.py will show as <strong><span style="color: #990066;">main</span></strong> in File Explorer.  This can cause students to inadvertently rename their file main.py.py. </p>
+<p>To keep this from happening to you, watch the video below for your Windows version, and set your computer to show file extensions.</p>
+<h5>Windows 10 or Earlier</h5>
+<p><iframe title="YouTube video player" src="https://www.youtube.com/embed/PoTah9YBG2Y?si=9a09HKXq5sm_F1i4" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe></p>
+<h5>Windows 11</h5>
+<p><iframe title="YouTube video player" src="https://www.youtube.com/embed/CKOWwTEjKcA?si=DIklIZrxkFMELTmW" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe></p>
+<h3>Work Flow and File Management</h3>
+<p>You'll capture many flags in this course like the one you captured above for GSHelloWorld.  Canvas will NOT remember the flags you enter, and you may want to enter them again in the future.  Also, many of the files you'll create will be called main.py, and you may want to refer back to code your wrote for an earlier flag.  I recommend adopting the workflow and file management practices demonstrated in this video.</p>
+<p><iframe title="YouTube video player" src="https://www.youtube.com/embed/Ym0j8OJym1M?si=sB7zUCgj4236BtAe" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe></p>
+<h3>Use Comments</h3>
+<p><strong><span style="color: #990066;">Comments</span></strong> are <strong><span style="color: #990066;">notes</span></strong> to yourself and other humans who might need to read and update your code.  At minimum, you should have <strong><span style="color: #990066;">one at the top</span></strong> of your program stating <strong><span style="color: #990066;">what it does</span></strong>, <strong><span style="color: #990066;">your name</span></strong>, and the <strong><span style="color: #990066;">date</span></strong> it was last <strong><span style="color: #990066;">modified</span></strong>.  You should put them within your code to help <strong><span style="color: #990066;">cla</span><span style="color: #990066;">rify</span><span style="color: #990066;"> what different sections do</span></strong>, like at the beginning of each function, and also where code might be challenging to understand.  We'll learn about functions later.</p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag GSCommentSL (5 pts)</h5>
+<p>Which <strong><span style="color: #990066;">delimiter</span></strong> begins a <strong><span style="color: #990066;">single line comment</span></strong>, but not a multiline comment?</p>
+</div>
+</div>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag GSCommentML (5 pts)</h5>
+<p>Which <strong><span style="color: #990066;">delimiter</span></strong> is used for <strong><span style="color: #990066;">multiline comments</span></strong>?</p>
+</div>
+</div>
+<p></p>
+<h3>Investigate Error Messages</h3>
+<p>Knowing how to use different IDEs can be helpful.  If one stops working for you, you have another one you can use.  If you're working with a team, it can be helpful to use the same IDE. Sometimes IDEs will identify and describe error and warning messages differently.  These messages can be hard to understand, in which case reading messages from multiple compilers can help you discern what they're trying to tell you. </p>
+<p>Keep in mind that compilers (and IDEs) are just programs written by people.  Communication is a two way street.  If you don't understand an error message, it's not all on you.  Perhaps the person could have composed a more understandable message, and maybe you'll find that's the case with a different compiler.  Whenever you do figure out what's wrong with your code, try to consider the error and warning messages again to see if what they were trying to say makes more sense.  As you reconsider messages, practice coding, and learn programming terminology, understanding compiler warnings and errors will get easier. <br><br></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag GSQuoteMiss (5 pts)</h5>
+<p>Try altering Hello World to contain an error, so it generates an error message.  Specifically, <strong><span style="color: #990066;">remove</span></strong> the <strong><span style="color: #990066;">second quote</span></strong> from the string getting printed.  You'll find that PyCharm (on a Mac) and JDoodle both generate similar error messages.  The flag is under the green box and is the same for both IDEs.</p>
+<p><img class="atto_image_button_text-bottom img-fluid" src="../assets/GSQuoteMissPyCharm.png" alt="Flag is after the words &quot;unterminated string&quot;" width="800" height="634"></p>
+<p><img class="img-fluid" src="../assets/JDoodleError.png" alt="...
+SyntaxError: unterminated string gb (detected at line 1)
+where gb is the green box" width="600" height="93"></p>
+<p>Notice as well that both error messages indicate the issue occurred on line 1.</p>
+<p>PyCharm (on a PC) produces a different, but similar error message.  Again, the word under the green flag is the same, but the message says EOL (which means end of line) while scanning string.  The two compilers above report the string is unterminated.  They're both having an issue at the end of the line, but say this in a slightly different way.</p>
+<p><img class="img-fluid atto_image_button_text-bottom" src="../assets/GSQuoteMissPyCharmW.png" alt="Flag is after the words EOL while scanning string" width="901" height="559"></p>
+</div>
+</div>
+<p></p>
+<p>Try making additional changes to the code to see what kinds of error messages get generated.  Do they make sense?  If not, ask me about them.  They'll likely inspire some interesting conversations and bonus learning!</p>
+<h3>Debug</h3>
+<p>Of course, we don't normally break code on purpose.  When we write code, we try to <span style="color: #990066;"><strong>remove errors and get it to run properly</strong></span>.  This is called <strong><span style="color: #990066;">debugging</span></strong>. </p>
+<p>The code below has one or more errors.  See if you can find them.  You can use an IDE of your choice, or you can even use the code checking tool which uses the python3 compiler on Linux.  In general, it's good practice to <strong><span style="color: #990066;">focus on just the first error reported</span></strong>, <strong><span style="color: #990066;">fix it</span></strong>, then <strong><span style="color: #990066;">rerun</span></strong> the program, and once again, focus on the first error message.  This is because the interpreter can get very lost very quickly after the first error.  Fixing the first error often fixes other errors (which often aren't really errors).</p>
+<p>The code below adds a feature, asking the person for their name and then displaying it in a greeting.  It uses input to retrieve a string from the user, which it stores in a variable called name.  It has one or more errors.  See if you can find them. </p>
+<pre class="language-python"><code>name = input("What is your name? ")
+print("Hi, " + Name + "!")</code></pre>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag GSDebug1 (10 pts)</h5>
+<p>After you've <strong><span style="color: #990066;">debugged</span></strong> the <strong><span style="color: #990066;">code</span></strong> and gotten it to run, put it <strong><span style="color: #990066;">in</span></strong> a <strong><span style="color: #990066;">folder</span></strong>, <strong><span style="color: #990066;">zip</span></strong> the <strong><span style="color: #990066;">folder</span></strong>, and <strong><span style="color: #990066;">submit</span></strong> the <strong><span style="color: #990066;">zipped folder</span></strong> to this the code <a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=GSDebug1&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=GSDebug1&amp;subFormat=uploadZip" target="_blank" rel="noopener"><strong>code checker</strong></a> to get the flag.</p>
+</div>
+</div>
+<p><br>The code below asks a user for a number, converts the string entered to an integer, multiplies it by two, and displays the result.  It has one or more errors.  See if you can find them. </p>
+<pre class="language-python"><code>value = integer(input("Enter an integer between 1 and 10: "))
+output(value * 2)</code></pre>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag GSDebug2 (10 pts)</h5>
+<p>After you've <strong><span style="color: #990066;">debugged</span></strong> the <strong><span style="color: #990066;">code</span></strong> and gotten it to run, submit your zipped folder containing main.py to this <a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=GSDebug2&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=GSDebug2&amp;subFormat=uploadZip" target="_blank" rel="noopener"><strong>code checker</strong></a> to get the flag.</p>
+</div>
+</div>
+<p></p>
+<p>The code below adds two numbers and displays the sum.  It has one or more errors.  See if you can find them. </p>
+<pre class="language-python"><code>number1 = input(Enter an integer between 1 and 10: )
+number1 = input(Enter a second integer between 1 and 10: )
+print(number1 + number2)</code></pre>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag GSDebug3 (10 pts)</h5>
+<p>After you've <strong><span style="color: #990066;">debugged</span></strong> the <strong><span style="color: #990066;">code</span></strong> and gotten it to run, submit your zipped folder containing main.py to this <a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=GSDebug3&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=GSDebug3&amp;subFormat=uploadZip" target="_blank" rel="noopener"><strong>code checker</strong></a> to get the flag.</p>
+</div>
+</div>
+<p></p>
+<h3>Write a Program to Get and Display Two Values</h3>
+<p>Write a program which <strong><span style="color: #990066;">asks</span></strong> the user <strong><span style="color: #990066;">for two inputs</span></strong>. The first input is their <strong><span style="color: #990066;">favorite color</span></strong>. The second input is their <strong><span style="color: #990066;">favorite number</span></strong>.  <strong><span style="color: #990066;">Output</span></strong> in a complete sentence <strong><span style="color: #990066;">both</span></strong> of their <strong><span style="color: #990066;">answers</span></strong>.  <strong><span style="color: #990066;">Use two variables</span></strong>, one for the color and one for the number.  Here is an example run.</p>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="background-color: black; color: white; padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #003087;">What is your favorite color? <span style="color: #f2a900;">purple</span><br>What is your favorite number? <span style="color: #f2a900;">42</span><br>Your favorite color is purple, and your favorite number is 42.</div>
+</div>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag GSGetDisp2Vals (15 pts)</h5>
+<p>After your code is working, submit your zipped folder containing main.py to this <a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=GSGetDisp2Vals&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=GSGetDisp2Vals&amp;subFormat=uploadZip" target="_blank" rel="noopener"><strong>code checker</strong></a> to get the flag.</p>
+</div>
+</div>
+<p></p>
+<h4> </h4>
+</body>
+</html>

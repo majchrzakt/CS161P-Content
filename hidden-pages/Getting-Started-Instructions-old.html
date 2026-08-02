@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting Started -- old</title>
+<style>
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-BoldItalic.woff2') format('woff2');
+}
+body {
+  font-family: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background: #ffffff;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 3rem;
+}
+/* Moodle's WYSIWYG editor bakes in a different inline font-family per page
+   (Arial, Calibri, Times New Roman, etc.) - force everything back to the
+   accessible stack above regardless of what the original page specified. */
+body * {
+  font-family: inherit !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+}
+/* Explicit scale so no heading level ties or drops below the 18px body
+   text - the browser default em-based scale shrinks below that starting
+   at h4/h5 once the body font-size is bumped up this far for accessibility. */
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.1em; }
+h5 { font-size: 1em; }
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+/* img/video have a true intrinsic aspect ratio, so height: auto above keeps
+   them proportional automatically. iframe has no such intrinsic ratio, so
+   without this it looks squished/too-wide whenever its container is
+   narrower than its width="..." attribute (e.g. YouTube embeds at 560x315
+   on a narrower viewport). Assumes 16:9, true for all current embeds. */
+iframe {
+  aspect-ratio: 16 / 9;
+}
+a {
+  color: #0b5fff;
+}
+table {
+  border-collapse: collapse;
+}
+td, th {
+  padding: 0.4em 0.8em;
+}
+/* Moodle CTF "flag" prompts are wrapped in a div with an inline neon-green
+   border (#00ff11); the title inside is an h5 that barely stands out once
+   pulled out of Moodle's own page chrome. Give it real visual weight, but
+   with a darkened green (8.2:1 contrast on white, WCAG AAA) instead of the
+   neon border color, which would be close to unreadable as text. */
+div[style*="00ff11"] h5 {
+  font-size: 1.3em;
+  font-weight: 800;
+  color: #0e5c1a;
+  margin: 0 0 0.5em 0;
+}
+</style>
+</head>
+<body>
+<h1>Getting Started -- old</h1>
+<h3><a title="http://yaacotu.com/ctf/engineDRM/index.php?class=161P&amp;challengeTopic=Getting_Started" href="http://yaacotu.com/ctf/engineDRM/index.php?class=161P&amp;challengeTopic=Getting_Started" target="_blank" rel="noopener">Getting Started CTF</a></h3>
+<p>Complete Capture the Flag (CTF) activities below.  You can check that you have the correct flags at the CTF link above.  If you'd like to register your progress and to have your name appear on the leaderboard, you may opt to include your name when entering flags.  As you capture flags and verify they're correct, keep track of them, so you can enter them into Canvas and earn class points toward your grade. </p>
+<h3 id="yui_3_18_1_1_1767939914735_195">Required Resources</h3>
+<h4>Read </h4>
+<ul>
+<li>Chapters 1 and 2 in <span style="color: #990066;"><strong>CS 161P: Computer Science 1 Using Python</strong></span> by Jim Bailey (in <span style="color: #990066;"><strong>Course Resources</strong></span> section)</li>
+<li>Chapter 1 and section 2.1 to 2.5 in <a href="https://runestone.academy/ns/books/published/thinkcspy/index.html" target="_blank" rel="noopener"><strong>How to Think Like a Computer Scientist</strong></a></li>
+</ul>
+<p>Then watch the <span style="color: #990066;"><strong>videos</strong></span> on the Readings and Videos page in the Study Materials section.</p>
+<p>Then attempt the challenges below.</p>
+<h4>Try IDEs and Choose One</h4>
+<p>An IDE is an integrated development environment, which allows you to edit code, compile it, debug it, and run it.  Some good choices include PyCharm, Replit, and VS Code.  While Replit is a good IDE to start with as a new programmer, PyCharm and VS Code are IDEs you're more likely to see used professionally.  <br><br>The first program people generally write when learning a new language is Hello World.  It gives them a chance to see if they can get the coding environment to work and produce simple output.  You'll find Hello World on page 7 of the CP 161P readings for this week.  In her video, Mari Good shows how to use the <strong><a style="background-color: #ffffff; font-size: 1rem; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';" href="https://replit.com/" target="_blank" rel="noopener">Replit</a></strong> and PyCharm IDEs to enter and run Hello World.  </p>
+<p>Replit requires you to sign up for an account to try it.  If you prefer, you can try an online alternative IDE called <strong><a href="https://www.jdoodle.com/python3-programming-online" target="_blank" rel="noopener">JDoodle</a></strong> which doesn't require an account.  To run your code in <strong><span style="color: #990066;">JDoodle</strong>, click the <strong><span style="color: #990066;">Execute </span></strong>button.  For <strong><span style="color: #990066;">Replit</span></strong>, the button Mari shows in her video to run the code is <strong><span style="color: #990066;">Run</span></strong>.  It looks like Replit's interface has changed, so just use Run for this flag.</span></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag GSReplit (5 pts)</h5>
+<p>For Replit, what button do you need to click to execute the code?  The flag is under the green box.  Replit's interface has changed.  Please enter <strong><span style="color: #990066;">Run </span></strong>for this flag.  Run is a common term used by different IDEs for running code.</p>
+<p dir="ltr"><img class="img-fluid atto_image_button_text-bottom" src="../assets/GSReplit.png" alt="The flag covers the word on the button you click to compile and execute the code." width="800" height="348"></p>
+</div>
+</div>
+<p></p>
+<p>Try the PyCharm IDE by entering and executing the Hello Word code in it.  PyCharm is a professional IDE developed by JetBrains that is available for Linux, Mac, and Windows.  There is a free educational license available for all the JetBrains software.  PyCharm also is available in the classroom and in the Computer Lab.  Below are some resources to help you learn more about it and to get it installed on your home system, if you wish.</p>
+<ul>
+<li><a title="Educational License Information" href="https://www.jetbrains.com/community/education/#students" target="_blank" rel="noopener"><strong>Educational License Information</strong></a> ← Go to this page, click the Apply now button, then fill out and submit the form using your Lane email address.</li>
+<li><a title="Download PyCharm" href="https://www.jetbrains.com/pycharm/download/?section=mac#section=mac" target="_blank" rel="noopener"><strong>Download PyCharm</strong></a></li>
+</ul>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag GSPyCharm (5 pts)</h5>
+<p>What does PyCharm report when Hello World executes?  The flag is under the green box.</p>
+<p><img class="img-fluid atto_image_button_text-bottom" src="../assets/GSPyCharm-(2).png" alt="Word after &quot;Process finished with exit code&quot;" width="800" height="449"></p>
+</div>
+</div>
+<p><br>Now try saving your hello world program in a file called main.py, saving that file in a folder with a name of your choosing, zipping the folder, and submitting the zipped folder to be checked for accuracy.  <br><br>On a Windows computer, you can put your main.py file in a folder, right click the folder, choose <strong><span style="color: #990066;">Send to</span></strong>, and then choose <strong><span style="color: #990066;">Compressed (zipped) folder</span></strong>.  Here's a video showing the process.</p>
+<p><iframe title="YouTube video player" src="https://www.youtube.com/embed/t79KzhfU7hM?si=rQR4uJRC0PkqZW54" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe></p>
+<p>On a Mac, you can right click (<strong><span style="color: #990066;">two finger press</span></strong>) and choose <strong><span style="color: #990066;">Compress &lt;folderName&gt;</span></strong>, where folderName is the name of your folder.</p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag GSHelloWorld (5 pts)</h5>
+<p>Submit your zipped folder containing main.py to this <a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=GSHelloWorld&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=GSHelloWorld&amp;subFormat=uploadZip" target="_blank" rel="noopener"><strong>code checker</strong></a> to get the flag.</p>
+</div>
+</div>
+<p></p>
+<p></p>
+<h4>Use Comments</h4>
+<p>Comments are notes to yourself and others who might need to read and update your code.  At minimum, you should have one at the top of your program stating what it does, your name, and the date it was last modified.  You should put them within your code to help clarify what different sections do, like at the beginning of each function, and also where code might be challenging to understand.  We'll learn about functions later.</p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag GSCommentSL (5 pts)</h5>
+<p>Which delimiter begins a single line comment, but not a multiline comment?</p>
+</div>
+</div>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag GSCommentML (5 pts)</h5>
+<p>Which delimiter is used for multiline comments?</p>
+</div>
+</div>
+<p></p>
+<h4>Investigate Error Messages</h4>
+<p>Knowing how to use different IDEs can be helpful.  If one stops working for you, you have another one you can use.  If you're working with a team, it can be helpful to use the same IDE. Sometimes IDEs will identify and describe error and warning messages differently.  These messages can be hard to understand, in which case reading messages from multiple compilers can help you discern what they're trying to tell you.  Keep in mind that compilers (and IDEs) are just programs written by people.  Communication is a two way street.  If you don't understand an error message, it's not all on you.  Perhaps the person could have composed a more understandable message, and maybe you'll find that's the case with a different compiler.  Whenever you do figure out what's wrong with your code, try to consider the error and warning messages again to see if what they were trying to say makes more sense.  As you reconsider messages, practice coding, and learn programming terminology, understanding compiler warnings and errors will get easier. <br><br></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag GSQuoteMiss (5 pts)</h5>
+<p>Try altering Hello World to contain an error, so it generates an error message.  Specifically, remove the second quote from the string getting printed.  You'll find that PyCharm (on a Mac) and Replit both generate similar error messages.  The flag is under the green box and is the same for both IDEs.</p>
+<p><img class="atto_image_button_text-bottom img-fluid" src="../assets/GSQuoteMissPyCharm-(2).png" alt="Flag is after the words &quot;unterminated string&quot;" width="800" height="634"></p>
+<p><img class="atto_image_button_text-bottom img-fluid" src="../assets/GSQuoteMissReplit.png" alt="Flag is after the words &quot;unterminated string&quot;" width="1000" height="211"></p>
+<p>Notice as well that both error messages indicate the issue occurred in file main.py on line 1.</p>
+<p>PyCharm (on a PC) produces a different, but similar error message.  Again, the word under the green flag is the same, but the message says EOL (which means end of line) while scanning string.  The two compilers above report the string is unterminated.  They're both having an issue at the end of the line, but say this in a slightly different way.</p>
+<p><img class="img-fluid atto_image_button_text-bottom" src="../assets/GSQuoteMissPyCharmW-(2).png" alt="Flag is after the words EOL while scanning string" width="901" height="559"></p>
+</div>
+</div>
+<p></p>
+<p>Try making additional changes to the code to see what kinds of error messages get generated.  Do they make sense?  If not, ask me about them.  They'll likely inspire some interesting conversations and bonus learning!</p>
+<h4>Debug</h4>
+<p>Of course, we don't normally break code on purpose.  When we write code, we try to remove errors and get it to run properly.  This is called debugging.  The code below has one or more errors.  See if you can find them.  You can use an IDE of your choice, or you can even use the code checking tool which uses the python3 compiler on Linux.  In general, it's good practice to focus on just the first error reported, fix it, then recompile, and once again, focus on the first error message.  This is because the compiler can get very lost very quickly after the first error.  Fixing the first error often fixes other errors (which aren't really errors).</p>
+<p>The code below adds a feature, asking the person for their name and then displaying it in a greeting.  It uses input to retrieve a string from the user, which it stores in a variable called name.  It has one or more errors.  See if you can find them. </p>
+<pre>name = input("What is your name? ")
+print("Hi, " + Name + "!")</pre>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag GSDebug1 (10 pts)</h5>
+<p>After you've debugged the code and gotten it to run, submit your zipped folder containing main.py to this the code <a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=GSDebug1&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=GSDebug1&amp;subFormat=uploadZip" target="_blank" rel="noopener"><strong>code checker</strong></a> to get the flag.</p>
+</div>
+</div>
+<p><br>The code below asks a user for a number, converts the string entered to an integer, multiplies it by two, and displays the result.  It has one or more errors.  See if you can find them. <br><br></p>
+<pre>value = integer(input("Enter an integer between 1 and 10: "))
+output(value * 2)
+</pre>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag GSDebug2 (10 pts)</h5>
+<p>After you've debugged the code and gotten it to run, submit your zipped folder containing main.py to this <a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=GSDebug2&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=GSDebug2&amp;subFormat=uploadZip" target="_blank" rel="noopener"><strong>code checker</strong></a> to get the flag.</p>
+</div>
+</div>
+<p></p>
+<p>The code below adds two numbers and displays the sum.  It has one or more errors.  See if you can find them. </p>
+<pre>number1 = input(Enter an integer between 1 and 10: )
+number1 = input(Enter a second integer between 1 and 10: )
+print(number1 + number2)</pre>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag GSDebug3 (10 pts)</h5>
+<p>After you've debugged the code and gotten it to run, submit your zipped folder containing main.py to this <a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=GSDebug3&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=GSDebug3&amp;subFormat=uploadZip" target="_blank" rel="noopener"><strong>code checker</strong></a> to get the flag.</p>
+</div>
+</div>
+<p></p>
+<h4>Write a Program to Get and Display Two Values</h4>
+<p>Write a program which asks the user for two inputs. The first input is their favorite color. The second input is their favorite number.  Output in a complete sentence both of their answers.  Use two variables, one for the color and one for the number.</p>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="background-color: black; color: white; padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #003087;">What is your favorite color? <span style="color: #f2a900;">purple</span><br>What is your favorite number? <span style="color: #f2a900;">42</span><br>Your favorite color is purple, and your favorite number is 42.</div>
+</div>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag GSGetDisp2Vals (15 pts)</h5>
+<p>After your code is working, submit your zipped folder containing main.py to this <a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=GSGetDisp2Vals&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=GSGetDisp2Vals&amp;subFormat=uploadZip" target="_blank" rel="noopener"><strong>code checker</strong></a> to get the flag.</p>
+</div>
+</div>
+<p></p>
+<h4> </h4>
+</body>
+</html>

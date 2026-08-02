@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pair Programming -- Collaboration (in person only using PyCharm)</title>
+<style>
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-BoldItalic.woff2') format('woff2');
+}
+body {
+  font-family: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background: #ffffff;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 3rem;
+}
+/* Moodle's WYSIWYG editor bakes in a different inline font-family per page
+   (Arial, Calibri, Times New Roman, etc.) - force everything back to the
+   accessible stack above regardless of what the original page specified. */
+body * {
+  font-family: inherit !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+}
+/* Explicit scale so no heading level ties or drops below the 18px body
+   text - the browser default em-based scale shrinks below that starting
+   at h4/h5 once the body font-size is bumped up this far for accessibility. */
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.1em; }
+h5 { font-size: 1em; }
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+/* img/video have a true intrinsic aspect ratio, so height: auto above keeps
+   them proportional automatically. iframe has no such intrinsic ratio, so
+   without this it looks squished/too-wide whenever its container is
+   narrower than its width="..." attribute (e.g. YouTube embeds at 560x315
+   on a narrower viewport). Assumes 16:9, true for all current embeds. */
+iframe {
+  aspect-ratio: 16 / 9;
+}
+a {
+  color: #0b5fff;
+}
+table {
+  border-collapse: collapse;
+}
+td, th {
+  padding: 0.4em 0.8em;
+}
+/* Moodle CTF "flag" prompts are wrapped in a div with an inline neon-green
+   border (#00ff11); the title inside is an h5 that barely stands out once
+   pulled out of Moodle's own page chrome. Give it real visual weight, but
+   with a darkened green (8.2:1 contrast on white, WCAG AAA) instead of the
+   neon border color, which would be close to unreadable as text. */
+div[style*="00ff11"] h5 {
+  font-size: 1.3em;
+  font-weight: 800;
+  color: #0e5c1a;
+  margin: 0 0 0.5em 0;
+}
+</style>
+</head>
+<body>
+<h1>Pair Programming -- Collaboration (in person only using PyCharm)</h1>
+<h3>Why Pair Programming?</h3>
+<p>It has been used successfully by companies like Facebook, Stripe, Airbnb, Spotify, and Google for tasks such as onboarding and critical systems development.  Advantages include the following.</p>
+<div>
+<ul>
+<li><strong>Better Code Quality and Consistency</strong>: Real-time reviews reduce bugs and maintain uniform standards.</li>
+<li><strong>Collaboration and Team Cohesion</strong>: Encourages communication, trust, and knowledge sharing.</li>
+<li><strong>Faster Problem-Solving</strong>: Two minds tackle challenges efficiently.</li>
+<li><strong>Accelerated Learning and Onboarding</strong>: Boosts skill development for juniors and simplifies training.</li>
+<li><strong>Employee Growth and Engagement</strong>: Provides mentorship and fosters confidence.</li>
+</ul>
+</div>
+<div><hr>
+<h3>Rules</h3>
+<ul>
+<li>Respect each other’s ideas.</li>
+<li>Clearly communicate your thought process.</li>
+<li>Encourage your partner and maintain a supportive attitude.</li>
+</ul>
+<hr></div>
+<h3>Set Up (5-10 minutes)</h3>
+<p>Choose a partner.  Decide who will drive first and who will navigate.</p>
+<ul>
+<li><strong><span style="color: #0000ff;">Driver</span>:</strong> writes code to solve the prompt</li>
+<li><strong><span style="color: #0000ff;">Navigator</span>:</strong> observes and provides feedback</li>
+</ul>
+<p>Set up the environment.</p>
+<ol>
+<li>The <span style="color: #0000ff;"><strong>Driver</strong></span> starts <span style="color: #990066;"><strong>PyCharm</strong></span>, clicks the <span style="color: #990066;"><strong>Code with Me</strong></span> icon <img class="img-fluid" src="../assets/Screenshot-2025-01-22-at-10.21.13_PM-_1_.png" alt="person with plus sign" width="22" height="24"> in the top right corner, selects <span style="color: #990066;"><strong>Edit</strong></span>, and clicks the <strong><span style="color: #990066;">Start Session</span></strong> button.  After the session starts, the Driver clicks <strong><span style="color: #990066;">Copy Link</span></strong> and sends it to the Navigator via email, Zoom chat, etc.</li>
+<li>The <span style="color: #0000ff;"><strong>Navigator</strong></span> clicks the link sent by the Driver and specifies a name.</li>
+<li>The <span style="color: #0000ff;"><strong>Driver</strong></span> allows the specified Navigator access to the code.</li>
+</ol>
+<hr>
+<h3>Prompt 1 (15-20 minutes)</h3>
+<p>If you have 3 participants in your group, read the instructions for Prompt 3 below first.</p>
+<p><strong>Prompt:</strong> Write a program that asks the user for the current temperature in Celsius and converts it to Fahrenheit.  Then, based on the temperature, display one of these messages.</p>
+<ul>
+<li>If it is below 50<sup>o</sup> F, display "It's cold. Wear a jacket!"</li>
+<li>If it is between 50<sup>o</sup> F and 80<sup>o</sup> F, display "The weather is pleasant."</li>
+<li>If it is above 80<sup>o</sup> F, display "It's hot. Stay hydrated!"</li>
+</ul>
+<hr>
+<h3>Prompt 2 (15-20 minutes)</h3>
+<p>Switch roles between who is the driver and who is the navigator.</p>
+<p><strong>Prompt:</strong> Write a program that asks the user for the total shopping amount in dollars. Based on the amount, calculate and display the discount they receive:</p>
+<ul>
+<li>If the amount is less than $50, no discount is applied.</li>
+<li>If the amount is between $50 and $100, apply a 10% discount.</li>
+<li>If the amount is above $100, apply a 20% discount.</li>
+</ul>
+<p>Also, display the final amount after applying the discount.</p>
+<hr>
+<h3>Prompt 3 (10-13 minutes)</h3>
+<p>Use this prompt if you have 3 participants in your group.  Try to complete each prompt in 10-13 minutes.  Be sure each person has a turn being the Driver.  The other two participants will both be Navigators.  Start with Prompt 1 above.</p>
+<p><strong>Prompt:</strong> Write a program that asks the user for the number of kilowatt-hours (kWh) they used this month. Based on the usage, calculate the bill:</p>
+<ul>
+<li>For usage &lt;= 100 kWh, charge $0.10 per kWh.</li>
+<li>For usage between 100 and 500 kWh, inclusive, charge $0.15 per kWh.</li>
+<li>For usage above 500 kWh, charge $0.20 per kWh.</li>
+</ul>
+<p>Display the total bill amount.</p>
+<hr>
+<h3>Reflect and Discuss</h3>
+<ul>
+<li>What did you learn from being the <span style="color: #0000ff;"><strong>Driver</strong></span>?</li>
+<li>What did you learn from being the <span style="color: #0000ff;"><strong>Navigator</strong></span>?</li>
+<li>Discuss any challenges and how you overcame them.</li>
+</ul>
+<hr>
+<h3>Biggest Take Away</h3>
+<p>To earn credit, report your thoughts on this experience in this section's <span style="color: #990066;"><strong>Pair Programming</strong></span> graded assignment.</p>
+</body>
+</html>

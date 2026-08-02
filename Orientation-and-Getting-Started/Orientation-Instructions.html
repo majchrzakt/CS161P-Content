@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orientation</title>
+<style>
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-BoldItalic.woff2') format('woff2');
+}
+body {
+  font-family: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background: #ffffff;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 3rem;
+}
+/* Moodle's WYSIWYG editor bakes in a different inline font-family per page
+   (Arial, Calibri, Times New Roman, etc.) - force everything back to the
+   accessible stack above regardless of what the original page specified. */
+body * {
+  font-family: inherit !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+}
+/* Explicit scale so no heading level ties or drops below the 18px body
+   text - the browser default em-based scale shrinks below that starting
+   at h4/h5 once the body font-size is bumped up this far for accessibility. */
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.1em; }
+h5 { font-size: 1em; }
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+/* img/video have a true intrinsic aspect ratio, so height: auto above keeps
+   them proportional automatically. iframe has no such intrinsic ratio, so
+   without this it looks squished/too-wide whenever its container is
+   narrower than its width="..." attribute (e.g. YouTube embeds at 560x315
+   on a narrower viewport). Assumes 16:9, true for all current embeds. */
+iframe {
+  aspect-ratio: 16 / 9;
+}
+a {
+  color: #0b5fff;
+}
+table {
+  border-collapse: collapse;
+}
+td, th {
+  padding: 0.4em 0.8em;
+}
+/* Moodle CTF "flag" prompts are wrapped in a div with an inline neon-green
+   border (#00ff11); the title inside is an h5 that barely stands out once
+   pulled out of Moodle's own page chrome. Give it real visual weight, but
+   with a darkened green (8.2:1 contrast on white, WCAG AAA) instead of the
+   neon border color, which would be close to unreadable as text. */
+div[style*="00ff11"] h5 {
+  font-size: 1.3em;
+  font-weight: 800;
+  color: #0e5c1a;
+  margin: 0 0 0.5em 0;
+}
+</style>
+</head>
+<body>
+<h1>Orientation</h1>
+<p dir="ltr">Please complete these tasks during the first week of the term to remain in the class and not get dropped.  You'll find links to the Who We Are slides, the Who We Are forum, the Student Profile Survey, and the Learning Community Forum in the Course Resources section.</p>
+<p dir="ltr">For each topic we explore, you'll complete challenges and find flags which will earn you class points when you enter them into the corresponding submission form.  If you like, you <strong><em>also</em></strong> may register your progress and have your name appear on the leaderboard for a given CTF.  Spell your name the same each time, and use the same capitalization.  As you capture flags and verify they're correct, keep track of them, so you can enter them into the corresponding Canvas submission form and earn class points toward your grade.  Only flags entered in the Canvas submission forms give you credit toward your grade.  Here's a video showing how to do two of the challenges.</p>
+<p dir="ltr"><iframe title="YouTube video player" src="https://www.youtube.com/embed/eB7fae8RgxQ" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen">
+  </iframe></p>
+<h3 dir="ltr"><a title="http://yaacotu.com/ctf/engineDRM/index.php?class=161P&amp;challengeTopic=Orientation" href="http://yaacotu.com/ctf/engineDRM/index.php?class=161P&amp;challengeTopic=Orientation" target="_blank" rel="noopener">Orientation CTF</a></h3>
+<h4>Entering Your First Flag</h4>
+<p>Click the Orientation CTF link above to open the leaderboard for this week's challenges in a new browser window.</p>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag ORFirst (5 pts)</h5>
+<p>Check that the <strong><span style="color: #990066;">ORFirst</span></strong> challenge is <strong><span style="color: #990066;">selected</span></strong>.  Enter your name, if you want to track your progress and to have it appear on the leaderboard.  Otherwise, leave name blank, if you just want to check that the flag is correct.  For this flag, <strong><span style="color: #990066;">enter</span></strong> the word <strong><span class="" style="background-color: #00ff11; color: #990066;">first</span></strong>, then click the <strong><span style="color: #990066;">Submit</span></strong> button.  Make a <strong><span style="color: #990066;">note</span></strong> that the flag is first for the ORFirst challenge, and <strong><span style="color: #990066;">enter</span></strong> this flag <strong><span style="color: #990066;">into</span></strong> the Orientation <strong><span style="color: #990066;">Canvas submission form for</span></strong> points toward your <strong><span style="color: #990066;">grade</span></strong>.</p>
+</div>
+</div>
+<p></p>
+<h4>Entering Flags to Earn Class Points</h4>
+<p>Entering flags to get on the leaderboard does not earn you class points, just prestige.  To actually earn points for the class, you need to enter the flags you find into the corresponding Canvas submission form (referred to as M-CTFs in the video).  Watch the video below to see how.</p>
+<p><iframe title="YouTube video player" src="https://www.youtube.com/embed/dvNP74lER3A" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen">
+  </iframe> </p>
+<h4>Check Parts of Multi Part Question</h4>
+<p>Some flags will ask you to answer several questions and to put pipe symbols <span style="color: #990066;"><strong>|</strong></span> between the answers.  You can check individual parts in the CTF.  Watch the video below to see how.</p>
+<p><iframe title="YouTube video player" src="https://www.youtube.com/embed/FbiJzbYt_LM" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen">
+  </iframe></p>
+<h4>Who We Are</h4>
+<p dir="ltr">Add a slide to the Google Who We Are slide deck for the class.  You'll find the link to Who We Are in the Course Resources section on the Canvas home page for this course.  After you click the link, you can click the + symbol to add a new slide.  Please be sure to make a new blank slide.  Don't alter a slide which already exists.  The first slide has some directions.  The second slide is mine and shows an example of how you might create yours.  If you change your background and your change affects all the other slides as well, please click undo (the backward pointing arrow to the right of the + symbol).  It is possible to only change the background for your slide.  After you've created your slide, please move it, so it's in alphabetical order by first name with respect to the other slides, but leave the first three slides in place.</p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag ORWho (5 pts)</h5>
+<p>After you're done adding your slide, enter the flag (the word under the green box) into the Orientation <strong><span style="color: #990066;">Canvas</span></strong> submission form.  If you opt to enter it on the leaderboard as well, be sure to set the challenge to <strong><span style="color: #990066;">ORWho</span></strong>.  Make a note of the flag, in case you need to enter it into Canvas again in the future.</p>
+<p dir="ltr"><img class="img-fluid atto_image_button_text-bottom" src="../assets/OrientationWWA.png" alt="The flag covers the word to the right of Background on the menu for a Google slide deck." width="800" height="421"></p>
+</div>
+</div>
+<p></p>
+<h4>Take Student Profile Survey</h4>
+<p>You'll find the link to the Student Profile Survey in the Course Resources section on the Canvas home page for this course.</p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag ORSurv (5 pts)</h5>
+<p>After you've taken the survey, make a note of the flag under the green box.</p>
+<p><img class="img-fluid atto_image_button_text-bottom" src="../assets/OrientationSurvey.png" alt="Word in after &quot;Select name on&quot;" width="800" height="383"></p>
+</div>
+</div>
+<p></p>
+<h4>Read Canvas Message</h4>
+<p>I sent you a Canvas message on the first day of class with a flag in it.  If you added the class recently, you might not have received the message yet.  Some students are finding it has been automatically forwarded to their email by Canvas.  If you can't find it, let me know.  I'm happy to send it again!<br><br></p>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag ORMsg (5 pts)</h5>
+<p>Locate the <strong><span style="color: #990066;">message</span></strong> in <strong><span style="color: #990066;">Canvas</span></strong> to get the flag and make a note of it.</p>
+</div>
+</div>
+<p></p>
+<h4>Set Canvas Profile Picture</h4>
+<p>You can set your profile picture in Canvas.  Click your initials* in the top right corner, then choose Profile.  Click the Edit profile link.  Scroll down to User picture and add a new picture.</p>
+<p>* If you've already set up a profile picture, you'll see your picture rather than initials.</p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag ORPic (5 pts)</h5>
+<p>After you've updated your Canvas profile picture, make a note of the flag under the green box.</p>
+<p><img class="img-fluid atto_image_button_text-bottom" src="../assets/OrientationPic.png" alt="The word after picture in the User picture section" width="800" height="526"></p>
+</div>
+</div>
+<p></p>
+<h4>Set Message Preference</h4>
+<p>You can set your message preference in Canvas to include email so you can get course updates emailed to you.  Click your face in the top right corner, then choose Preferences.  Click the Message preferences link, and confirm Email is on under Notification preferences.</p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag ORMsgPref (5 pts)</h5>
+<p>After you've updated your message preferences, make a note of the flag under the green box.</p>
+<p><img class="img-fluid atto_image_button_text-bottom" src="../assets/OrientationMsgPref.png" alt="Word after Activity under Notification preference on right" width="800" height="446"></p>
+</div>
+</div>
+<p></p>
+<h4>Set Notification Preference</h4>
+<p>You can set your notification preferences in Canvas.  For example, you can choose to get grade alerts.  Click your face in the top right corner, then choose Preferences.  Click the Notification preferences link.</p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag ORNotifyPref (5 pts)</h5>
+<p>After you've updated your notification preferences, make a note of the flag under the green box.</p>
+<p><img class="img-fluid atto_image_button_text-bottom" src="../assets/OrientationNotPref.png" alt="Word in front of on" width="800" height="644"></p>
+</div>
+</div>
+<p></p>
+<h4>Forward Quickmail</h4>
+<p>In notifications preferences, scroll down to the settings for Quickmail message and confirm the email toggle is on so messages I send you in Canvas get forwarded to your email.</p>
+<p><!-- Green challenge instructions --></p>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag ORQMail (5 pts)</h5>
+<p>After you've confirmed the email in on, make a note of the flag under the green box.</p>
+<p><img class="img-fluid" src="../assets/quickmail.png" alt="Quickmail message with third toggle set to on" width="800" height="277"></p>
+<p>The flag is under the green box.</p>
+</div>
+</div>
+<p><!-- Green challenge instructions --></p>
+<h4> </h4>
+<h4>Subscribe to Learning Community Forum</h4>
+<p>You can subscribe to a class forum, so you receive notifications for new posts.  Under the Course Resources section on the home page for this course in Canvas, click Learning Community Forum, then click the Subscribe to forum button.</p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag ORLearnCom (5 pts)</h5>
+<p>After you've subscribed to the forum, make a note of the flag under the green box.</p>
+<p><img class="img-fluid atto_image_button_text-bottom" src="../assets/OrientationLCF.png" alt="Word in front of 'Learning Community Forum'" width="800" height="647"></p>
+</div>
+</div>
+<p></p>
+<h4>Add Recording to Who We Are Forum</h4>
+<p>NOTE: If you don't have a webcam on your computer, try using your phone.<br>Under the Course Resources section on the home page for this course in Canvas, click the Who We Are <strong><span class="" style="color: #900c3f;">forum</span></strong>, then click the <strong><span class="" style="color: #900c3f;">Add discussion topic</span></strong> button.  Put your nickname (what you'd like to be called) as the <strong><span class="" style="color: #900c3f;">Subject</span></strong>.  Click in the message box, then click the Embed Kaltura Media<img class="img-fluid atto_image_button_middle" src="../assets/Screenshot-2024-09-28-at-11.16.14_AM.png" alt="record video" width="50" height="48"> icon to make a recording.  In the dialog box which pops up, click the <strong><span class="" style="color: #900c3f;">+ Add New</span></strong> button, choose <strong><span class="" style="color: #900c3f;">Express Capture</span></strong>, allow access to your microphone and camera, then click the red circle to record your video. Click the red circle with the white square to stop recording.  Click the white triangle to review your video.  You can click the <strong><span class="" style="color: #900c3f;">Record Again</span></strong> button if you'd like to record it again.  If you're ready to post it, click the <strong><span class="" style="color: #900c3f;">Use This</span></strong> button, then click the <strong><span class="" style="color: #900c3f;">&lt;/&gt; Save and Embed</span></strong> button in the top right corner of the dialog box.  After you return the the forum, click the <strong><span class="" style="color: #900c3f;">Post to forum</span></strong> button.<br><br>Please say one of the following, filling in the blanks.</p>
+<blockquote class="">My name is _____.  Something unique/interesting about me is _____.</blockquote>
+<blockquote class="">My name is _____.  My super power is _____.</blockquote>
+<p>For example, I might say the following.</p>
+<blockquote class="">My name is Tina.  My super power is debugging.</blockquote>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag ORAddVid (5 pts)</h5>
+<p>Make a note of the flag under the green box in the dialog box which pops up when you click the Embed Kaltura Media<img class="img-fluid" src="../assets/Screenshot-2024-09-28-at-11.16.14_AM-(2).png" alt="record video" width="50" height="48">icon.</p>
+<p><img class="img-fluid atto_image_button_text-bottom" src="../assets/OrAddVid.png" alt="Word in front of recording in dialog box which appears after you're done recording" width="800" height="250"></p>
+</div>
+</div>
+<p></p>
+<h4>Review Student Profile Survey Results</h4>
+<p>You'll find a link to the Student Profile Survey results in the Course Resources section on the Canvas home page for this course.  Click the Results link to open the Google sheet.  Review the results and identify 2-4 students who might make good study group partners (same work days, times, communication preferences, etc.). Reach out to them (or respond to them) via the Learning Community Forum.  Below are some topics you might discuss.</p>
+<ul>
+<li>When and how you might work/learn together this term</li>
+<li>Which <strong><a href="https://www.lanecc.edu/experience-lane/clubs-organizations" target="_blank" rel="noopener">Lane clubs</a></strong> sound fun to investigate together</li>
+<li>Whether you'd enjoy meeting to play board games in the Computer Lab (building 19, room 135) on Wednesdays, 4-6pm</li>
+<li>Whether there are games/activities you might enjoy together online</li>
+</ul>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag ORSurvRes (5 pts)</h5>
+<p>After you've reached out to 2-4 students in the Learning Community Forum, go back to the <strong><span style="color: #990066;">Google sheet</span></strong>, click in <strong><span style="color: #990066;">cell D1</span></strong>, make a note of the flag under the green box.</p>
+<p><img class="img-fluid atto_image_button_text-bottom" src="../assets/OrientationSurvRes.png" alt="Word after 'What are your'" width="600" height="266"></p>
+</div>
+</div>
+<p></p>
+<h4>Review General and Course Specific Syllabus</h4>
+<p>Review the syllabus and other course resources.  Do you have any questions?  Feel free to email me directly and/or to post in the Learning Community Forum.</p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag ORSylPerc (5 pts)</h5>
+<p>What <strong><span style="color: #990066;">percentage</span></strong> of your total <strong><span style="color: #990066;">grade</span></strong> are the <strong><span style="color: #990066;">activities</span></strong> worth?  For 10% enter 10 for the flag.</p>
+</div>
+</div>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag ORSylProj (5 pts)</h5>
+<p>What do you need to <strong><span style="color: #990066;">explain</span></strong> in the <em>required</em> video to earn <em>any</em> points for the project?  The flag is under the green box.</p>
+<blockquote>
+<p><span style="color: #002eb8;"><strong><em style="font-size: 18pt;">Project</em></strong></span></p>
+<p>. . . <span style="color: #cb4335;"><strong>To earn ANY points for the project, you MUST submit a video explaining all the <span style="color: #00ff11; background-color: #00ff11; display: inline-block; width: 3em; height: 1.5em; border-radius: 3px;">gb</span></strong></span> by the end of week 10. During Monday through Wednesday of week 11 (final exam week), you will . . .</p>
+</blockquote>
+</div>
+</div>
+<p></p>
+</body>
+</html>

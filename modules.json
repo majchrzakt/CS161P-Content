@@ -1,0 +1,264 @@
+{
+  "course": "CS161P",
+  "term": "2026-winter",
+  "modules": [
+    {
+      "name": "Course Resources",
+      "folder": "Course-Resources",
+      "pages": [
+        {
+          "name": "Music",
+          "file": "Music.html"
+        }
+      ]
+    },
+    {
+      "name": "Orientation & Getting Started",
+      "folder": "Orientation-and-Getting-Started",
+      "pages": [
+        {
+          "name": "In Person",
+          "file": "In-Person.html"
+        },
+        {
+          "name": "Orientation Instructions",
+          "file": "Orientation-Instructions.html"
+        },
+        {
+          "name": "Getting Started Instructions",
+          "file": "Getting-Started-Instructions.html"
+        },
+        {
+          "name": "Variables and Data Types Instructions",
+          "file": "Variables-and-Data-Types-Instructions.html"
+        }
+      ]
+    },
+    {
+      "name": "Sequential Programs",
+      "folder": "Sequential-Programs",
+      "pages": [
+        {
+          "name": "Math and Random Instructions",
+          "file": "Math-and-Random-Instructions.html"
+        },
+        {
+          "name": "Formatting Instructions",
+          "file": "Formatting-Instructions.html"
+        },
+        {
+          "name": "Code Tracing -- Collaboration",
+          "file": "Code-Tracing-Collaboration.html"
+        }
+      ]
+    },
+    {
+      "name": "Logical Expressions & Selection Statements",
+      "folder": "Logical-Expressions-and-Selection-Statements",
+      "pages": [
+        {
+          "name": "Logical Expression Instructions",
+          "file": "Logical-Expression-Instructions.html"
+        },
+        {
+          "name": "Selection Statement Instructions",
+          "file": "Selection-Statement-Instructions.html"
+        },
+        {
+          "name": "Pair Programming Instructions -- Collaboration",
+          "file": "Pair-Programming-Instructions-Collaboration.html"
+        }
+      ]
+    },
+    {
+      "name": "Loops & Exam 1 with Walkthrough",
+      "folder": "Loops-and-Exam-1-with-Walkthrough",
+      "pages": [
+        {
+          "name": "Loops Instructions",
+          "file": "Loops-Instructions.html"
+        },
+        {
+          "name": "Example Programming Question",
+          "file": "Example-Programming-Question.html"
+        },
+        {
+          "name": "Solution to Example Programming Question",
+          "file": "Solution-to-Example-Programming-Question.html"
+        }
+      ]
+    },
+    {
+      "name": "Functions & Code Organization",
+      "folder": "Functions-and-Code-Organization",
+      "pages": [
+        {
+          "name": "Functions Instructions",
+          "file": "Functions-Instructions.html"
+        },
+        {
+          "name": "Code Organization Instructions",
+          "file": "Code-Organization-Instructions.html"
+        }
+      ]
+    },
+    {
+      "name": "Data Validation & More Functions",
+      "folder": "Data-Validation-and-More-Functions",
+      "pages": [
+        {
+          "name": "Data Validation Instructions",
+          "file": "Data-Validation-Instructions.html"
+        },
+        {
+          "name": "More Functions Instructions",
+          "file": "More-Functions-Instructions.html"
+        },
+        {
+          "name": "Internet of Things (IoT) -- Collaboration",
+          "file": "Internet-of-Things-_IoT_-Collaboration.html"
+        },
+        {
+          "name": "Debugger -- Collaboration",
+          "file": "Debugger-Collaboration.html"
+        }
+      ]
+    },
+    {
+      "name": "Modules & File I/O",
+      "folder": "Modules-and-File-IO",
+      "pages": [
+        {
+          "name": "Separate Compilation Instructions",
+          "file": "Separate-Compilation-Instructions.html"
+        },
+        {
+          "name": "File IO Instructions",
+          "file": "File-IO-Instructions.html"
+        }
+      ]
+    },
+    {
+      "name": "Strings, Lists, & Exam 2",
+      "folder": "Strings-Lists-and-Exam-2",
+      "pages": [
+        {
+          "name": "Strings Activities",
+          "file": "Strings-Activities.html"
+        },
+        {
+          "name": "Lists Activities",
+          "file": "Lists-Activities.html"
+        },
+        {
+          "name": "Git and GitHub Instructions (optional)",
+          "file": "Git-and-GitHub-Instructions-_optional_.html"
+        },
+        {
+          "name": "Team Build",
+          "file": "Team-Build.html"
+        }
+      ]
+    },
+    {
+      "name": "Project Plan",
+      "folder": "Project-Plan",
+      "pages": [
+        {
+          "name": "Readings and Videos",
+          "file": "Readings-and-Videos.html"
+        }
+      ]
+    },
+    {
+      "name": "Project Implementation",
+      "folder": "Project-Implementation",
+      "pages": [
+        {
+          "name": "Project Requirements and Instructions",
+          "file": "Project-Requirements-and-Instructions.html"
+        }
+      ]
+    },
+    {
+      "name": "Project Peer Reviews and Rankings",
+      "folder": "Project-Peer-Reviews-and-Rankings",
+      "pages": [
+        {
+          "name": "Instructions for Project Reviews and Rankings",
+          "file": "Instructions-for-Project-Reviews-and-Rankings.html"
+        }
+      ]
+    },
+    {
+      "name": "Course Resource Components",
+      "folder": "Course-Resource-Components",
+      "pages": [
+        {
+          "name": "Course Schedule",
+          "file": "Course-Schedule.html"
+        },
+        {
+          "name": "Instructor Bio",
+          "file": "Instructor-Bio.html"
+        },
+        {
+          "name": "Learning Outcomes",
+          "file": "Learning-Outcomes.html"
+        },
+        {
+          "name": "How to Get Into Class Zoom",
+          "file": "How-to-Get-Into-Class-Zoom.html"
+        }
+      ]
+    }
+  ],
+  "hidden_pages": [
+    {
+      "name": "Getting Started Instructions -- old",
+      "file": "Getting-Started-Instructions-old.html",
+      "was_in_module": "Orientation & Getting Started"
+    },
+    {
+      "name": "Math and Random Instructions -- old",
+      "file": "Math-and-Random-Instructions-old.html",
+      "was_in_module": "Sequential Programs"
+    },
+    {
+      "name": "Pair Programming Instructions -- Collaboration (in person only using PyCharm)",
+      "file": "Pair-Programming-Instructions-Collaboration-_in-person-only-using-PyCharm_.html",
+      "was_in_module": "Logical Expressions & Selection Statements"
+    },
+    {
+      "name": "Debugging Interview (available soon)",
+      "file": "Debugging-Interview-_available-soon_.html",
+      "was_in_module": "Functions & Code Organization"
+    },
+    {
+      "name": "Debugging Interview Instructions -- Collaboration",
+      "file": "Debugging-Interview-Instructions-Collaboration.html",
+      "was_in_module": "Functions & Code Organization"
+    },
+    {
+      "name": "Debugging Interview Instructions -- Collaboration ORIG",
+      "file": "Debugging-Interview-Instructions-Collaboration-ORIG.html",
+      "was_in_module": "Functions & Code Organization"
+    },
+    {
+      "name": "Robots -- Collaboration",
+      "file": "Robots-Collaboration.html",
+      "was_in_module": "Data Validation & More Functions"
+    },
+    {
+      "name": "Team Build Instructions",
+      "file": "Team-Build-Instructions.html",
+      "was_in_module": "Modules & File I/O"
+    },
+    {
+      "name": "Team Build",
+      "file": "Team-Build-(2).html",
+      "was_in_module": null
+    }
+  ],
+  "hidden_pages_note": "Pages marked hidden (visible=0) in Moodle -- not part of the official module structure. Kept for reference in hidden-pages/, not linked from index.html."
+}

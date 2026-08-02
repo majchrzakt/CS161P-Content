@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Validation</title>
+<style>
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-BoldItalic.woff2') format('woff2');
+}
+body {
+  font-family: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background: #ffffff;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 3rem;
+}
+/* Moodle's WYSIWYG editor bakes in a different inline font-family per page
+   (Arial, Calibri, Times New Roman, etc.) - force everything back to the
+   accessible stack above regardless of what the original page specified. */
+body * {
+  font-family: inherit !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+}
+/* Explicit scale so no heading level ties or drops below the 18px body
+   text - the browser default em-based scale shrinks below that starting
+   at h4/h5 once the body font-size is bumped up this far for accessibility. */
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.1em; }
+h5 { font-size: 1em; }
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+/* img/video have a true intrinsic aspect ratio, so height: auto above keeps
+   them proportional automatically. iframe has no such intrinsic ratio, so
+   without this it looks squished/too-wide whenever its container is
+   narrower than its width="..." attribute (e.g. YouTube embeds at 560x315
+   on a narrower viewport). Assumes 16:9, true for all current embeds. */
+iframe {
+  aspect-ratio: 16 / 9;
+}
+a {
+  color: #0b5fff;
+}
+table {
+  border-collapse: collapse;
+}
+td, th {
+  padding: 0.4em 0.8em;
+}
+/* Moodle CTF "flag" prompts are wrapped in a div with an inline neon-green
+   border (#00ff11); the title inside is an h5 that barely stands out once
+   pulled out of Moodle's own page chrome. Give it real visual weight, but
+   with a darkened green (8.2:1 contrast on white, WCAG AAA) instead of the
+   neon border color, which would be close to unreadable as text. */
+div[style*="00ff11"] h5 {
+  font-size: 1.3em;
+  font-weight: 800;
+  color: #0e5c1a;
+  margin: 0 0 0.5em 0;
+}
+</style>
+</head>
+<body>
+<h1>Data Validation</h1>
+<h3><a title="http://yaacotu.com/ctf/engineDRM/index.php?class=161P&amp;challengeTopic=Data_Validation" href="http://yaacotu.com/ctf/engineDRM/index.php?class=161P&amp;challengeTopic=Data_Validation" target="_blank" rel="noopener">Data Validation CTF</a></h3>
+<p dir="ltr" style="text-align: left;">Complete Capture the Flag (CTF) activities below.  You can check that you have the correct flags at the CTF link above.  If you'd like to register your progress and to have your name appear on the leaderboard, you may opt to include your name when entering flags.  As you capture flags and verify they're correct, keep track of them, so you can enter them into Canvas and earn class points toward your grade.</p>
+<h3 id="yui_3_18_1_1_1767939914735_195">Required Resources</h3>
+<p>Read this material, then attempt the challenges below.</p>
+<ul id="yui_3_18_1_1_1768619106315_31">
+<li><span style="color: #990066;"><strong>Chapter 6</strong></span> in <span style="color: #990066;"><strong>CS 161P: Computer Science 1 Using Python</strong></span> by Jim Bailey (in <span style="color: #990066;"><strong>Course Resources</strong></span> section)</li>
+<li><span style="color: #990066;"><strong>Section 8.8.2 and Chapter 13</strong></span> in <a href="https://runestone.academy/ns/books/published/thinkcspy/index.html" target="_blank" rel="noopener"><strong>How to Think Like a Computer Scientist</strong></a></li>
+</ul>
+<h3 style="text-align: left;">Must Validate</h3>
+<p>When we get <strong><span style="color: #990066;">data from</span></strong> the <span style="color: #990066;"><strong>user</strong></span>, we <span style="color: #990066;"><strong>must check it</strong></span> before using it.  We need to make sure they've given us what we requested, and that they're not trying to hack our system.  If we ask for a number, they should not give us a letter or a string, etc.  But we can't count on this, so we need to <strong><span style="color: #990066;">validate</span></strong> what they give us <strong><span style="color: #990066;">before using</span></strong> it.</p>
+<h4 style="text-align: left;">Get a Positive Integer </h4>
+<p>The program below <strong><span style="color: #990066;">asks for</span></strong> a <strong><span style="color: #990066;">positive integer</span></strong> and then <strong><span style="color: #990066;">displays it</span></strong>.  As long as the user enters an integer, it appears to work.  Give it a try.</p>
+<pre class="language-python"><code>value = int(input("Enter a positive integer: "))
+if value &lt;= 0:
+  print("Invalid number, try again.")
+  value = int(input("Enter a positive integer: "))
+print(f'Your number is {value}.')</code></pre>
+<p><strong><span style="color: #990066;">Test</span></strong> the code above with the following inputs.</p>
+<ul>
+<li>Enter <strong><span style="color: #990066;">-5</span></strong>, then enter <strong><span style="color: #990066;">4</span></strong>.  What does it report for your number?</li>
+<li>Enter <strong><span style="color: #990066;">0</span></strong>, then enter <strong><span style="color: #990066;">2</span></strong>.  What does it report for your number</li>
+<li>Enter <span style="color: #990066;"><strong>7</strong></span>.  What does it report for your number?</li>
+</ul>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag VALInt (5 pts)</h5>
+<p>Put the answers to the questions above together, separated by pipes to build the flag.  For example, if the answers were a, b, c, d, then enter a|b|c|d to get the flag.  The pipe is above the return/enter key on standard keyboards.</p>
+</div>
+</div>
+<p><br>Now <strong><span style="color: #990066;">test</span></strong> the code above with these inputs.</p>
+<ul>
+<li>Enter <strong><span style="color: #990066;">3.1</span></strong>.</li>
+<li>Enter the letter <span style="color: #990066;"><strong>c</strong></span>.</li>
+<li>Enter the string <strong><span style="color: #990066;">sterling</span></strong>.</li>
+</ul>
+<p>In all three cases, you get a runtime error, which likely says something about an <span style="color: #990066;"><strong><span class="">invalid literal for int()</span></strong></span>, because <strong><span style="color: #990066;">int()</span></strong> is being asked to covert the user's input to an integer.  It <strong><span style="color: #990066;">doesn't know how to convert 3.1</span></strong>, <strong><span style="color: #990066;">c</span></strong>, and <strong><span style="color: #990066;">sterling</span></strong> to integers.  We want to catch this <strong><span style="color: #990066;">runtime error</span></strong> before it can happen.</p>
+<p>We can <strong><span style="color: #990066;">validate</span></strong> user <strong><span style="color: #990066;">input</span></strong> and <strong><span style="color: #990066;">handle</span></strong> a <strong><span style="color: #990066;">bad entry</span></strong>, like when we ask for a number and get something nonnumeric, by using a <strong><span style="color: #990066;">try-except</span></strong> pair as follows.</p>
+<pre class="language-python"><code>try:
+  value = int(input("Enter a positive integer: "))
+  if value &lt;= 0:
+    print("Number was out of range.")
+    value = int(input("Enter a positive integer: "))
+
+except ValueError:
+  print("That was not a number.")
+  value = int(input("Enter a positive integer: "))
+
+print(f"Your number was {value}.")</code></pre>
+<p>The <strong><span style="color: #990066;">try block attempts to convert</span></strong> the user's <strong><span style="color: #990066;">input to</span></strong> an <strong><span style="color: #990066;">integer</span></strong>.  <strong><span style="color: #990066;">If</span></strong> the input <strong><span style="color: #990066;">cannot</span></strong> be converted, the rest of the try <span style="color: #990066;"><strong>block</strong></span> is <strong><span style="color: #990066;">skipped</span></strong>.  Instead, a <strong><span style="color: #990066;">ValueError exception</span></strong> is <strong><span style="color: #990066;">raised</span></strong>, and the <strong><span style="color: #990066;">except block</span></strong> for ValueError is <strong><span style="color: #990066;">executed</span></strong>.  It <strong><span style="color: #990066;">reports</span></strong> that the value entered was <strong><span style="color: #990066;">not a number</span></strong> and gives the user <strong><span style="color: #990066;">another chance</span></strong> to enter a value.</p>
+<p><span style="color: #990066;"><strong>Test</strong></span> the code above with these inputs.</p>
+<ul>
+<li>Enter <span style="color: #990066;"><strong>-5</strong></span>, then enter <span style="color: #990066;"><strong>2</strong></span>.  What does it report for your number?</li>
+<li>Enter <span style="color: #990066;"><strong>3.1</strong></span>, then enter <strong><span style="color: #990066;">4</span></strong>.  What does it report for your number?</li>
+<li>Enter the letter <span style="color: #990066;"><strong>c</strong></span>, then enter <span style="color: #990066;"><strong>7</strong></span>.  What does it report for your number?</li>
+<li>Enter the string <span style="color: #990066;"><strong>sterling</strong></span>, then enter <strong><span style="color: #990066;">9</span></strong>.  What does it report for your number?</li>
+</ul>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag VALNonNum (5 pts)</h5>
+<p>Put the answers to the questions above together, separated by pipes to build the flag.</p>
+</div>
+</div>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag VALErrType (5 pts)</h5>
+<p>For each of the initial inputs in the last challenge, -5, 3.1, c, and sterling, an error message is reported.  If the message was "<strong><span style="color: #990066;">Number was out of range</span></strong>," record an <strong><span style="color: #990066;">o</span></strong>.  If the message was "<strong><span style="color: #990066;">That was not a number</span></strong>," record an <span style="color: #990066;"><strong>n</strong></span>.  Put the n's and o's together, separated by pipes to build the flag.  For example, if "Number was out of range" is reported for -5 and 3.1, and "That was not a number" is reported for c and sterling, then enter o|o|n|n for the flag.</p>
+</div>
+</div>
+<p></p>
+<h4>Loop Until Valid Positive Integer</h4>
+<p>The code above only handles the case when the user enters the data badly one time.  Update it so it <strong><span style="color: #990066;">loops</span></strong> and keeps <span style="color: #990066;"><strong>get</strong></span>ting <strong><span style="color: #990066;">data</span></strong> from the user <strong><span style="color: #990066;">until</span></strong> they enter a <strong><span style="color: #990066;">valid</span></strong> positive number. </p>
+<p>Below is an example run.</p>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="background-color: black; color: white; padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #003087;">Enter a positive integer:  <span class="" style="color: #f0a800;">c</span><br>That was not a number.<br>Enter a positive integer:  <span class="" style="color: #f0a800;">dog</span><br>That was not a number.<br>Enter a positive integer:  <span class="" style="color: #f0a800;">-7</span><br>Number was out of range.<br>Enter a positive integer:  <span class="" style="color: #f0a800;">6</span><br>Your number was 6.</div>
+</div>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag VALIntLoop (15 pts)</h5>
+<p>After you update the code, so it <strong><span style="color: #990066;">keeps getting input until a valid positive integer is entered</span></strong> and then <strong><span style="color: #990066;">reports it</span></strong>, submit it to this <strong><a href="http://yaacotu.com/ctf-progs/engineDRM/index.php?lang=P&amp;class=161P&amp;challenge=VALIntLoop&amp;subFormat=uploadZip" target="_blank" rel="noopener">code checker</a></strong> to get the flag.</p>
+</div>
+</div>
+<p></p>
+<h4>Loop Until Valid Character</h4>
+<p>Consider the code below, which gets a <span style="color: #990066;"><strong>character</strong></span> from the user.  They can enter bad data one time only.</p>
+<pre class="language-python"><code>answer = input("Do you like lima beans? (Y/N): ")
+answer = answer.upper()  # convert answer to uppercase
+if answer != 'Y' and answer != 'N':
+    answer = input("Please enter Y for yes or N for no: ")
+print(f"You entered {answer}.")</code></pre>
+<p><strong><span style="color: #990066;">Add</span></strong> a <span style="color: #990066;"><strong>loop</strong></span> to the code above, so it continues to <strong><span style="color: #990066;">get data</span></strong> from the user <strong><span style="color: #990066;">until</span></strong> the user enters <strong><span style="color: #990066;">valid</span></strong> data. </p>
+<p>Below are example runs.</p>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="background-color: black; padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid rgb(0, 48, 135);"><span style="color: white;">Do you like lima beans? (Y/N): <span class="" style="color: #f0a800;">-9</span><br>Please enter Y for yes or N for no. <span class="" style="color: #f0a800;">4</span><br>Please enter Y for yes or N for no. <span class="" style="color: #f0a800;">d</span><br>Please enter Y for yes or N for no. <span class="" style="color: #f0a800;">y</span><br>You entered Y.<br></span></div>
+</div>
+<p></p>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="background-color: black; padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid rgb(0, 48, 135);"><span style="color: white;">Do you like lima beans? (Y/N): <span class="" style="color: #f0a800;">N</span><br>You entered N.<br></span></div>
+</div>
+<p></p>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag VALCharLoop (15 pts)</h5>
+<p>After you update the code, so it <strong><span style="color: #990066;">keeps getting input until a valid character is entered</span></strong> and then reports it, submit it to this <strong><a href="http://yaacotu.com/ctf-progs/engineDRM/index.php?lang=P&amp;class=161P&amp;challenge=VALCharLoop&amp;subFormat=uploadZip" target="_blank" rel="noopener">code checker</a></strong> to get the flag.</p>
+</div>
+</div>
+<p></p>
+<h4>Raise Your Own Exception</h4>
+<p>We saw above that the Python interpreter can raise an exception, for example, when a number is requested but something other than a number is entered or when the number entered is out of range.  There are many other standard exceptions built into Python.  You <strong><span style="color: #990066;">can raise</span></strong> these <strong><span style="color: #990066;">built in exceptions</span></strong> yourself <strong><span style="color: #990066;">and</span></strong>/or raise your own <strong><span style="color: #990066;">custom exceptions</span></strong>.  <br><br>You should anticipate when exceptions might get raised and <strong><span style="color: #990066;">handle them elegantly</span></strong> rather than just letting your code crash in a runtime error.  They can be handled by any function in the current call stack. </p>
+<p>Consider this code, where four functions, A, B, C, and D are defined.  After all the function definitions are read in and stored for later use, function A gets called.  A calls B, B calls C, and C calls D.  As its last action each function prints that it is done.</p>
+<pre class="language-python"><code>def A():
+  B()
+  print("done with A")
+  
+def B():
+  C()
+  print("done with B")
+  
+def C():
+  D()
+  print("done with C")
+  
+def D():
+  print("done with D")
+
+A()  # &lt;-- first line to execute</code></pre>
+<p>Now let's imagine <strong><span style="color: #990066;">something goes wrong in D</span></strong> and we <strong><span style="color: #990066;">raise</span></strong> an <strong><span style="color: #990066;">exception</span></strong>.  The code below will experience the custom exception we raise in D and <strong><span style="color: #990066;">look for</span></strong> a <strong><span style="color: #990066;">way to handle it</span></strong>.  When it doesn't find a way <strong><span style="color: #990066;">in D</span></strong>, it looks in <strong><span style="color: #990066;">C</span></strong>, then <span style="color: #990066;"><strong>B</strong></span>, then <strong><span style="color: #990066;">A</span></strong>.  Because it <strong><span style="color: #990066;">doesn't find a way</span></strong> to handle it anywhere, the code stops abruptly and <strong><span style="color: #990066;">crashes</span></strong> inelegantly.  It doesn't report that it is done with any of the functions.  It DOES report our custom exception message.</p>
+<pre class="language-python"><code>def A():
+  B()
+  print("done with A")
+  
+def B():
+  C()
+  print("done with B")
+  
+def C():
+  D()
+  print("done with C")
+  
+def D():
+  raise Exception("something went wrong")
+  print("done with D")
+  
+A()  # &lt;-- first line to execute</code></pre>
+<p>We can <strong><span style="color: #990066;">handle</span></strong> the <strong><span style="color: #990066;">exception</span></strong> in D directly with a <strong><span style="color: #990066;">try-except block</span></strong> as follows.  In this case, the program <span style="color: #990066;"><strong>ends elegantly</strong></span> and reports that it is done with all functions.</p>
+<pre class="language-python"><code>def A():
+  B()
+  print("done with A")
+  
+def B():
+  C()
+  print("done with B")
+  
+def C():
+  D()
+  print("done with C")
+  
+def D():
+  try:
+    raise Exception("something went wrong")
+  except Exception:
+    print("handled exception")
+  print("done with D")
+  
+A()  # &lt;-- first line to execute</code></pre>
+<p>If we <span style="color: #990066;"><strong>handle</strong></span> the <strong><span style="color: #990066;">exception in B</span></strong> instead, then when the exception is raised in D, the interpreter can't find a way to handle it there, so it falls back to C, the function which called D. C also doesn't provide a means of handling the exception, so it <strong><span style="color: #990066;">falls back to B</span></strong>, the function which called C. It DOES find a way to handle the exception in B, after which it completes the rest of the statements in B, returns to A, and completes the rest of the statements in A. </p>
+<pre class="language-python"><code>def A():
+  B()
+  print("done with A")
+  
+def B():
+  try:
+    C()
+  except Exception:
+    print("handled exception")
+  print("done with B")
+  
+def C():
+  D()
+  print("done with C")
+  
+def D():
+  raise Exception("something went wrong")
+  print("done with D")
+
+A()  # &lt;-- first line to execute</code></pre>
+<!-- Green challenge instructions -->
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag VALNotDone (5 pts)</h5>
+<p>The program above with exception handling in B doesn't crash, but it doesn't have the same output as the prior version with exception handling in D.  Which functions does it NOT report finishing?  Put the function names in alphabetical order between pipes.</p>
+</div>
+</div>
+<p></p>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pages — CS 161P: Computer Science 1 W26 (Majchrzak Meta 32153 32154 33214)</title>
+<title>Pages — CS 161P Computer Science 1 with Python</title>
 <style>
 @font-face {
   font-family: 'Atkinson Hyperlegible';
@@ -65,6 +65,14 @@ img, video, iframe {
   max-width: 100%;
   height: auto;
 }
+/* img/video have a true intrinsic aspect ratio, so height: auto above keeps
+   them proportional automatically. iframe has no such intrinsic ratio, so
+   without this it looks squished/too-wide whenever its container is
+   narrower than its width="..." attribute (e.g. YouTube embeds at 560x315
+   on a narrower viewport). Assumes 16:9, true for all current embeds. */
+iframe {
+  aspect-ratio: 16 / 9;
+}
 a {
   color: #0b5fff;
 }
@@ -88,88 +96,79 @@ div[style*="00ff11"] h5 {
 </style>
 </head>
 <body>
-<h1>Pages — CS 161P: Computer Science 1 W26 (Majchrzak Meta 32153 32154 33214)</h1>
-<p>42 page(s) from CS 161P: Computer Science 1 W26 (Majchrzak Meta 32153 32154 33214).</p>
+<h1>Pages — CS 161P Computer Science 1 with Python</h1>
+<p>33 page(s) from CS 161P Computer Science 1 with Python, grouped by course section (matching Moodle's module structure).</p>
 <h2>Course Resources</h2>
 <ul>
-<li><a href="Music.html">Music</a></li>
+<li><a href="Course-Resources/Music.html">Music</a></li>
 </ul>
 <h2>Orientation &amp; Getting Started</h2>
 <ul>
-<li><a href="In-Person.html">In Person</a></li>
-<li><a href="Orientation-Instructions.html">Orientation</a></li>
-<li><a href="Getting-Started-Instructions.html">Getting Started</a></li>
-<li><a href="Variables-and-Data-Types-Instructions.html">Variables and Data Types</a></li>
-<li><a href="Getting-Started-Instructions-old.html">Getting Started -- old</a></li>
+<li><a href="Orientation-and-Getting-Started/In-Person.html">In Person</a></li>
+<li><a href="Orientation-and-Getting-Started/Orientation-Instructions.html">Orientation Instructions</a></li>
+<li><a href="Orientation-and-Getting-Started/Getting-Started-Instructions.html">Getting Started Instructions</a></li>
+<li><a href="Orientation-and-Getting-Started/Variables-and-Data-Types-Instructions.html">Variables and Data Types Instructions</a></li>
 </ul>
 <h2>Sequential Programs</h2>
 <ul>
-<li><a href="Math-and-Random-Instructions.html">Math and Random</a></li>
-<li><a href="Formatting-Instructions.html">Formatting</a></li>
-<li><a href="Math-and-Random-Instructions-old.html">Math and Random -- old</a></li>
-<li><a href="Code-Tracing-Collaboration.html">Code Tracing -- Collaboration</a></li>
+<li><a href="Sequential-Programs/Math-and-Random-Instructions.html">Math and Random Instructions</a></li>
+<li><a href="Sequential-Programs/Formatting-Instructions.html">Formatting Instructions</a></li>
+<li><a href="Sequential-Programs/Code-Tracing-Collaboration.html">Code Tracing -- Collaboration</a></li>
 </ul>
 <h2>Logical Expressions &amp; Selection Statements</h2>
 <ul>
-<li><a href="Logical-Expression-Instructions.html">Logical Expression</a></li>
-<li><a href="Selection-Statement-Instructions.html">Selection Statement</a></li>
-<li><a href="Pair-Programming-Instructions-Collaboration-_in-person-only-using-PyCharm_.html">Pair Programming -- Collaboration (in person only using PyCharm)</a></li>
-<li><a href="Pair-Programming-Instructions-Collaboration.html">Pair Programming -- Collaboration</a></li>
+<li><a href="Logical-Expressions-and-Selection-Statements/Logical-Expression-Instructions.html">Logical Expression Instructions</a></li>
+<li><a href="Logical-Expressions-and-Selection-Statements/Selection-Statement-Instructions.html">Selection Statement Instructions</a></li>
+<li><a href="Logical-Expressions-and-Selection-Statements/Pair-Programming-Instructions-Collaboration.html">Pair Programming Instructions -- Collaboration</a></li>
 </ul>
 <h2>Loops &amp; Exam 1 with Walkthrough</h2>
 <ul>
-<li><a href="Loops-Instructions.html">Loops</a></li>
-<li><a href="Example-Programming-Question.html">Example Programming Question</a></li>
-<li><a href="Solution-to-Example-Programming-Question.html">Solution to Example Programming Question</a></li>
+<li><a href="Loops-and-Exam-1-with-Walkthrough/Loops-Instructions.html">Loops Instructions</a></li>
+<li><a href="Loops-and-Exam-1-with-Walkthrough/Example-Programming-Question.html">Example Programming Question</a></li>
+<li><a href="Loops-and-Exam-1-with-Walkthrough/Solution-to-Example-Programming-Question.html">Solution to Example Programming Question</a></li>
 </ul>
 <h2>Functions &amp; Code Organization</h2>
 <ul>
-<li><a href="Functions-Instructions.html">Functions</a></li>
-<li><a href="Code-Organization-Instructions.html">Code Organization</a></li>
-<li><a href="Debugging-Interview-_available-soon_.html">Debugging Interview (available soon)</a></li>
-<li><a href="Debugging-Interview-Instructions-Collaboration.html">Debugging Interview -- Collaboration</a></li>
-<li><a href="Debugging-Interview-Instructions-Collaboration-ORIG.html">Debugging Interview -- Collaboration ORIG</a></li>
+<li><a href="Functions-and-Code-Organization/Functions-Instructions.html">Functions Instructions</a></li>
+<li><a href="Functions-and-Code-Organization/Code-Organization-Instructions.html">Code Organization Instructions</a></li>
 </ul>
 <h2>Data Validation &amp; More Functions</h2>
 <ul>
-<li><a href="Data-Validation-Instructions.html">Data Validation</a></li>
-<li><a href="More-Functions-Instructions.html">More Functions</a></li>
-<li><a href="Internet-of-Things-_IoT_-Collaboration.html">Internet of Things (IoT) -- Collaboration</a></li>
-<li><a href="Debugger-Collaboration.html">Debugger -- Collaboration</a></li>
-<li><a href="Robots-Collaboration.html">Robots -- Collaboration</a></li>
+<li><a href="Data-Validation-and-More-Functions/Data-Validation-Instructions.html">Data Validation Instructions</a></li>
+<li><a href="Data-Validation-and-More-Functions/More-Functions-Instructions.html">More Functions Instructions</a></li>
+<li><a href="Data-Validation-and-More-Functions/Internet-of-Things-_IoT_-Collaboration.html">Internet of Things (IoT) -- Collaboration</a></li>
+<li><a href="Data-Validation-and-More-Functions/Debugger-Collaboration.html">Debugger -- Collaboration</a></li>
 </ul>
 <h2>Modules &amp; File I/O</h2>
 <ul>
-<li><a href="Separate-Compilation-Instructions.html">Separate Compilation</a></li>
-<li><a href="File-IO-Instructions.html">File IO</a></li>
-<li><a href="Team-Build-Instructions.html">Team Build</a></li>
+<li><a href="Modules-and-File-IO/Separate-Compilation-Instructions.html">Separate Compilation Instructions</a></li>
+<li><a href="Modules-and-File-IO/File-IO-Instructions.html">File IO Instructions</a></li>
 </ul>
 <h2>Strings, Lists, &amp; Exam 2</h2>
 <ul>
-<li><a href="Strings-Activities.html">Strings Activities</a></li>
-<li><a href="Lists-Activities.html">Lists Activities</a></li>
-<li><a href="Git-and-GitHub-Instructions-_optional_.html">Git and GitHub (optional)</a></li>
-<li><a href="Team-Build.html">Team Build</a></li>
-<li><a href="Team-Build-(2).html">Team Build</a></li>
+<li><a href="Strings-Lists-and-Exam-2/Strings-Activities.html">Strings Activities</a></li>
+<li><a href="Strings-Lists-and-Exam-2/Lists-Activities.html">Lists Activities</a></li>
+<li><a href="Strings-Lists-and-Exam-2/Git-and-GitHub-Instructions-_optional_.html">Git and GitHub Instructions (optional)</a></li>
+<li><a href="Strings-Lists-and-Exam-2/Team-Build.html">Team Build</a></li>
 </ul>
 <h2>Project Plan</h2>
 <ul>
-<li><a href="Readings-and-Videos.html">Readings and Videos</a></li>
+<li><a href="Project-Plan/Readings-and-Videos.html">Readings and Videos</a></li>
 </ul>
 <h2>Project Implementation</h2>
 <ul>
-<li><a href="Project-Requirements-and-Instructions.html">Project Requirements and</a></li>
+<li><a href="Project-Implementation/Project-Requirements-and-Instructions.html">Project Requirements and Instructions</a></li>
 </ul>
 <h2>Project Peer Reviews and Rankings</h2>
 <ul>
-<li><a href="Instructions-for-Project-Reviews-and-Rankings.html">for Project Reviews and Rankings</a></li>
+<li><a href="Project-Peer-Reviews-and-Rankings/Instructions-for-Project-Reviews-and-Rankings.html">Instructions for Project Reviews and Rankings</a></li>
 </ul>
 <h2>Course Resource Components</h2>
 <ul>
-<li><a href="Course-Schedule.html">Course Schedule</a></li>
-<li><a href="Instructor-Bio.html">Instructor Bio</a></li>
-<li><a href="Learning-Outcomes.html">Learning Outcomes</a></li>
-<li><a href="How-to-Get-Into-Class-Zoom.html">How to Get Into Class Zoom</a></li>
+<li><a href="Course-Resource-Components/Course-Schedule.html">Course Schedule</a></li>
+<li><a href="Course-Resource-Components/Instructor-Bio.html">Instructor Bio</a></li>
+<li><a href="Course-Resource-Components/Learning-Outcomes.html">Learning Outcomes</a></li>
+<li><a href="Course-Resource-Components/How-to-Get-Into-Class-Zoom.html">How to Get Into Class Zoom</a></li>
 </ul>
 </body>
 </html>

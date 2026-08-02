@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>File IO</title>
+<style>
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-BoldItalic.woff2') format('woff2');
+}
+body {
+  font-family: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background: #ffffff;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 3rem;
+}
+/* Moodle's WYSIWYG editor bakes in a different inline font-family per page
+   (Arial, Calibri, Times New Roman, etc.) - force everything back to the
+   accessible stack above regardless of what the original page specified. */
+body * {
+  font-family: inherit !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+}
+/* Explicit scale so no heading level ties or drops below the 18px body
+   text - the browser default em-based scale shrinks below that starting
+   at h4/h5 once the body font-size is bumped up this far for accessibility. */
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.1em; }
+h5 { font-size: 1em; }
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+/* img/video have a true intrinsic aspect ratio, so height: auto above keeps
+   them proportional automatically. iframe has no such intrinsic ratio, so
+   without this it looks squished/too-wide whenever its container is
+   narrower than its width="..." attribute (e.g. YouTube embeds at 560x315
+   on a narrower viewport). Assumes 16:9, true for all current embeds. */
+iframe {
+  aspect-ratio: 16 / 9;
+}
+a {
+  color: #0b5fff;
+}
+table {
+  border-collapse: collapse;
+}
+td, th {
+  padding: 0.4em 0.8em;
+}
+/* Moodle CTF "flag" prompts are wrapped in a div with an inline neon-green
+   border (#00ff11); the title inside is an h5 that barely stands out once
+   pulled out of Moodle's own page chrome. Give it real visual weight, but
+   with a darkened green (8.2:1 contrast on white, WCAG AAA) instead of the
+   neon border color, which would be close to unreadable as text. */
+div[style*="00ff11"] h5 {
+  font-size: 1.3em;
+  font-weight: 800;
+  color: #0e5c1a;
+  margin: 0 0 0.5em 0;
+}
+</style>
+</head>
+<body>
+<h1>File IO</h1>
+<h3><a title="http://yaacotu.com/ctf/engineDRM/index.php?class=161P&amp;challengeTopic=File_IO" href="http://yaacotu.com/ctf/engineDRM/index.php?class=161P&amp;challengeTopic=File_IO" target="_blank" rel="noopener">File IO CTF</a></h3>
+<p dir="ltr" style="text-align: left;">Complete Capture the Flag (CTF) activities below.  You can check that you have the correct flags at the CTF link above.  If you'd like to register your progress and to have your name appear on the leaderboard, you may opt to include your name when entering flags.  As you capture flags and verify they're correct, keep track of them, so you can enter them into Canvas and earn class points toward your grade.</p>
+<h3 dir="ltr" style="text-align: left;">Data</h3>
+<p dir="ltr" style="text-align: left;">In addition to reading data from the keyboard and displaying data on the screen, we can read input and write output to files.</p>
+<h3 style="text-align: left;">Input</h3>
+<p>The program below should <span style="color: #990066;"><strong>open</strong> a <strong><span style="color: #990066;">file</span></strong> and <strong><span style="color: #990066;">read</span></strong> in <strong><span style="color: #990066;">each number</span></strong> from the file.  It should add each number to a <span style="color: #990066;"><strong>running total</strong></span> as it reads it.  After reading and adding all numbers, it should <strong><span style="color: #990066;">display</span></strong> the <span style="color: #990066;"><strong>sum</strong></span> of the numbers.  </span></p>
+<p>The code has one or more <strong><span style="color: #990066;">errors</strong>.  See if you can find them.  The program requires an input file called "input".  Create a file called <strong><span class="" style="color: #900c3f;">input</span></strong> in the <span style="color: #990066;"><strong>same folder</strong></span> as your main.py file and populate it with <span style="color: #990066;"><strong>several numbers</strong></span>, each listed on <strong><span style="color: #990066;">separate lines</span></strong>.  </span></p>
+<p>NOTE: You MUST use the name <strong><span class="" style="color: #900c3f;">input</strong> for the input file.  Do not change it in any way, including adding an extension (e.g., <s>input.txt</s> will NOT work).  If you're using Windows, be sure extensions are visible, so you can ensure there is no extension on this file.</span></p>
+<pre class="language-python"><code>try:
+  reader = open "input", "r"
+  print("Input values: ", end="")
+  for line in reader:
+    value = int(line)
+    sum += value
+    print(value, end=" ")
+  print(f"\nSum of values: {sum}")
+  input.close
+except FileNotFoundError:
+  print("Failed to open")</code></pre>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag FIODebugIn (15 pts)</h5>
+<p>After you've gotten the program to work, put <strong><span class="" style="color: #900c3f;">input</span></strong> and <span class="" style="color: #900c3f;"><strong>main.py</strong></span> into a folder, zip the folder, and submit it to this <strong><a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=FIODebugIn&amp;hasInf=1&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=FIODebugIn&amp;hasInf=1&amp;subFormat=uploadZip" target="_blank" rel="noopener">code checker</a></strong> to get the flag.</p>
+</div>
+</div>
+<p></p>
+<h3 style="text-align: left;">Output</h3>
+<p dir="ltr" style="text-align: left;">The program below should <strong><span style="color: #990066;">open a file</span></strong> and <strong><span style="color: #990066;">write</span></strong> a <strong><span style="color: #990066;">10x10 multiplication table to it</span></strong>.  It also should <strong><span style="color: #990066;">display</span></strong> the table <span style="color: #990066;"><strong>on</strong></span> the <span style="color: #990066;"><strong>screen</strong></span>.  The code has one or more <strong><span style="color: #990066;">errors</span></strong>.  See if you can find them.</p>
+<pre class="language-python"><code>writer = open("output", "w")
+
+MAX = 10
+# Determine the width based on the largest number in the table
+width = len(str(MAX * MAX)) + 1
+
+for i in range(1, MAX):
+  line = ""
+
+  for j in range(1, MAX):
+    line += f"{i * j:&gt;{width}}"
+
+  print(line)
+  writer.write(line)
+
+writer.close()</code></pre>
+<p></p>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag FIODebugOut (15 pts)</h5>
+<p>After you've gotten the program to work, submit it to this <strong><a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=FIODebugOut&amp;hasOutput=1&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=FIODebugOut&amp;hasOutput=1&amp;subFormat=uploadZip" target="_blank" rel="noopener">code checker</a></strong> to get the flag.</p>
+</div>
+</div>
+<p></p>
+<h3>Input/Output</h3>
+<p>This program should <span style="color: #990066;"><strong>open</strong></span> a <strong><span style="color: #990066;">file for reading</span></strong> and a <strong><span style="color: #990066;">file for writing</span></strong>.  It first should <strong><span style="color: #990066;">read</span></strong> a single <span style="color: #990066;"><strong>number</strong></span> from the input stream.  Then it should <strong><span style="color: #990066;">read that many</span></strong> more <strong><span style="color: #990066;">values</span></strong> from the input stream (i.e., input file) and <span style="color: #990066;"><strong>output</strong></span> those <span style="color: #990066;"><strong>numbers</strong></span> along with their <span style="color: #990066;"><strong>sum</strong></span> <strong><span style="color: #990066;">to</span></strong> the <strong><span style="color: #990066;">output stream</span></strong> (i.e., output file) <span style="color: #990066;"><strong>and</strong></span> to the <span style="color: #990066;"><strong>screen</strong></span>.  Next it should <strong><span style="color: #990066;">repeat</span></strong> this <strong><span style="color: #990066;">process</span></strong> of reading a number from the input stream, reading that many more numbers, calculating their sum, and displaying the numbers and sum.  It should <strong><span style="color: #990066;">terminate</strong> when it <strong><span style="color: #990066;">reads zero</span></strong> from the input stream for the number of values to retrieve or when it encounters the <strong><span style="color: #990066;">end of</span></strong> the <strong><span style="color: #990066;">file</span></strong>.  The code has one or more <span style="color: #990066;"><strong>errors</strong></span>.  See if you can find them.  </span></p>
+<pre class="language-python"><code>with open(input, r) as reader, open(output, w) as writer:
+
+  dataRemaining = False
+  while dataRemaining:
+    line = reader.readline()
+    if (not line) or (int(line) == 0):
+      dataRemaining = True
+    else:
+      numVals = int(line)
+
+      writer.write(f"Number of values: {numVals}\nValues: ")
+      print(f"Number of values: {numVals}\nValues: ", end="")
+
+      vals = ""
+      for _ in range(numVals):
+        line = reader.readline()
+
+        if (not line) or (int(line) == 0):
+          dataRemaining = False
+        else:
+          vals += line.strip() + " "
+          sum += int(line)
+
+      writer.write(vals)
+      print(vals)
+
+      writer.write(f"\nSum: {sum}\n\n")
+      print(f"Sum: {sum}\n")</code></pre>
+<p>Create a file called <strong><span class="" style="color: #900c3f;">input</span></strong> in the same folder as your main.py file and populate it with several numbers, each listed on separate lines.  NOTE: You MUST use the name <strong><span class="" style="color: #900c3f;">input</span></strong> for the input file.  Do not change it in any way, including adding an extension (e.g., <s>input.txt</s> will NOT work).</p>
+<p><strong><span class="" style="color: #900c3f;">input</span></strong></p>
+<pre class="language-c"><code>4
+7
+2
+1
+3
+2
+7
+1
+0</code></pre>
+<p>The output for the input above should look as follows.  This should display on the screen and be stored in the <strong><span style="color: #990066;">output</span></strong> file.<br><br></p>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="background-color: black; padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid rgb(0, 48, 135);"><span style="color: white;">Number of values: <span class="" style="color: #f0a800;">4</span><br>Values: <span class="" style="color: #f0a800;">7 2 1 3</span><br>Sum: <span class="" style="color: #f0a800;">13</span><br><br><span style="color: white;">Number of values: <span class="" style="color: #f0a800;">2</span><br>Values: <span class="" style="color: #f0a800;">7 1</span><br>Sum: <span class="" style="color: #f0a800;">8</span><br><br></span></span></div>
+</div>
+<p></p>
+<p><strong>NOTE:</strong> Do NOT change the names of the input and output files.  The code checker will look for files called <span style="color: #990066;"><strong><span class="">input</span></strong></span> and <span style="color: #990066;"><strong><span class="">output</span></strong></span>.</p>
+<div style="display: flex; align-items: center; justify-content: left; margin: 0;">
+<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<h5>Flag FIODebugIO (30 pts)</h5>
+<p>After you've gotten the program to work, submit it to this <strong><a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=FIODebugIO&amp;hasInput=1&amp;hasOutput=1&amp;hasInf=1&amp;hasOutf=1&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?class=161P&amp;lang=P&amp;challenge=FIODebugIO&amp;hasInput=1&amp;hasOutput=1&amp;hasInf=1&amp;hasOutf=1&amp;subFormat=uploadZip" target="_blank" rel="noopener">code checker</a></strong> to get the flag.</p>
+</div>
+</div>
+<p></p>
+</body>
+</html>
