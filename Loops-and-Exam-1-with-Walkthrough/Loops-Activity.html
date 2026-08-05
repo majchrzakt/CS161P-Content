@@ -98,26 +98,24 @@ div[style*="00ff11"] h5 {
 <body>
 <details style="margin-bottom: 0.75em; border: 1px solid #c1c7cd; border-radius: 8px; padding: 0.5em 0.9em;">
 <summary style="cursor: pointer;">Leaderboard</summary>
-<iframe src="https://yaacotu.com/ctf/engineDRM/scoreboard.php?summary=1&amp;refresh=1&amp;class=161P&amp;challengeTopic=Loops" width="100%" height="300" frameborder="0" style="margin-top: 0.75em;"></iframe>
+<iframe src="https://yaacotu.com/ctf/engine/scoreboard.php?summary=1&amp;refresh=1&amp;class=161P&amp;challengeTopic=Loops" width="100%" height="300" frameborder="0" style="margin-top: 0.75em;"></iframe>
 </details>
 <details style="margin-bottom: 0.75em; border: 1px solid #c1c7cd; border-radius: 8px; padding: 0.5em 0.9em;">
 <summary style="cursor: pointer;">Progress</summary>
-<iframe src="https://yaacotu.com/ctf/engineDRM/scoreboard.php?summary=0&amp;refresh=1&amp;class=161P&amp;challengeTopic=Loops" width="100%" height="300" frameborder="0" style="margin-top: 0.75em;"></iframe>
+<iframe src="https://yaacotu.com/ctf/engine/scoreboard.php?summary=0&amp;refresh=1&amp;class=161P&amp;challengeTopic=Loops" width="100%" height="300" frameborder="0" style="margin-top: 0.75em;"></iframe>
 </details>
 <details style="margin-bottom: 0.75em; border: 1px solid #c1c7cd; border-radius: 8px; padding: 0.5em 0.9em;">
 <summary style="cursor: pointer;">Flag Checker</summary>
 <p>You can check your flags here.&nbsp; If you want to have your name on the leaderboard, enter your name when entering flags.&nbsp; Otherwise, leave the name field blank.&nbsp; To earn points on this activity, you MUST enter your flags and click Submit on the form at the bottom of this page.</p>
-<iframe src="https://yaacotu.com/ctf/engineDRM/index.php?class=161P&amp;challengeTopic=Loops" width="100%" height="300" frameborder="0" style="margin-top: 0.75em;" allow="unload"></iframe>
+<iframe src="https://yaacotu.com/ctf/engine/index.php?class=161P&amp;challengeTopic=Loops" width="100%" height="300" frameborder="0" style="margin-top: 0.75em;" allow="unload"></iframe>
 </details>
 <div style="max-height: 60vh; min-height: 150px; overflow-y: auto; border: 1px solid #c1c7cd; border-radius: 8px; padding: 1em 1.25em; margin-bottom: 1em; background: #fafbfc;">
-<h1>Loops</h1>
-<h3><a title="http://yaacotu.com/ctf/engineDRM/index.php?class=161P&amp;challengeTopic=Loops" href="http://yaacotu.com/ctf/engineDRM/index.php?class=161P&amp;challengeTopic=Loops" target="_blank" rel="noopener">Loops CTF</a></h3>
-<p>Complete Capture the Flag (CTF) activities below.  You can check that you have the correct flags at the CTF link above.  If you'd like to register your progress and to have your name appear on the leaderboard, you may opt to include your name when entering flags.  As you capture flags and verify they're correct, keep track of them, so you can enter them into Canvas and earn class points toward your grade. </p>
+
 <h3 id="yui_3_18_1_1_1767939914735_195">Required Resources</h3>
 <p>Read this material, then attempt the challenges below.</p>
 <ul id="yui_3_18_1_1_1768619106315_31">
 <li><span style="color: #990066;"><strong>Chapter 5</strong></span> in <span style="color: #990066;"><strong>CS 161P: Computer Science 1 Using Python</strong></span> by Jim Bailey (in <span style="color: #990066;"><strong>Course Resources</strong></span> section)</li>
-<li><strong><span style="color: #990066;">Chapters 4 and 8</span></strong> in <a href="https://runestone.academy/ns/books/published/thinkcspy/index.html" target="_blank" rel="noopener"><strong>How to Think Like a Computer Scientist</strong></a></li>
+<li><strong><span style="color: #990066;">Chapters 4 and 8</span></strong> in <a href="https://runestone.academy/ns/books/published/thinkcspy/index.html" target="_blank"><strong>How to Think Like a Computer Scientist</strong></a></li>
 </ul>
 <p>There's a great quote in the section 4.4 video.</p>
 <blockquote>
@@ -139,9 +137,8 @@ while num &lt;= 10:
     num += 2</code></pre>
 <p>The while loop executes, because 2 is less than or equal to 10, so it's condition evaluates to True. </p>
 <p>Inside the while loop, note that <strong><span style="color: #990066;">end=" "</span></strong> in the print statement indicates each <strong><span style="color: #990066;">line printed should end with a space</span></strong> rather than a new line.  Therefore, all the values get printed on the same line.</p>
-<!-- Green challenge instructions -->
 <div style="display: flex; align-items: center; justify-content: left; margin: 0;">
-<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<div style="padding: 2%;  border-radius: 10px; border: 10px solid #00ff11;">
 <h5>Flag LOOPWhile1 (5 pts)</h5>
 <p>What gets <strong><span style="color: #990066;">displayed</span></strong> by the loop above?  <strong><span style="color: #990066;">Include</span></strong> any and <span style="color: #990066;"><strong>all spaces</strong></span>.</p>
 </div>
@@ -153,45 +150,41 @@ while ch &lt;= 'E':
     print(ch, end=" ")
     ch = chr(ord(ch) + 1)</code></pre>
 <p>For now, just report what it prints. Then we'll dig deeper and try to understand what's happening on that last line.</p>
-<!-- Green challenge instructions -->
 <div style="display: flex; align-items: center; justify-content: left; margin: 0;">
-<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<div style="padding: 2%;  border-radius: 10px; border: 10px solid #00ff11;">
 <h5>Flag LOOPWhile2 (5 pts)</h5>
 <p>What gets <strong><span style="color: #990066;">displayed</span></strong> by the loop above?  <strong><span style="color: #990066;">Include</span></strong> any and <span style="color: #990066;"><strong>all spaces</strong></span>.</p>
 </div>
 </div>
 <h4> </h4>
-<p>A little background information will help us under the last line in the code above.  The computer <strong><span style="color: #990066;">stores</span></strong> everything as <strong><span style="color: #990066;">zeros</span></strong> and <strong><span style="color: #990066;">ones</span></strong>.  If it needs to store the letter 'A', it must covert it into something it can store as a binary number (zeros and ones).  To <span style="color: #990066;"><strong>change 'A' into a number</strong></span>, it looks it up in the <strong><a href="https://www.rapidtables.com/code/text/ascii-table.html" target="_blank" rel="noopener">ASCII table</a></strong> to find it's position in the table.  Go to the table and scroll down to the ASCII printable characters.  Locate 'A' in the Symbol column.  Notice it's at <strong><span style="color: #990066;">position 65</span></strong> (in the DEC column).  Notice <strong><span style="color: #990066;">'B'</span></strong> is at <strong><span style="color: #990066;">position 66</span></strong>, 'C' is at position 67, and so on.  So the position of 'B' is one integer higher than 'A'.  </p>
-<p>In the code above, <strong><span style="color: #990066;">ord returns</strong> the <strong><span style="color: #990066;">ASCII position</span></strong> of the value you give it, and <span style="color: #990066;"><strong>chr returns</strong></span> the <strong><span style="color: #990066;">character at</span></strong> a given <strong><span style="color: #990066;">ASCII position</span></strong>.  Try printing each of the following.</span></p>
+<p>A little background information will help us under the last line in the code above.  The computer <strong><span style="color: #990066;">stores</span></strong> everything as <strong><span style="color: #990066;">zeros</span></strong> and <strong><span style="color: #990066;">ones</span></strong>.  If it needs to store the letter 'A', it must covert it into something it can store as a binary number (zeros and ones).  To <span style="color: #990066;"><strong>change 'A' into a number</strong></span>, it looks it up in the <strong><a href="https://www.rapidtables.com/code/text/ascii-table.html" target="_blank">ASCII table</a></strong> to find it's position in the table.  Go to the table and scroll down to the ASCII printable characters.  Locate 'A' in the Symbol column.  Notice it's at <strong><span style="color: #990066;">position 65</span></strong> (in the DEC column).  Notice <strong><span style="color: #990066;">'B'</span></strong> is at <strong><span style="color: #990066;">position 66</span></strong>, 'C' is at position 67, and so on.  So the position of 'B' is one integer higher than 'A'.  </p>
+<p>In the code above, <strong><span style="color: #990066;">ord returns</span></strong> the <strong><span style="color: #990066;">ASCII position</span></strong> of the value you give it, and <span style="color: #990066;"><strong>chr returns</strong></span> the <strong><span style="color: #990066;">character at</span></strong> a given <strong><span style="color: #990066;">ASCII position</span></strong>.  Try printing each of the following.</p>
 <pre class="language-python"><code>ord('A')
 ord('A')+1
 chr(65)
 chr(66)
 chr(ord('A')+2)
 chr(ord('A')-4)</code></pre>
-<!-- Green challenge instructions -->
 <div style="display: flex; align-items: center; justify-content: left; margin: 0;">
-<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<div style="padding: 2%;  border-radius: 10px; border: 10px solid #00ff11;">
 <h5>Flag LOOPOrdChr (5 pts)</h5>
 <p>If you print each line above, what gets <strong><span style="color: #990066;">displayed</span></strong> for it?  Put the values displayed together, <strong><span style="color: #990066;">separated by pipes</span></strong> to build the flag.  For example, if the answers were a, b, c, then enter a|b|c for the flag.  The pipe is above the return/enter key on standard keyboards.</p>
 </div>
 </div>
 <p></p>
-<!-- Green challenge instructions -->
 <div style="display: flex; align-items: center; justify-content: left; margin: 0;">
-<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<div style="padding: 2%;  border-radius: 10px; border: 10px solid #00ff11;">
 <h5>Flag LOOPASCII (5 pts)</h5>
 <p>Looking in the <strong><span style="color: #990066;">ASCII table</span></strong>, at what <strong><span style="color: #990066;">DEC position</span></strong> do you find the <strong><span style="color: #990066;">@</span></strong> symbol?</p>
 </div>
 </div>
 <p></p>
 <h4>for Loops</h4>
-<p>While loops are great when you don't know how many times the loop will need to execute.  When you <strong><span style="color: #990066;">know exactly how many times</strong> a loop must execute, use a <strong><span style="color: #990066;">for loop</span></strong> instead.  Consider the for loop below.</span></p>
+<p>While loops are great when you don't know how many times the loop will need to execute.  When you <strong><span style="color: #990066;">know exactly how many times</span></strong> a loop must execute, use a <strong><span style="color: #990066;">for loop</span></strong> instead.  Consider the for loop below.</p>
 <pre class="language-python"><code>for i in range(10):
     print(i, end=" ")</code></pre>
-<!-- Green challenge instructions -->
 <div style="display: flex; align-items: center; justify-content: left; margin: 0;">
-<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<div style="padding: 2%;  border-radius: 10px; border: 10px solid #00ff11;">
 <h5>Flag LOOPFor1 (5 pts)</h5>
 <p>What gets <strong><span style="color: #990066;">displayed</span></strong> by the loop above?  <strong><span style="color: #990066;">Include</span></strong> any and <span style="color: #990066;"><strong>all spaces</strong></span>.</p>
 </div>
@@ -202,17 +195,15 @@ chr(ord('A')-4)</code></pre>
 <p>Consider the code below.</p>
 <pre class="language-python"><code>for i in range(start, stopBefore, step):
     print(i, end=" ")</code></pre>
-<!-- Green challenge instructions -->
 <div style="display: flex; align-items: center; justify-content: left; margin: 0;">
-<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<div style="padding: 2%;  border-radius: 10px; border: 10px solid #00ff11;">
 <h5>Flag LOOPFor2 (10 pts)</h5>
 <p>What values would you use for <strong><span style="color: #990066;">start</span></strong>, <strong><span style="color: #990066;">stopBefore</span></strong>, and <strong><span style="color: #990066;">step</span></strong>, so it prints the numbers <strong><span style="color: #990066;">1 2 3 4 5 6 7 8 9 10</span></strong>  all on one line?  Put the values you'd use for start, stopBefore, and step together, <strong><span style="color: #990066;">separated by pipes</span></strong> to build the flag.</p>
 </div>
 </div>
 <p></p>
-<!-- Green challenge instructions -->
 <div style="display: flex; align-items: center; justify-content: left; margin: 0;">
-<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<div style="padding: 2%;  border-radius: 10px; border: 10px solid #00ff11;">
 <h5>Flag LOOPFor3 (10 pts)</h5>
 <p>Consider the solution code for the prior challenge.</p>
 <ul>
@@ -222,7 +213,7 @@ chr(ord('A')-4)</code></pre>
 <p>Put the <strong><span style="color: #990066;">answers</span></strong> to the questions above together, <strong><span style="color: #990066;">separated by a pipe</span></strong> to build the flag.</p>
 </div>
 </div>
-<p><br>If we want a for loop to repeat a set number of times, but we <strong><span style="color: #990066;">don't need to do anything with the loop variable</span></strong> inside the loop, we can use <strong><span style="color: #990066;">_</span></strong> rather than a loop variable name. </p>
+<p><br/>If we want a for loop to repeat a set number of times, but we <strong><span style="color: #990066;">don't need to do anything with the loop variable</span></strong> inside the loop, we can use <strong><span style="color: #990066;">_</span></strong> rather than a loop variable name. </p>
 <p>Consider the Turtle code below.</p>
 <pre class="language-python"><code>import turtle
 wn = turtle.Screen()
@@ -231,39 +222,36 @@ for _ in range(10):
     t.forward(50)
     t.right(36)
 wn.exitonclick()</code></pre>
-<!-- Green challenge instructions -->
 <div style="display: flex; align-items: center; justify-content: left; margin: 0;">
-<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<div style="padding: 2%;  border-radius: 10px; border: 10px solid #00ff11;">
 <h5>Flag LOOPFor4 (5 pts)</h5>
 <p>How many <strong><span style="color: #990066;">sides</span></strong> does the drawing produced by the turtle have?</p>
 </div>
 </div>
-<p>Because the Turtle module depends on being able to do graphics, it can be challenging to work with it in certain IDEs.  If you're having difficulty using it in yours, check out this <strong><a href="https://colab.research.google.com/drive/1I3RemhLTiWZxyc0E5T2Tjk0Imfj1ZmB5?usp=sharing" target="_blank" rel="noopener">snippet of Turtle code in a Colab Notebook</a></strong>.</p>
+<p>Because the Turtle module depends on being able to do graphics, it can be challenging to work with it in certain IDEs.  If you're having difficulty using it in yours, check out this <strong><a href="https://colab.research.google.com/drive/1I3RemhLTiWZxyc0E5T2Tjk0Imfj1ZmB5?usp=sharing" target="_blank">snippet of Turtle code in a Colab Notebook</a></strong>.</p>
 <p>Another type of for loop allows us to <strong><span style="color: #990066;">iterate over values in a sequence</span></strong>. </p>
 <p>Consider the code below.</p>
 <pre class="language-python"><code>colors = ["red", "green", "blue"]
 for color in colors:
     print(color, end=" - ") </code></pre>
 <p>Notice the value of <span style="color: #990066;"><strong>end</strong></span> is different than in prior challenges.  Try to guess what will be displayed before running this code in an IDE.</p>
-<!-- Green challenge instructions -->
 <div style="display: flex; align-items: center; justify-content: left; margin: 0;">
-<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<div style="padding: 2%;  border-radius: 10px; border: 10px solid #00ff11;">
 <h5>Flag LOOPFor5 (5 pts)</h5>
 <p>What gets <strong><span style="color: #990066;">displayed</span></strong> by the loop above? <strong><span style="color: #990066;">Include</span></strong> any and <span style="color: #990066;"><strong>all spaces and punctuation</strong></span>.</p>
 </div>
 </div>
-<p><br>Consider the questions below.</p>
+<p><br/>Consider the questions below.</p>
 <ul>
 <li>What statement can be used to exit a loop?  (generally not a best practice)</li>
 <li>What statement can be used to skip the rest of a loop and move onto the next iteration of the loop?  (generally not a best practice)</li>
 </ul>
-<!-- Green challenge instructions -->
 <div style="display: flex; align-items: center; justify-content: left; margin: 0;">
-<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<div style="padding: 2%;  border-radius: 10px; border: 10px solid #00ff11;">
 <h5>Flag LOOPBad (5 pts)</h5>
 <p>Answer these questions about statements discussed in the readings in <span style="color: #990066;"><strong>CS 161P: Computer Science 1 Using Python</strong></span> for this week.  Put the answers together, separated by a pipe to build the flag.</p>
 <ul>
-<li>What <strong><span style="color: #990066;">statement</strong> can be used to <strong><span style="color: #990066;">exit</span></strong> a <strong><span style="color: #990066;">loop</span></strong>?  (generally not a best practice)</span></li>
+<li>What <strong><span style="color: #990066;">statement</span></strong> can be used to <strong><span style="color: #990066;">exit</span></strong> a <strong><span style="color: #990066;">loop</span></strong>?  (generally not a best practice)</li>
 <li>What <strong><span style="color: #990066;">statement</span></strong> can be used to <strong><span style="color: #990066;">skip</span></strong> the <strong><span style="color: #990066;">rest of</span></strong> a <strong><span style="color: #990066;">loop</span></strong> and <strong><span style="color: #990066;">move</span></strong> on <strong><span style="color: #990066;">to</span></strong> the <strong><span style="color: #990066;">next iteration</span></strong> of the loop?  (generally not a best practice)</li>
 </ul>
 </div>
@@ -275,9 +263,8 @@ for color in colors:
     for j in range(1, 4):
         print("*", end=" ")
     print()</code></pre>
-<!-- Green challenge instructions -->
 <div style="display: flex; align-items: center; justify-content: left; margin: 0;">
-<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<div style="padding: 2%;  border-radius: 10px; border: 10px solid #00ff11;">
 <h5>Flag LOOPNested (5 pts)</h5>
 <p>How many <strong><span style="color: #990066;">asterisks</span></strong> will be on <strong><span style="color: #990066;">each line</span></strong>?  As usual, try to guess before trying the code in an IDE.</p>
 </div>
@@ -292,11 +279,10 @@ while value != -1:
   sum += value
 
 print("The sum of your numbers, other than -1, is", sum)</code></pre>
-<!-- Green challenge instructions -->
 <div style="display: flex; align-items: center; justify-content: left; margin: 0;">
-<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<div style="padding: 2%;  border-radius: 10px; border: 10px solid #00ff11;">
 <h5>Flag LOOPDebugWhile (10 pts)</h5>
-<p>After you've gotten the program to work, submit it to this <a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?lang=P&amp;class=161P&amp;challenge=LOOPDebugWhile&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?lang=P&amp;class=161P&amp;challenge=LOOPDebugWhile&amp;subFormat=uploadZip" target="_blank" rel="noopener"><strong>code checker</strong></a> to get the flag.</p>
+<p>After you've gotten the program to work, submit it to this <a href="http://yaacotu.com/ctf-progs/engine/index.php?lang=P&amp;class=161P&amp;challenge=LOOPDebugWhile&amp;subFormat=uploadZip" target="_blank" title="http://yaacotu.com/ctf-progs/engine/index.php?lang=P&amp;class=161P&amp;challenge=LOOPDebugWhile&amp;subFormat=uploadZip"><strong>code checker</strong></a> to get the flag.</p>
 </div>
 </div>
 <h4> </h4>
@@ -305,11 +291,10 @@ print("The sum of your numbers, other than -1, is", sum)</code></pre>
 <pre class="language-python"><code>print("This program will output the odd numbers 1, 3, ..., 19")
 for i in range(11):
     print(2 * i + 1)</code></pre>
-<!-- Green challenge instructions -->
 <div style="display: flex; align-items: center; justify-content: left; margin: 0;">
-<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<div style="padding: 2%;  border-radius: 10px; border: 10px solid #00ff11;">
 <h5>Flag LOOPDebugFor (10 pts)</h5>
-<p>After you've gotten the program to work, submit it to this <a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?lang=P&amp;class=161P&amp;challenge=LOOPDebugFor&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?lang=P&amp;class=161P&amp;challenge=LOOPDebugFor&amp;subFormat=uploadZip" target="_blank" rel="noopener"><strong>code checker</strong></a> to get the flag.</p>
+<p>After you've gotten the program to work, submit it to this <a href="http://yaacotu.com/ctf-progs/engine/index.php?lang=P&amp;class=161P&amp;challenge=LOOPDebugFor&amp;subFormat=uploadZip" target="_blank" title="http://yaacotu.com/ctf-progs/engine/index.php?lang=P&amp;class=161P&amp;challenge=LOOPDebugFor&amp;subFormat=uploadZip"><strong>code checker</strong></a> to get the flag.</p>
 </div>
 </div>
 <h4> </h4>
@@ -317,23 +302,21 @@ for i in range(11):
 <p>Write a program which outputs the <strong><span style="color: #990066;">sum</span></strong> of the <strong><span style="color: #990066;">first 10 integers</span></strong> (i.e., the sum of 1+2+3+...+10).  Use a <span style="color: #990066;"><strong>while loop</strong></span> to <strong><span style="color: #990066;">iterate</span></strong> through the integers <strong><span style="color: #990066;">from 1 to 10</span></strong>, and to <strong><span style="color: #990066;">add</span></strong> each one <strong><span style="color: #990066;">to</span></strong> a <strong><span style="color: #990066;">running sum</span></strong>.  In other words, the <strong><span style="color: #990066;">sum</span></strong> should <strong><span style="color: #990066;">initially</span></strong> be <strong><span style="color: #990066;">zero</span></strong>.  Then, the first time through the loop, you'll add 1 to the sum, the next time through the loop, you'll add 2 to the sum, etc.  After the loop is done, you should <strong><span style="color: #990066;">print</span></strong> the <strong><span style="color: #990066;">sum</span></strong>. </p>
 <p>Below is an example run.</p>
 <div style="display: flex; align-items: center; justify-content: left; margin: 0;">
-<div style="background-color: black; color: white; padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #003087;">The sum of the integers 1 to 10 is 55.</div>
+<div style="background-color: black; color: white; padding: 2%;  border-radius: 10px; border: 10px solid #003087;">The sum of the integers 1 to 10 is 55.</div>
 </div>
 <p></p>
-<!-- Green challenge instructions -->
 <div style="display: flex; align-items: center; justify-content: left; margin: 0;">
-<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<div style="padding: 2%;  border-radius: 10px; border: 10px solid #00ff11;">
 <h5>Flag LOOPWhile1to10 (15 pts)</h5>
-<p>After you've gotten the program to work, submit it to this <a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?lang=P&amp;class=161P&amp;challenge=LOOPWhile1to10&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?lang=P&amp;class=161P&amp;challenge=LOOPWhile1to10&amp;subFormat=uploadZip" target="_blank" rel="noopener"><strong>code checker</strong></a> to get the flag.</p>
+<p>After you've gotten the program to work, submit it to this <a href="http://yaacotu.com/ctf-progs/engine/index.php?lang=P&amp;class=161P&amp;challenge=LOOPWhile1to10&amp;subFormat=uploadZip" target="_blank" title="http://yaacotu.com/ctf-progs/engine/index.php?lang=P&amp;class=161P&amp;challenge=LOOPWhile1to10&amp;subFormat=uploadZip"><strong>code checker</strong></a> to get the flag.</p>
 </div>
 </div>
 <h4> </h4>
 <p><strong><span style="color: #990066;">Rewrite</span></strong> the last program, which outputs the sum of the first 10 integers, using a <span style="color: #990066;"><strong>for loop</strong></span> to iterate through the integers and to store them in a running sum.  The program output will look the same.</p>
-<!-- Green challenge instructions -->
 <div style="display: flex; align-items: center; justify-content: left; margin: 0;">
-<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<div style="padding: 2%;  border-radius: 10px; border: 10px solid #00ff11;">
 <h5>Flag LOOPFor1to10 (15 pts)</h5>
-<p>After you've gotten the program to work, submit it to this <a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?lang=P&amp;class=161P&amp;challenge=LOOPFor1to10&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?lang=P&amp;class=161P&amp;challenge=LOOPFor1to10&amp;subFormat=uploadZip" target="_blank" rel="noopener"><strong>code checker</strong></a> to get the flag.</p>
+<p>After you've gotten the program to work, submit it to this <a href="http://yaacotu.com/ctf-progs/engine/index.php?lang=P&amp;class=161P&amp;challenge=LOOPFor1to10&amp;subFormat=uploadZip" target="_blank" title="http://yaacotu.com/ctf-progs/engine/index.php?lang=P&amp;class=161P&amp;challenge=LOOPFor1to10&amp;subFormat=uploadZip"><strong>code checker</strong></a> to get the flag.</p>
 </div>
 </div>
 <h4> </h4>
@@ -341,7 +324,7 @@ for i in range(11):
 <p>Write a program which uses a <strong><span style="color: #990066;">while loop</span></strong> to <strong><span style="color: #990066;">ask</span></strong> the user to input a <strong><span style="color: #990066;">positive integer</span></strong>.  <strong><span style="color: #990066;">If</span></strong> the integer is <strong><span style="color: #990066;">not positive</span></strong> (including 0), <strong><span style="color: #990066;">tell</span></strong> the user it isn’t <strong><span style="color: #990066;">valid</span></strong>.  <strong><span style="color: #990066;">Continue</span></strong> requesting input <strong><span style="color: #990066;">until</span></strong> the user enters a <strong><span style="color: #990066;">positive integer</span></strong>.  Then use a <strong><span style="color: #990066;">for loop</span></strong> to consider the numbers <strong><span style="color: #990066;">between 1 and</span></strong> the <strong><span style="color: #990066;">integer entered</span></strong>.  <strong><span style="color: #990066;">Display</span></strong> the numbers which are <strong><span style="color: #990066;">factors</span></strong> of the integer.  In other words, which of these numbers divide the integer evenly.  HINT: The modulus operator (%) tells you the remainder after dividing.</p>
 <p>Below is an example run.</p>
 <div style="display: flex; align-items: center; justify-content: left; margin: 0;">
-<div style="background-color: black; color: white; padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #003087;">Enter a positive integer: <span class="" style="color: #f0a800;">-9</span><br>That is not a positive integer. Please try again: <span class="" style="color: #f0a800;">0</span><br>That is not a positive integer. Please try again: <span class="" style="color: #f0a800;">4</span><br>The factors of 4 are: 1 2 4</div>
+<div style="background-color: black; color: white; padding: 2%;  border-radius: 10px; border: 10px solid #003087;">Enter a positive integer: <span class="" style="color: #f0a800;">-9</span><br/>That is not a positive integer. Please try again: <span class="" style="color: #f0a800;">0</span><br/>That is not a positive integer. Please try again: <span class="" style="color: #f0a800;">4</span><br/>The factors of 4 are: 1 2 4</div>
 </div>
 <p></p>
 <details>
@@ -359,11 +342,10 @@ For each number between 1 and value, including 1 and value
         Print the number
   </code></pre>
 </details>
-<!-- Green challenge instructions -->
 <div style="display: flex; align-items: center; justify-content: left; margin: 0;">
-<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<div style="padding: 2%;  border-radius: 10px; border: 10px solid #00ff11;">
 <h5>Flag LOOPFactors (20 pts)</h5>
-<p>After you've gotten the program to work, submit it to this <a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?lang=P&amp;class=161P&amp;challenge=LOOPFactors&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?lang=P&amp;class=161P&amp;challenge=LOOPFactors&amp;subFormat=uploadZip" target="_blank" rel="noopener"><strong>code checker</strong></a> to get the flag.</p>
+<p>After you've gotten the program to work, submit it to this <a href="http://yaacotu.com/ctf-progs/engine/index.php?lang=P&amp;class=161P&amp;challenge=LOOPFactors&amp;subFormat=uploadZip" target="_blank" title="http://yaacotu.com/ctf-progs/engine/index.php?lang=P&amp;class=161P&amp;challenge=LOOPFactors&amp;subFormat=uploadZip"><strong>code checker</strong></a> to get the flag.</p>
 </div>
 </div>
 <h4> </h4>
@@ -371,15 +353,15 @@ For each number between 1 and value, including 1 and value
 <p>Write a program which allows the user to <strong><span style="color: #990066;">enter</span></strong> a series of <strong><span style="color: #990066;">positive integers between 1 and 100</span></strong> (including 1 and 100) and <strong><span style="color: #990066;">displays</span></strong> the <strong><span style="color: #990066;">smallest</span></strong> and <strong><span style="color: #990066;">largest</span></strong> of the numbers entered.  The program should not store the numbers entered.  It should simply keep track of the smallest and largest numbers it has seen so far as it gets each new number. The program should <strong><span style="color: #990066;">continue</span></strong> accepting numbers <strong><span style="color: #990066;">until</span></strong> the value <strong><span style="color: #990066;">0 is entered</span></strong> and then display the results.  <span style="color: #990066;"><strong>If</strong></span> a <span style="color: #990066;"><strong>0</strong></span> is entered <strong><span style="color: #990066;">immediately</span></strong>, the program should report "<strong><span style="color: #990066;">No values entered.</span></strong>"</p>
 <p>Below are example runs.</p>
 <div style="display: flex; align-items: center; justify-content: left; margin: 0;">
-<div style="background-color: black; color: white; padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #003087;">Enter a number between 1 and 100 (0 to end): <span class="" style="color: #f0a800;">-5</span><br>Number out of range. Please reenter.<br>Enter a number between 1 and 100 (0 to end): <span class="" style="color: #f0a800;">150</span><br>Number out of range. Please reenter.<br>Enter a number between 1 and 100 (0 to end): <span class="" style="color: #f0a800;">3</span><br>Enter a number between 1 and 100 (0 to end): <span class="" style="color: #f0a800;">7</span><br>Enter a number between 1 and 100 (0 to end): <span class="" style="color: #f0a800;">2</span><br>Enter a number between 1 and 100 (0 to end): <span class="" style="color: #f0a800;">8</span><br>Enter a number between 1 and 100 (0 to end): <span class="" style="color: #f0a800;">0</span><br>Smallest is 2.<br>Largest is 8.</div>
+<div style="background-color: black; color: white; padding: 2%;  border-radius: 10px; border: 10px solid #003087;">Enter a number between 1 and 100 (0 to end): <span class="" style="color: #f0a800;">-5</span><br/>Number out of range. Please reenter.<br/>Enter a number between 1 and 100 (0 to end): <span class="" style="color: #f0a800;">150</span><br/>Number out of range. Please reenter.<br/>Enter a number between 1 and 100 (0 to end): <span class="" style="color: #f0a800;">3</span><br/>Enter a number between 1 and 100 (0 to end): <span class="" style="color: #f0a800;">7</span><br/>Enter a number between 1 and 100 (0 to end): <span class="" style="color: #f0a800;">2</span><br/>Enter a number between 1 and 100 (0 to end): <span class="" style="color: #f0a800;">8</span><br/>Enter a number between 1 and 100 (0 to end): <span class="" style="color: #f0a800;">0</span><br/>Smallest is 2.<br/>Largest is 8.</div>
 </div>
 <p></p>
 <div style="display: flex; align-items: center; justify-content: left; margin: 0;">
-<div style="background-color: black; color: white; padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #003087;">Enter a number between 1 and 100 (0 to end): <span class="" style="color: #f0a800;">3</span><br>Enter a number between 1 and 100 (0 to end): <span class="" style="color: #f0a800;">0</span><br>Smallest is 3.<br>Largest is 3.</div>
+<div style="background-color: black; color: white; padding: 2%;  border-radius: 10px; border: 10px solid #003087;">Enter a number between 1 and 100 (0 to end): <span class="" style="color: #f0a800;">3</span><br/>Enter a number between 1 and 100 (0 to end): <span class="" style="color: #f0a800;">0</span><br/>Smallest is 3.<br/>Largest is 3.</div>
 </div>
 <p></p>
 <div style="display: flex; align-items: center; justify-content: left; margin: 0;">
-<div style="background-color: black; color: white; padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #003087;">Enter a number between 1 and 100 (0 to end): <span class="" style="color: #f0a800;">0</span><br>No values entered.</div>
+<div style="background-color: black; color: white; padding: 2%;  border-radius: 10px; border: 10px solid #003087;">Enter a number between 1 and 100 (0 to end): <span class="" style="color: #f0a800;">0</span><br/>No values entered.</div>
 </div>
 <p></p>
 <details>
@@ -413,15 +395,16 @@ Otherwise
   </code></pre>
 </details>
 <div style="display: flex; align-items: center; justify-content: left; margin: 0;">
-<div style="padding: 2%; box-sizing: border-box; border-radius: 10px; border: 10px solid #00ff11;">
+<div style="padding: 2%;  border-radius: 10px; border: 10px solid #00ff11;">
 <h5>Flag LOOPLowHigh (20 pts)</h5>
-<p>After you've gotten the program to work, submit it to this <a title="http://yaacotu.com/ctf-progs/engineDRM/index.php?lang=P&amp;class=161P&amp;challenge=LOOPLowHigh&amp;subFormat=uploadZip" href="http://yaacotu.com/ctf-progs/engineDRM/index.php?lang=P&amp;class=161P&amp;challenge=LOOPLowHigh&amp;subFormat=uploadZip" target="_blank" rel="noopener"><strong>code checker</strong></a> to get the flag.</p>
+<p>After you've gotten the program to work, submit it to this <a href="http://yaacotu.com/ctf-progs/engine/index.php?lang=P&amp;class=161P&amp;challenge=LOOPLowHigh&amp;subFormat=uploadZip" target="_blank" title="http://yaacotu.com/ctf-progs/engine/index.php?lang=P&amp;class=161P&amp;challenge=LOOPLowHigh&amp;subFormat=uploadZip"><strong>code checker</strong></a> to get the flag.</p>
 </div>
 </div>
+
 </div>
 <h2>Submit Work</h2>
 <p>You <strong><span style="color: #c71f23;">must</span></strong> enter your flags below and click <strong><span style="color: #c71f23;">submit</span></strong> to earn points for this activity.&nbsp; You do NOT have to enter all flags to earn credit, but you must click submit.&nbsp; You may update the flags and submit them an unlimited number of times until the due date.&nbsp; Your highest score will be entered in the gradebook.</p>
 <p>If a flag has more than one box to the right of it, enter the <strong><span style="color: #c71f23;">same</span></strong> <strong><span style="color: #c71f23;">flag</span></strong> into <strong><span style="color: #c71f23;">each</span></strong> <strong><span style="color: #c71f23;">box</span></strong>.&nbsp; These flags are worth more points.</p>
-<iframe src="https://lanecc.h5p.com/content/1292971296702510478/embed" width="100%" height="500" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *" style="margin-top: 1em;"></iframe>
+<iframe src="https://lanecc.h5p.com/content/1292973449087788368/embed" width="100%" height="500" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *" style="margin-top: 1em;"></iframe>
 </body>
 </html>
